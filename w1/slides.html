@@ -987,7 +987,7 @@ margin-right: 0; }
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Introduction to AI co-creation</h1>
-  <p class="subtitle">Week 5 · Workshop 1 · AI foundations for capstone · TPACK: TK</p>
+  <p class="subtitle">Workshop 1 · AI foundations for the capstone · TPACK: TK</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1033,6 +1033,21 @@ Andy Parra-Martinez, Ph.D.
 </tr>
 </tbody>
 </table>
+<aside class="notes">
+<p>Workshop 1 of four. Sixty minutes, all workshop. Milestone 1 is written at home this term — same for both sections — so nothing here is drafting time. The deck’s job is TK only: what the tool is, what it can build, how to prompt it, and how to stay the one deciding.</p>
+<p>Before class: the video queued (3Blue1Brown, <em>Large Language Models explained briefly</em>, 8 min); one hallucination example you can reproduce; two or three chat tools open in tabs (ChatGPT, Gemini, Claude — whichever the room already has accounts on); the Week 4 instrument open in another tab as the “you have already used one” example; random-number generator on your phone for the activity.</p>
+<p>Ask them to bring a laptop or phone. The prompt block does not work without one.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="basics" class="slide level2 divider">
 <h2>Basics</h2>
@@ -1064,6 +1079,20 @@ Andy Parra-Martinez, Ph.D.
 </tbody>
 </table>
 <p><strong>AI will help create the tool.</strong> <em>You</em> will decide who it is for, whether it is right, and whether it should exist.</p>
+<aside class="notes">
+<p>Two minutes. Say the division of labour once and plainly: the production is outsourceable; the judgement is not. The rest of the hour is about both halves — what the tool can produce, and what only you can decide.</p>
+<p>If anyone is worried they cannot code: no one in this course writes code by hand. The code track means you read and run what the tool writes. The no-code track means you never see it. Both are legitimate; both need M1 first.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="video" class="slide level2 divider">
 <h2>Video</h2>
@@ -1073,6 +1102,20 @@ Andy Parra-Martinez, Ph.D.
 <p>3Blue1Brown · 8 minutes</p>
 <p><a href="https://www.youtube.com/watch?v=LPZh9BOjkQs" class="uri">https://www.youtube.com/watch?v=LPZh9BOjkQs</a></p>
 <p>Watch for one thing: <strong>what does the model actually do, one word at a time?</strong></p>
+<aside class="notes">
+<p>Play the whole thing. No pausing except at 0:36–0:51 if you want to flag the moment: the model predicts the next word, assigns probabilities, and <em>samples</em> — it does not always take the most likely word. That is the mechanism the activity reproduces.</p>
+<p>One sentence before it starts: “By the end of the hour you will have asked a tool to build something. First, what is it.”</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="activity" class="slide level2 divider">
 <h2>Activity</h2>
@@ -1114,12 +1157,43 @@ Andy Parra-Martinez, Ph.D.
 <li><strong>Generate</strong> <em>(3 min)</em> — draw a random number 1–100 on your phone. Pick the word in the list that is closest to the random number. That word is the output. <strong>Do it three times.</strong></li>
 <li><strong>Discuss</strong> <em>(3 min)</em> — what happened when a low-probability word came up?</li>
 </ol>
+<aside class="notes">
+<p>Assign sentences so every letter is covered; more than one group on C is fine. Pick your own for the demo before they start: “The cat sat on the —” mat 60, floor 20, chair 10, roof 7, keyboard 3. Roll 87: roof. Show the cumulative walk once so no one is confused about the mechanism.</p>
+<p>Debrief, three questions, fast:</p>
+<p><strong>Sentence C.</strong> What did your model say Maya passed? “Note.” Every group. The most probable word is not what happened — she passed a drawing. The model has never seen Maya draw; it has read a great many sentences about students passing things during exams. Say this line: <em>the tool produces the probable, not the true.</em> Write it on the board. It comes back in the M1 blind-spot part.</p>
+<p><strong>The low-probability roll.</strong> When a 3% word came up, the sentence still read fine — “the cat sat on the keyboard.” Fluent, plausible, and not the answer anyone expected. That is the video’s point about natural-sounding text, and it is also how a hallucination reads: nothing marks it as the unlikely pick.</p>
+<p><strong>Sentence D.</strong> Where did your probabilities come from? From what you have read and heard. So do the model’s. If the internet mostly says “practice,” the model says practice — whether or not that is true for a 9th grader who needs the shape before the formula.</p>
+<p><strong>Sentence E.</strong> What were the top words — <em>transform, revolutionize, help, personalize</em>? That is what has been written about AI and education, and it is what the tool will say back to you. M1 has to say something more specific than the probable word.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="prediction-not-knowledge" class="slide level2">
 <h2>Prediction, not knowledge</h2>
 <p>An LLM predicts the <strong>most likely next text</strong>, given what it has read.</p>
 <p>It has not met your learner. It has read a great many paragraphs <em>about learners like the one you described</em>, and it produces the most probable text about them.</p>
 <p><strong>Fluent ≠ true.</strong> <strong>Confident ≠ verifiable sources.</strong></p>
+<aside class="notes">
+<p>One minute. This is the slide to leave up while groups finish. The activity did the teaching; this is the sentence to remember.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="your-project" class="slide level2 divider">
 <h2>Your Project</h2>
@@ -1174,6 +1248,21 @@ Week 4 instrument</strong></td>
 </tr>
 </tbody>
 </table>
+<aside class="notes">
+<p>Ten minutes for the whole block. Walk the table top to bottom, one example each, then show the Week 4 instrument tab: <em>you filled this in on Tuesday; it is a stand-alone page; a model wrote the code and I checked every item against the published scale.</em> That is the division of labour in one object.</p>
+<p>Map to M1 Part 3 out loud, so they can see the milestone’s list is this list: Socratic tutor = chatbot tutor; interactive simulation = artifact or stand-alone page; practice/feedback generator = teaching assistant; instrument = Forms + Sheets or a static page.</p>
+<p>The one distinction that matters for M1: <em>who is the user</em> — the learner, or you? A TA tool is a legitimate capstone. It still needs a population, because the practice it generates is for someone.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="code-or-no-code" class="slide level2">
 <h2>Code or no-code</h2>
@@ -1197,6 +1286,20 @@ Week 4 instrument</strong></td>
 <p><em>You never write the code. You read it, run it, and decide.</em></p>
 </div></div>
 <p><strong>Either way, the same two questions:</strong> <em>who is it for, and what does it do that a handout cannot?</em></p>
+<aside class="notes">
+<p>Two minutes. The track choice is not today’s decision; M1 is track-independent. Say that. The only reason to show this now is so that “I’m not technical” stops being a reason to pick a population late.</p>
+<p>The last line is M1 Part 3’s sentence. Point at it.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="prompts-tested" class="slide level2 divider">
 <h2>Prompts, tested</h2>
@@ -1217,6 +1320,20 @@ Week 4 instrument</strong></td>
 <p><em>A 9th grader can execute the quadratic formula but cannot say what the answer is. They learn from diagrams and hands-on work before text. In under 120 words, describe what the two solutions</em> are <em>before any formula.</em></p>
 </blockquote>
 </div></div>
+<aside class="notes">
+<p>Three minutes, you drive. Run both and let the room compare.</p>
+<p>Name what the scoping <em>is</em>: what the learner can do, what she cannot yet, how she learns — developmental facts, not “make it simple.” The room should notice this is Maya. That is the point: a scoped prompt is a population statement, which is what M1 Part 1 and Part 2 are.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="your-turn-pick-one" class="slide level2 smaller">
 <h2>Your turn — pick one</h2>
@@ -1238,6 +1355,23 @@ Week 4 instrument</strong></td>
 </div></div>
 <p><strong>Critical Judgement:</strong> How do you know the AI didn’t hallucinate? Can you verify the output?</p>
 <p>See this video from Dr. Casey Fiesler, an AI ethicist at the University of Colorado Boulder: <a href="https://www.youtube.com/watch?v=0y7BSWoksyo" class="uri">https://www.youtube.com/watch?v=0y7BSWoksyo</a></p>
+<aside class="notes">
+<p>Seven minutes. Circulate. Two or three share-outs at the end, one from each side.</p>
+<p><strong>Catch one.</strong> Made-up citations no longer work as the example — current models say they cannot find the study and suggest it may not exist. So the prompt asks for a <em>real</em> figure with a real source: the model will produce a plausible percentage and name MDE or a news outlet, and the number will be stale, rounded, or for a different year. Verification means opening the MDE accountability page and looking. Backups that still catch: a direct quote with a page number from a real book; the sample size and method of Gosling, Rentfrow &amp; Swann (2003) — the TIPI paper behind Tuesday’s instrument.</p>
+<p>If the tool hedges — “I can’t verify this” — say that is checkpoint 2 working, on the tool’s side. It does not replace checkpoint 2 on yours. Model the verification, not just the catch: where would you look, how long does it take, what does it cost to skip it. The skill is not “AI lies.” The skill is “I have a routine for checking.” Say the word <em>hallucination</em> once and define it: fluent output with no source behind it. They need the word for M1 Part 4.</p>
+<p><strong>Build one.</strong> The second sentence of the prompt is the one that matters. The tool will name a default assumption about the learners — reading level, prior knowledge, motivation — and that is M1 Part 4 done in the room. Anyone who built one has their blind-spot answer already.</p>
+<p>If accounts are a problem, pair up. The person without the tool reads the output and does the judging — which is the better seat anyway.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="staying-the-agent" class="slide level2 divider">
 <h2>Staying the agent</h2>
@@ -1295,6 +1429,21 @@ Week 4 instrument</strong></td>
 <div style="font-size:0.6em;text-align:right">
 <p>Austin, T. <em>UnBlooms™ — The Reflective Checkpoint Process.</em> Redrawn.</p>
 </div>
+<aside class="notes">
+<p>Five minutes. Austin’s point that matters here: the cycle is not a hierarchy and it is not linear. You can resist at any step — decline to prompt, decline to accept, decline to build. That is what “agency” in the centre means. “AI should support learning, not replace thinking.”</p>
+<p>Walk the five with today’s hour: the activity was checkpoint 2 (what is this output, and is it the true one?); “catch one” was 2 and 3; “build one” was 3 — the tool named its own default; M1 Part 3’s handout test is checkpoint 5.</p>
+<p>Say the framework name once and the author once. Students will meet the cycle again at every workshop; M2’s documentation log is organised around it.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="austins-five-questions" class="slide level2 smaller">
 <h2>Austin’s Five Questions</h2>
@@ -1337,6 +1486,19 @@ Week 4 instrument</strong></td>
 <p><strong>Reflection is the process.</strong> Pause at each checkpoint. Question the output. Make a deliberate choice.</p>
 <p>You are responsible for the use and consequences of everything the AI gives you.</p>
 </blockquote>
+<aside class="notes">
+<p>Two minutes. Same cycle, as questions. Leave this up while you take one example from the room through all five.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="cognitive-offloading" class="slide level2">
 <h2>Cognitive offloading</h2>
@@ -1363,6 +1525,20 @@ Week 4 instrument</strong></td>
 </tbody>
 </table>
 <p><strong>You cannot use a tool well if you do not know what you asked it to do — or if you accept whatever it produces.</strong></p>
+<aside class="notes">
+<p>Two minutes. Offloading is not a sin: a calculator is offloading, and so is a textbook. The line is between production and judgement. The M1 page exists so that the judgement is written down before any production starts — the population is yours, in your words, and the tool inherits it.</p>
+<p>The bold line is the whole workshop in one sentence. It is also the M1 blind-spot criterion: name the assumption, say how you would know.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="how-to-prompt-using-the-checkpoints" class="slide level2 smaller">
 <h2>How to prompt using the checkpoints</h2>
@@ -1405,6 +1581,20 @@ One claim, checked by you, every time. Sources named; sources opened.</td>
 </tr>
 </tbody>
 </table>
+<aside class="notes">
+<p>Three minutes. Do not read the table; pick two rows. <em>Intent</em> is the one they skip most — the scoped prompt they saw earlier was written before the tab was opened. <em>Critique</em> is the one that does M1 Part 4 for them.</p>
+<p>The “in your own words” at the end is not a style preference. From M2 on, the documentation log asks for the decision and the reason at each checkpoint, and a reason pasted from the tool is a reason you did not make.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="two-versions-of-you" class="slide level2">
 <h2>Two versions of you</h2>
@@ -1433,6 +1623,19 @@ One claim, checked by you, every time. Sources named; sources opened.</td>
 </tbody>
 </table>
 <p><strong>The tool can do your homework. It cannot do your rehearsal — and if it did the homework, you likely didn’t learn at all.</strong></p>
+<aside class="notes">
+<p>One minute, not a sermon. The capstone is student teaching before student teaching — feed the tool a unit you will teach, make it roleplay your ten hardest learners, make it write fifty exit tickets for you to answer. Then move to the card.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="exit-card" class="slide level2 divider">
 <h2>Exit card</h2>
@@ -1442,6 +1645,20 @@ One claim, checked by you, every time. Sources named; sources opened.</td>
 <p>On the tool — <strong>three minutes:</strong></p>
 <p><strong>Before.</strong> Write the prompt you would have written before this session.</p>
 <p><strong>After.</strong> The same request, contextualized to <em>your</em> learners — what they can do, cannot yet, how they learn — and one line asking the tool what it is least sure about.</p>
+<aside class="notes">
+<p>This is the Readiness Check artifact for the week. Collect the cards.</p>
+<p>It also starts M1 for them: the scoped prompt is Part 1 and Part 2 compressed into three lines, and the last line is Part 4. Anyone stuck at home tonight can start from the card — say so.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="milestone-1" class="slide level2 smaller">
 <h2>Milestone 1</h2>
@@ -1454,12 +1671,41 @@ One claim, checked by you, every time. Sources named; sources opened.</td>
 <li><strong>Synthesis</strong> — <em>what Unit 1 predicts they will do with it</em></li>
 </ol>
 <p>Then <strong>peer feedback</strong> — critically challenge the work and provide suggestions.</p>
+<aside class="notes">
+<p>Two minutes. Do not re-explain the milestone — point to the file and to today’s card.</p>
+<p>Say the unit of analysis aloud once more: teachers take a class and name the two or three learners who stretch it; counsellors, coaches and social workers take a group; nurses, therapists and tutors take one person. Some of the room is still assuming “learner” means “a kid in a classroom.”</p>
+<p>Peer feedback is asynchronous this term for both sections: drafts post, partners write the four boxes, authors add one line on what they changed. Pair them before they leave — cross-profession where you can — so nobody is waiting on Sunday night for a partner.</p>
+<p>Deadline: whatever the course calendar says. Do not improvise a date at the podium.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="next" class="slide level2">
 <h2>Next</h2>
 <ul>
 <li>Unit 2 opens — Memory and cognition</li>
 </ul>
+<aside class="notes">
+<p>One line on the arc: M1 says who. M2 says how it teaches — and nothing in Unit 2’s cognitive-load work makes sense without the population they write this weekend. The page they submit is the one they open again in Week 9.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="sources" class="slide level2 smaller">
 <h2>Sources</h2>
@@ -1473,7 +1719,7 @@ One claim, checked by you, every time. Sources named; sources opened.</td>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>EPY 3143 · Workshop 1</p>
+<p>AI Workshops · Workshop 1</p>
 </div>
 </div></div>
 

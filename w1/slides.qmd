@@ -1,12 +1,12 @@
 ---
 title: "Introduction to AI co-creation"
-subtitle: "Week 5 · Workshop 1 · AI foundations for capstone · TPACK: TK"
+subtitle: "Workshop 1 · AI foundations for the capstone · TPACK: TK"
 author: "Andy Parra-Martinez, Ph.D."
 format:
   revealjs:
     theme: [default, ../shared/msstate.scss]
     slide-number: c/t
-    footer: "EPY 3143 · Workshop 1"
+    footer: "AI Workshops · Workshop 1"
     history: false
     embed-resources: true
     slide-level: 2
@@ -28,6 +28,13 @@ Use the accompanying worksheet file to take notes and track your progress
 | 44–55 | **Human Agency** — UnBlooms, and cognitive offloading    |
 | 55–60 | **Exit card** — and Milestone 1                          |
 
+::: notes
+Workshop 1 of four. Sixty minutes, all workshop. Milestone 1 is written at home this term — same for both sections — so nothing here is drafting time. The deck's job is TK only: what the tool is, what it can build, how to prompt it, and how to stay the one deciding.
+
+Before class: the video queued (3Blue1Brown, *Large Language Models explained briefly*, 8 min); one hallucination example you can reproduce; two or three chat tools open in tabs (ChatGPT, Gemini, Claude — whichever the room already has accounts on); the Week 4 instrument open in another tab as the "you have already used one" example; random-number generator on your phone for the activity.
+
+Ask them to bring a laptop or phone. The prompt block does not work without one.
+:::
 
 ## Basics {.divider}
 
@@ -43,6 +50,11 @@ Use the accompanying worksheet file to take notes and track your progress
 
 **AI will help create the tool.** *You* will decide who it is for, whether it is right, and whether it should exist.
 
+::: notes
+Two minutes. Say the division of labour once and plainly: the production is outsourceable; the judgement is not. The rest of the hour is about both halves — what the tool can produce, and what only you can decide.
+
+If anyone is worried they cannot code: no one in this course writes code by hand. The code track means you read and run what the tool writes. The no-code track means you never see it. Both are legitimate; both need M1 first.
+:::
 
 ## Video {.divider}
 
@@ -54,6 +66,11 @@ Use the accompanying worksheet file to take notes and track your progress
 
 Watch for one thing: **what does the model actually do, one word at a time?**
 
+::: notes
+Play the whole thing. No pausing except at 0:36–0:51 if you want to flag the moment: the model predicts the next word, assigns probabilities, and *samples* — it does not always take the most likely word. That is the mechanism the activity reproduces.
+
+One sentence before it starts: "By the end of the hour you will have asked a tool to build something. First, what is it."
+:::
 
 ## Activity {.divider}
 
@@ -71,6 +88,19 @@ Watch for one thing: **what does the model actually do, one word at a time?**
 2.  **Generate** *(3 min)* — draw a random number 1–100 on your phone. Pick the word in the list that is closest to the random number. That word is the output. **Do it three times.**
 3.  **Discuss** *(3 min)* — what happened when a low-probability word came up?
 
+::: notes
+Assign sentences so every letter is covered; more than one group on C is fine. Pick your own for the demo before they start: "The cat sat on the —" mat 60, floor 20, chair 10, roof 7, keyboard 3. Roll 87: roof. Show the cumulative walk once so no one is confused about the mechanism.
+
+Debrief, three questions, fast:
+
+**Sentence C.** What did your model say Maya passed? "Note." Every group. The most probable word is not what happened — she passed a drawing. The model has never seen Maya draw; it has read a great many sentences about students passing things during exams. Say this line: *the tool produces the probable, not the true.* Write it on the board. It comes back in the M1 blind-spot part.
+
+**The low-probability roll.** When a 3% word came up, the sentence still read fine — "the cat sat on the keyboard." Fluent, plausible, and not the answer anyone expected. That is the video's point about natural-sounding text, and it is also how a hallucination reads: nothing marks it as the unlikely pick.
+
+**Sentence D.** Where did your probabilities come from? From what you have read and heard. So do the model's. If the internet mostly says "practice," the model says practice — whether or not that is true for a 9th grader who needs the shape before the formula.
+
+**Sentence E.** What were the top words — *transform, revolutionize, help, personalize*? That is what has been written about AI and education, and it is what the tool will say back to you. M1 has to say something more specific than the probable word.
+:::
 
 ## Prediction, not knowledge
 
@@ -80,6 +110,9 @@ It has not met your learner. It has read a great many paragraphs *about learners
 
 **Fluent ≠ true.** **Confident ≠ verifiable sources.**
 
+::: notes
+One minute. This is the slide to leave up while groups finish. The activity did the teaching; this is the sentence to remember.
+:::
 
 ## Your Project {.divider}
 
@@ -102,6 +135,13 @@ It has not met your learner. It has read a great many paragraphs *about learners
 | **Stand-alone page — dynamic**    | a page that keeps state or talks to a model — a form that scores itself, an app with a login, a tutor with memory    | Forms + Sheets · Apps Script · Streamlit               |
 +-----------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
 
+::: notes
+Ten minutes for the whole block. Walk the table top to bottom, one example each, then show the Week 4 instrument tab: *you filled this in on Tuesday; it is a stand-alone page; a model wrote the code and I checked every item against the published scale.* That is the division of labour in one object.
+
+Map to M1 Part 3 out loud, so they can see the milestone's list is this list: Socratic tutor = chatbot tutor; interactive simulation = artifact or stand-alone page; practice/feedback generator = teaching assistant; instrument = Forms + Sheets or a static page.
+
+The one distinction that matters for M1: *who is the user* — the learner, or you? A TA tool is a legitimate capstone. It still needs a population, because the practice it generates is for someone.
+:::
 
 ## Code or no-code
 
@@ -130,6 +170,11 @@ It has not met your learner. It has read a great many paragraphs *about learners
 
 **Either way, the same two questions:** *who is it for, and what does it do that a handout cannot?*
 
+::: notes
+Two minutes. The track choice is not today's decision; M1 is track-independent. Say that. The only reason to show this now is so that "I'm not technical" stops being a reason to pick a population late.
+
+The last line is M1 Part 3's sentence. Point at it.
+:::
 
 ## Prompts, tested {.divider}
 
@@ -153,6 +198,11 @@ AI output quality depends on the quality of the input: Can you trust the answer?
 :::
 :::::
 
+::: notes
+Three minutes, you drive. Run both and let the room compare.
+
+Name what the scoping *is*: what the learner can do, what she cannot yet, how she learns — developmental facts, not "make it simple." The room should notice this is Maya. That is the point: a scoped prompt is a population statement, which is what M1 Part 1 and Part 2 are.
+:::
 
 ## Your turn — pick one {.smaller}
 
@@ -182,6 +232,17 @@ Read the answer to the second sentence first.
 
 See this video from Dr. Casey Fiesler, an AI ethicist at the University of Colorado Boulder: <https://www.youtube.com/watch?v=0y7BSWoksyo>
 
+::: notes
+Seven minutes. Circulate. Two or three share-outs at the end, one from each side.
+
+**Catch one.** Made-up citations no longer work as the example — current models say they cannot find the study and suggest it may not exist. So the prompt asks for a *real* figure with a real source: the model will produce a plausible percentage and name MDE or a news outlet, and the number will be stale, rounded, or for a different year. Verification means opening the MDE accountability page and looking. Backups that still catch: a direct quote with a page number from a real book; the sample size and method of Gosling, Rentfrow & Swann (2003) — the TIPI paper behind Tuesday's instrument.
+
+If the tool hedges — "I can't verify this" — say that is checkpoint 2 working, on the tool's side. It does not replace checkpoint 2 on yours. Model the verification, not just the catch: where would you look, how long does it take, what does it cost to skip it. The skill is not "AI lies." The skill is "I have a routine for checking." Say the word *hallucination* once and define it: fluent output with no source behind it. They need the word for M1 Part 4.
+
+**Build one.** The second sentence of the prompt is the one that matters. The tool will name a default assumption about the learners — reading level, prior knowledge, motivation — and that is M1 Part 4 done in the room. Anyone who built one has their blind-spot answer already.
+
+If accounts are a problem, pair up. The person without the tool reads the output and does the judging — which is the better seat anyway.
+:::
 
 ## Staying the agent {.divider}
 
@@ -242,6 +303,13 @@ See this video from Dr. Casey Fiesler, an AI ethicist at the University of Color
 Austin, T. *UnBlooms™ — The Reflective Checkpoint Process.* Redrawn.
 :::
 
+::: notes
+Five minutes. Austin's point that matters here: the cycle is not a hierarchy and it is not linear. You can resist at any step — decline to prompt, decline to accept, decline to build. That is what "agency" in the centre means. "AI should support learning, not replace thinking."
+
+Walk the five with today's hour: the activity was checkpoint 2 (what is this output, and is it the true one?); "catch one" was 2 and 3; "build one" was 3 — the tool named its own default; M1 Part 3's handout test is checkpoint 5.
+
+Say the framework name once and the author once. Students will meet the cycle again at every workshop; M2's documentation log is organised around it.
+:::
 
 ## Austin's Five Questions {.smaller}
 
@@ -265,6 +333,9 @@ At the centre: **your disciplinary judgement.** At every checkpoint: **× Resist
 >
 > You are responsible for the use and consequences of everything the AI gives you.
 
+::: notes
+Two minutes. Same cycle, as questions. Leave this up while you take one example from the room through all five.
+:::
 
 ## Cognitive offloading
 
@@ -282,6 +353,11 @@ AI is most useful when it augments what you can do for your students
 
 **You cannot use a tool well if you do not know what you asked it to do — or if you accept whatever it produces.**
 
+::: notes
+Two minutes. Offloading is not a sin: a calculator is offloading, and so is a textbook. The line is between production and judgement. The M1 page exists so that the judgement is written down before any production starts — the population is yours, in your words, and the tool inherits it.
+
+The bold line is the whole workshop in one sentence. It is also the M1 blind-spot criterion: name the assumption, say how you would know.
+:::
 
 ## How to prompt using the checkpoints {.smaller}
 
@@ -302,6 +378,11 @@ AI is most useful when it augments what you can do for your students
 | **Decide**   | Keep, change, or resist. Say which, and why, in your own words.                                                                                          |
 +--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+::: notes
+Three minutes. Do not read the table; pick two rows. *Intent* is the one they skip most — the scoped prompt they saw earlier was written before the tab was opened. *Critique* is the one that does M1 Part 4 for them.
+
+The "in your own words" at the end is not a style preference. From M2 on, the documentation log asks for the decision and the reason at each checkpoint, and a reason pasted from the tool is a reason you did not make.
+:::
 
 ## Two versions of you
 
@@ -317,6 +398,9 @@ AI is most useful when it augments what you can do for your students
 
 **The tool can do your homework. It cannot do your rehearsal — and if it did the homework, you likely didn't learn at all.**
 
+::: notes
+One minute, not a sermon. The capstone is student teaching before student teaching — feed the tool a unit you will teach, make it roleplay your ten hardest learners, make it write fifty exit tickets for you to answer. Then move to the card.
+:::
 
 ## Exit card {.divider}
 
@@ -328,6 +412,11 @@ On the tool — **three minutes:**
 
 **After.** The same request, contextualized to *your* learners — what they can do, cannot yet, how they learn — and one line asking the tool what it is least sure about.
 
+::: notes
+This is the Readiness Check artifact for the week. Collect the cards.
+
+It also starts M1 for them: the scoped prompt is Part 1 and Part 2 compressed into three lines, and the last line is Part 4. Anyone stuck at home tonight can start from the card — say so.
+:::
 
 ## Milestone 1 {.smaller}
 
@@ -341,11 +430,23 @@ On the tool — **three minutes:**
 
 Then **peer feedback** — critically challenge the work and provide suggestions.
 
+::: notes
+Two minutes. Do not re-explain the milestone — point to the file and to today's card.
+
+Say the unit of analysis aloud once more: teachers take a class and name the two or three learners who stretch it; counsellors, coaches and social workers take a group; nurses, therapists and tutors take one person. Some of the room is still assuming "learner" means "a kid in a classroom."
+
+Peer feedback is asynchronous this term for both sections: drafts post, partners write the four boxes, authors add one line on what they changed. Pair them before they leave — cross-profession where you can — so nobody is waiting on Sunday night for a partner.
+
+Deadline: whatever the course calendar says. Do not improvise a date at the podium.
+:::
 
 ## Next
 
 -   Unit 2 opens — Memory and cognition
 
+::: notes
+One line on the arc: M1 says who. M2 says how it teaches — and nothing in Unit 2's cognitive-load work makes sense without the population they write this weekend. The page they submit is the one they open again in Week 9.
+:::
 
 ## Sources {.smaller}
 

@@ -1,0 +1,564 @@
+#!/usr/bin/env python3
+"""Assemble w1/index.html — the self-guided Workshop 1. Edit here, run, commit both."""
+import math, os
+
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "index.html")
+
+# ---------- UnBlooms cycle, same geometry as the deck ----------
+def unblooms_svg():
+    cx, cy, R, RR = 450, 300, 180, 275
+    def pt(deg, r):
+        a = math.radians(deg - 90); return cx + r*math.cos(a), cy + r*math.sin(a)
+    nodes = [(0,"1","Intent &amp; Entry"),(60,"2","Generate &amp; Verify"),(120,"3","Critique &amp; Judge"),
+             (180,"4","Refine &amp; Decide"),(240,"5","Create or Resist"),(300,"","Outcome")]
+    o = ['<svg viewBox="0 0 900 600" role="img" aria-label="UnBlooms reflective checkpoint cycle by Tina Austin: five checkpoints — Intent and Entry, Generate and Verify, Critique and Judge, Refine and Decide, Create or Resist — arranged in a loop around a centre labelled Agency, disciplinary judgement, reflection throughout. The loop leads to an Outcome of deliberate judgement. A dashed Resist exit sits outside every checkpoint.">',
+         '<defs><marker id="ub-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ub-ink"/></marker></defs>']
+    for i in range(6):
+        a0 = nodes[i][0]; x1,y1 = pt(a0+15,R); x2,y2 = pt(a0+45,R)
+        o.append(f'<path d="M{x1:.1f},{y1:.1f} A{R},{R} 0 0 1 {x2:.1f},{y2:.1f}" fill="none" class="ub-arc" stroke-width="3" marker-end="url(#ub-arrow)"/>')
+    for deg,n,lab in nodes[:5]:
+        x,y = pt(deg,RR); ex,ey = pt(deg,R+32); sx,sy = pt(deg,RR-18)
+        o.append(f'<line x1="{ex:.1f}" y1="{ey:.1f}" x2="{sx:.1f}" y2="{sy:.1f}" class="ub-muted" stroke-width="1.5" stroke-dasharray="4 4"/>')
+        o.append(f'<rect x="{x-55:.1f}" y="{y-16:.1f}" width="110" height="32" rx="6" class="ub-box ub-muted" stroke-width="1.5" stroke-dasharray="5 4"/>')
+        o.append(f'<text x="{x:.1f}" y="{y+5:.1f}" text-anchor="middle" font-size="15" class="ub-muted-text">× Resist</text>')
+    o.append(f'<circle cx="{cx}" cy="{cy}" r="118" fill="none" class="ub-muted" stroke-width="1.5" stroke-dasharray="3 5"/>')
+    o.append(f'<circle cx="{cx}" cy="{cy}" r="96" class="ub-core"/>')
+    o.append(f'<text x="{cx}" y="{cy-30}" text-anchor="middle" font-size="15" letter-spacing="2" class="ub-core-sub">AGENCY</text>')
+    o.append(f'<text x="{cx}" y="{cy-2}" text-anchor="middle" font-size="21" font-weight="700" class="ub-core-text">Disciplinary</text>')
+    o.append(f'<text x="{cx}" y="{cy+22}" text-anchor="middle" font-size="21" font-weight="700" class="ub-core-text">judgement</text>')
+    o.append(f'<text x="{cx}" y="{cy+50}" text-anchor="middle" font-size="12" letter-spacing="1" class="ub-core-sub">REFLECTION THROUGHOUT</text>')
+    for deg,n,lab in nodes:
+        x,y = pt(deg,R); w,h = 160,62
+        cls = "ub-muted" if n == "" else "ub-arc"
+        o.append(f'<rect x="{x-w/2:.1f}" y="{y-h/2:.1f}" width="{w}" height="{h}" rx="8" class="ub-box {cls}" stroke-width="2.5"/>')
+        if n:
+            o.append(f'<text x="{x-w/2+16:.1f}" y="{y+8:.1f}" font-size="24" font-weight="700" class="ub-num">{n}</text>')
+            o.append(f'<text x="{x+12:.1f}" y="{y+7:.1f}" text-anchor="middle" font-size="18" class="ub-label">{lab}</text>')
+        else:
+            o.append(f'<text x="{x:.1f}" y="{y-2:.1f}" text-anchor="middle" font-size="19" font-weight="700" class="ub-label">Outcome</text>')
+            o.append(f'<text x="{x:.1f}" y="{y+19:.1f}" text-anchor="middle" font-size="13" class="ub-muted-text">deliberate judgement</text>')
+    o.append('</svg>')
+    return "\n".join(o)
+
+SVG = unblooms_svg()
+
+HTML = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introduction to AI co-creation</title>
+<meta name="description" content="EPY 3143 Workshop 1, self-guided: what a language model is, what you could build with one, how to prompt it, and how to stay the one deciding.">
+<style>
+:root{
+  --maroon:#5D1725; --maroon-deep:#40101A; --maroon-soft:#F2E9EB;
+  --ground:#FFFFFF; --surface:#FAF8F8; --ink:#241E20; --muted:#6E6E6E;
+  --rule:#E4DDDE; --rule-strong:#C1C6C8;
+  --gold:#C99700; --gold-text:#8A6600; --gold-bg:#FBF6E9;
+  --teal:#00A3AD; --teal-text:#01717A; --teal-bg:#E8F6F7;
+  --ok:#2F6B4F; --ok-bg:#EDF5F1; --no:#9B2C2C; --no-bg:#FBEDED;
+  --core:#5D1725; --core-text:#FFFFFF; --core-sub:#DAC79D; --box:#FFFFFF;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --maroon:#E9A7B2; --maroon-deep:#F3C3CB; --maroon-soft:#2E2126;
+  --ground:#171215; --surface:#1F181B; --ink:#EFE8EA; --muted:#A79DA0;
+  --rule:#382C31; --rule-strong:#4C3C42;
+  --gold:#FFB81C; --gold-text:#FFC94D; --gold-bg:#2A2118;
+  --teal:#5FD3DA; --teal-text:#7FE0E6; --teal-bg:#152628;
+  --ok:#7FCBA4; --ok-bg:#18251F; --no:#F09B9B; --no-bg:#2A1A1A;
+  --core:#7A2A3A; --core-text:#FFFFFF; --core-sub:#EBD9B4; --box:#1F181B;
+}}
+:root[data-theme="dark"]{
+  --maroon:#E9A7B2; --maroon-deep:#F3C3CB; --maroon-soft:#2E2126;
+  --ground:#171215; --surface:#1F181B; --ink:#EFE8EA; --muted:#A79DA0;
+  --rule:#382C31; --rule-strong:#4C3C42;
+  --gold:#FFB81C; --gold-text:#FFC94D; --gold-bg:#2A2118;
+  --teal:#5FD3DA; --teal-text:#7FE0E6; --teal-bg:#152628;
+  --ok:#7FCBA4; --ok-bg:#18251F; --no:#F09B9B; --no-bg:#2A1A1A;
+  --core:#7A2A3A; --core-text:#FFFFFF; --core-sub:#EBD9B4; --box:#1F181B;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);
+  font-family:"Source Sans 3","Segoe UI",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:17px;line-height:1.62;margin:0 auto;padding:1.5rem 16px 5rem;max-width:44rem;
+  -webkit-font-smoothing:antialiased}
+h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:2rem;line-height:1.1;color:var(--maroon);margin:0 0 .2em;text-wrap:balance}
+h2{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:1.45rem;line-height:1.2;color:var(--ink);margin:2.8rem 0 .7rem;padding-bottom:.22em;border-bottom:3px solid var(--maroon);text-wrap:balance}
+h2 .t{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.62em;color:var(--muted);font-weight:400;letter-spacing:.05em;margin-left:.6em;white-space:nowrap}
+h3{font-size:1.05rem;margin:1.8rem 0 .5rem;color:var(--maroon)}
+p{margin:0 0 1rem}
+strong{color:var(--maroon-deep)}
+a{color:var(--maroon)}
+code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.88em;background:var(--maroon-soft);color:var(--maroon-deep);padding:.06em .3em;border-radius:2px}
+table{border-collapse:collapse;width:100%;font-size:.92em;margin:0 0 1.2rem}
+th{text-align:left;color:var(--maroon);border-bottom:2px solid var(--maroon);padding:.35em .6em;font-size:.8em;letter-spacing:.05em;text-transform:uppercase}
+td{border-bottom:1px solid var(--rule);padding:.4em .6em;vertical-align:top}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+figure{margin:1.5rem 0}
+figure svg{max-width:100%;height:auto;display:block}
+figcaption{font-size:.82em;color:var(--muted);margin-top:.5rem}
+.head{border-top:4px solid var(--maroon);padding-top:1rem;margin-bottom:1.5rem}
+.head .moment{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 .5rem}
+.head .sub{color:var(--muted);font-size:1rem;margin:.3rem 0 0}
+.keyline{border-left:5px solid var(--maroon);background:var(--maroon-soft);padding:.7rem 1rem;margin:1.2rem 0;border-radius:0 3px 3px 0}
+.keyline p{margin:0 0 .5rem}.keyline p:last-child{margin:0}
+.gotcha{border-left:5px solid var(--gold);background:var(--gold-bg);padding:.7rem 1rem;margin:1.2rem 0;font-size:.94em;border-radius:0 3px 3px 0}
+.gotcha p{margin:0 0 .5rem}.gotcha p:last-child{margin:0}
+.do{border-left:5px solid var(--teal);background:var(--teal-bg);padding:.8rem 1rem;margin:1.2rem 0;border-radius:0 3px 3px 0}
+.do p{margin:0 0 .5rem}.do p:last-child{margin:0}
+.do .tag,.keyline .tag{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-text);display:block;margin-bottom:.3rem}
+.keyline .tag{color:var(--maroon)}
+label{display:block;font-weight:600;margin:.9rem 0 .3rem;font-size:.95em}
+textarea,input[type=text],input[type=number],select{width:100%;font:inherit;font-size:.95em;color:var(--ink);background:var(--box);border:1px solid var(--rule-strong);border-radius:4px;padding:.5em .6em}
+textarea{min-height:5.5em;resize:vertical}
+input[type=number]{width:5.5em;text-align:right}
+button{font:inherit;font-size:.92em;font-weight:700;border-radius:5px;padding:.5em 1em;cursor:pointer;border:2px solid var(--maroon);background:var(--maroon);color:#fff}
+button.ghost{background:transparent;color:var(--maroon)}
+button:disabled{opacity:.5;cursor:not-allowed}
+button.copy{font-size:.78em;padding:.25em .7em;margin-top:.4rem}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--maroon);outline-offset:2px}
+@media (pointer:coarse){button{min-height:2.75rem}}
+.video{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:6px;overflow:hidden;margin:1rem 0}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.prompt{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:.8rem 1rem;margin:.6rem 0;font-family:Georgia,"Times New Roman",serif;font-size:.97em}
+.prompt em{color:var(--maroon-deep)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media (max-width:640px){.cols{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:.9rem 1rem}
+.card h4{margin:0 0 .5rem;color:var(--maroon);font-size:1rem}
+.card ul{margin:0 0 .6rem;padding-left:1.2em}
+details{border:1px solid var(--rule);border-radius:6px;padding:.5rem .9rem;margin:1rem 0;background:var(--surface)}
+summary{cursor:pointer;font-weight:700;color:var(--maroon)}
+details[open] summary{margin-bottom:.5rem}
+/* be-the-model */
+.model{border:1px solid var(--rule-strong);border-radius:8px;padding:1rem;background:var(--surface)}
+.model table td{padding:.25em .4em;border:0}
+.model .sum{font-weight:700}
+.model .sum.ok{color:var(--ok)}.model .sum.no{color:var(--no)}
+.roll{border-left:4px solid var(--gold);background:var(--gold-bg);padding:.5rem .8rem;margin:.5rem 0;font-size:.95em;border-radius:0 3px 3px 0}
+.roll .word{font-size:1.15em;font-weight:700;color:var(--maroon-deep)}
+.roll .walk{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.82em;color:var(--muted)}
+.status{font-size:.85em;color:var(--muted);margin-left:.6em}
+.ub-arc{stroke:var(--maroon)}.ub-ink{fill:var(--maroon)}
+.ub-muted{stroke:var(--muted)}.ub-muted-text{fill:var(--muted)}
+.ub-box{fill:var(--box)}.ub-core{fill:var(--core)}
+.ub-core-text{fill:var(--core-text)}.ub-core-sub{fill:var(--core-sub)}
+.ub-num{fill:var(--maroon)}.ub-label{fill:var(--ink)}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.88em;color:var(--muted)}
+.footer ul{padding-left:1.2em}
+.toc{font-size:.9em;columns:2;column-gap:2rem;margin:0 0 1rem;padding-left:1.2em}
+@media (max-width:640px){.toc{columns:1}}
+@media print{button,.video,.no-print{display:none!important}textarea{min-height:3em}}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <p class="moment">EPY 3143 · Week 5 · Workshop 1 · Online</p>
+  <h1>Introduction to AI co-creation</h1>
+  <p class="sub">AI foundations for the capstone. About sixty minutes, self-guided — what the tool is, and who stays in charge.</p>
+</header>
+
+<div class="keyline">
+  <span class="tag">How this page works</span>
+  <p>Work through it in order — the parts build on each other. Keep <strong>one AI chat tool open in another tab</strong> (ChatGPT, Gemini, Claude — whichever you already have) and a phone or a second window for the video.</p>
+  <p>Everything you type saves in this browser as you go. Nothing is sent anywhere. At the end, one button copies your answers so you can paste them into the <strong>Week 5 Engagement Check</strong> in Canvas.</p>
+  <p><span id="saveStatus" role="status" aria-live="polite" class="status"></span></p>
+</div>
+
+<ol class="toc">
+  <li><a href="#deal">Basics</a> <span class="status">2 min</span></li>
+  <li><a href="#video">Video: what a language model does</a> <span class="status">8 min</span></li>
+  <li><a href="#model">Activity: be the AI model</a> <span class="status">10 min</span></li>
+  <li><a href="#build">Your project: what you could build</a> <span class="status">10 min</span></li>
+  <li><a href="#prompts">Prompts, tested</a> <span class="status">12 min</span></li>
+  <li><a href="#agent">Human agency</a> <span class="status">12 min</span></li>
+  <li><a href="#exit">Exit card, then Milestone 1</a> <span class="status">6 min</span></li>
+</ol>
+
+<!-- ============================================================ -->
+<h2 id="deal">1 · Basics <span class="t">2 min</span></h2>
+
+<p>Your capstone is a learning tool you will design across four milestones and defend at the showcase. Workshop 1 is the first of four, and it is about one thing: what the AI is, and what it is not.</p>
+
+<div class="scroll"><table>
+<tr><th>Final project structure</th><th>What it answers</th></tr>
+<tr><td><strong>M1</strong> · now</td><td><strong>who</strong> the tool is for, and the problem it solves</td></tr>
+<tr><td>M2</td><td><strong>how</strong> it teaches</td></tr>
+<tr><td>M3</td><td><strong>how</strong> it motivates</td></tr>
+<tr><td>M4</td><td><strong>who</strong> it leaves out</td></tr>
+<tr><td>Showcase</td><td>the tool, and your defence of it</td></tr>
+</table></div>
+
+<div class="keyline"><p><strong>AI will help create the tool.</strong> <em>You</em> will decide who it is for, whether it is right, and whether it should exist. The production is outsourceable. The judgement is not.</p></div>
+
+<p>If you are worried you cannot code: no one in this course writes code by hand. The <em>code track</em> means you read and run what the tool writes. The <em>no-code track</em> means you never see it. Both are legitimate, and both need Milestone 1 first.</p>
+
+<!-- ============================================================ -->
+<h2 id="video">2 · Video: what a language model does <span class="t">8 min</span></h2>
+
+<p><strong>3Blue1Brown — <em>Large Language Models explained briefly</em></strong> (about eight minutes). Watch the whole thing, holding one question: <strong>what does the model actually do, one word at a time?</strong></p>
+
+<div class="video">
+  <iframe src="https://www.youtube-nocookie.com/embed/LPZh9BOjkQs" title="Large Language Models explained briefly — 3Blue1Brown" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+<p class="status">If the video does not load here, open it on YouTube: <a href="https://www.youtube.com/watch?v=LPZh9BOjkQs">youtube.com/watch?v=LPZh9BOjkQs</a></p>
+
+<div class="do">
+  <span class="tag">Write</span>
+  <label for="q_video">In one sentence, in your own words: what does the model do, one word at a time?</label>
+  <textarea id="q_video" data-save></textarea>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="model">3 · Activity: be the AI model <span class="t">10 min</span></h2>
+
+<p>The video's key moment is at 0:36–0:51: the model assigns a probability to every possible next word, then <em>samples</em> one — it does not always take the most likely. For ten minutes, you are the model.</p>
+
+<div class="model">
+  <label for="sentence">Pick a sentence</label>
+  <select id="sentence" data-save>
+    <option value="A">A · The cat sat on the ____.</option>
+    <option value="B">B · The student raised her ____.</option>
+    <option value="C" selected>C · During the exam, Maya passed Leo a ____.</option>
+    <option value="D">D · The best way to learn algebra is to ____.</option>
+    <option value="E">E · AI and educational psychology could ____.</option>
+  </select>
+
+  <p style="margin-top:1rem"><strong>Train</strong> <span class="status">4 min</span> — five words that could fill the blank, and how likely each is in ordinary English. The five must add to <strong>100</strong>.</p>
+  <table>
+    <tr><th>Word</th><th>%</th></tr>
+    <tr><td><input type="text" id="w1" data-save aria-label="word 1"></td><td><input type="number" id="p1" data-save min="0" max="100" aria-label="probability 1"></td></tr>
+    <tr><td><input type="text" id="w2" data-save aria-label="word 2"></td><td><input type="number" id="p2" data-save min="0" max="100" aria-label="probability 2"></td></tr>
+    <tr><td><input type="text" id="w3" data-save aria-label="word 3"></td><td><input type="number" id="p3" data-save min="0" max="100" aria-label="probability 3"></td></tr>
+    <tr><td><input type="text" id="w4" data-save aria-label="word 4"></td><td><input type="number" id="p4" data-save min="0" max="100" aria-label="probability 4"></td></tr>
+    <tr><td><input type="text" id="w5" data-save aria-label="word 5"></td><td><input type="number" id="p5" data-save min="0" max="100" aria-label="probability 5"></td></tr>
+    <tr><td style="text-align:right">Total</td><td><span id="psum" class="sum" aria-live="polite">0</span></td></tr>
+  </table>
+
+  <p><strong>Generate</strong> <span class="status">3 min</span> — the page draws a number from 1 to 100 and walks down your list until the probabilities add past it. That word is the output. <strong>Generate three times.</strong></p>
+  <button id="genBtn" type="button">Generate a word</button>
+  <button class="ghost" id="clearRolls" type="button">Clear</button>
+  <div id="rolls" aria-live="polite"></div>
+</div>
+
+<div class="do">
+  <span class="tag">Write · 3 min</span>
+  <label for="q_model1">Sentence C, whichever one you chose: what would your model most likely say Maya passed Leo? What did she actually pass, in the case?</label>
+  <textarea id="q_model1" data-save></textarea>
+  <label for="q_model2">When a low-probability word came up (or would have), did the sentence still read fine? What does that tell you about how a wrong answer from an AI reads?</label>
+  <textarea id="q_model2" data-save></textarea>
+</div>
+
+<details>
+  <summary>Read after your three rolls</summary>
+  <p><strong>Sentence C.</strong> Almost everyone's model says "note." The most probable word is not what happened — Maya passed a drawing. The model has never seen Maya draw; it has read a great many sentences about students passing things during exams. <strong>The tool produces the probable, not the true.</strong> Keep that line; it comes back in Milestone 1, Part 4.</p>
+  <p><strong>The low-probability roll.</strong> When a 3% word comes up, the sentence still reads fine — "the cat sat on the keyboard." Fluent, plausible, and not what anyone expected. That is the video's point about natural-sounding text, and it is also how a <em>hallucination</em> reads: nothing in the output marks it as the unlikely pick.</p>
+  <p><strong>Sentence D.</strong> Where did your probabilities come from? From what you have read and heard. So do the model's. If the internet mostly says "practice," the model says practice — whether or not that is true for a 9th grader who needs to see the shape before the formula.</p>
+  <p><strong>Sentence E.</strong> What were your top words — <em>transform, revolutionize, help, personalize</em>? That is what has been written about AI and education, and it is what the tool will say back to you when you ask. Milestone 1 has to say something more specific than the probable word.</p>
+</details>
+
+<div class="keyline">
+  <p><strong>Prediction, not knowledge.</strong> A language model predicts the most likely next text, given what it has read. It has not met your learner. It has read a great many paragraphs <em>about learners like the one you described</em>, and it produces the most probable next paragraph.</p>
+  <p><strong>Fluent ≠ true. Confident ≠ verifiable sources.</strong></p>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="build">4 · Your project: what you could build <span class="t">10 min</span></h2>
+
+<p>"A learning tool" sounds abstract until you see the five shapes it usually takes. All five can be produced with an AI; the question for you is which one your learners' problem actually needs.</p>
+
+<div class="scroll"><table>
+<tr><th>Type</th><th>What it is</th><th>For whom</th><th>Example</th></tr>
+<tr><td><strong>Chatbot tutor</strong></td><td>a chat with a written role, rules and a knowledge file — a <em>Socratic tutor</em> that asks before it tells</td><td>the learner</td><td>a Custom GPT · a Gem · a Claude Project · a Poe bot</td></tr>
+<tr><td><strong>Teaching assistant</strong><br><span class="status" style="margin:0">only with instructor approval</span></td><td>the same chat, pointed at <em>your</em> work — practice sets, feedback, exit tickets, rubrics, differentiated versions</td><td>you</td><td>a bot that turns one lesson into three reading levels</td></tr>
+<tr><td><strong>Artifact</strong></td><td>a single interactive page the chat generates on request — a simulation, a visualiser, a quiz, a card sort</td><td>the learner</td><td><em>"make a quadratic I can drag"</em> · practice for your unit</td></tr>
+<tr><td><strong>Stand-alone page — static</strong></td><td>an HTML file that lives on its own: Google Sites, GitHub Pages, a Canvas file. Same every visit.</td><td>learner or you</td><td>the Week 4 instrument you filled in</td></tr>
+<tr><td><strong>Stand-alone page — dynamic</strong></td><td>a page that keeps state or talks to a model — a form that scores itself, an app with a login, a tutor with memory</td><td>learner</td><td>Forms + Sheets · Apps Script · Streamlit</td></tr>
+</table></div>
+
+<p>You have already used one. The Week 4 instrument is a stand-alone page: a model wrote the code, and your instructor checked every item against the published scale before it went to you. That is the division of labour in one object.</p>
+
+<h3>Code or no-code</h3>
+<div class="cols">
+  <div class="card"><h4>No-code</h4>
+    <ul><li>a written role and rules (a <em>system prompt</em>)</li><li>a knowledge file you upload</li><li>a form that scores itself</li><li>an artifact you asked for and kept</li></ul>
+    <p><em>You never see the code. The tool is the configuration.</em></p></div>
+  <div class="card"><h4>Code</h4>
+    <ul><li>you ask for the HTML, JavaScript or Python</li><li>you run it, and it breaks, and you ask again</li><li>you own the file — it works without the chat</li></ul>
+    <p><em>You never write the code. You read it, run it, and decide.</em></p></div>
+</div>
+
+<div class="gotcha"><p><strong>How this maps to Milestone 1, Part 3.</strong> Socratic tutor = chatbot tutor. Interactive simulation = artifact or stand-alone page. Practice/feedback generator = teaching assistant. Instrument = Forms + Sheets, or a static page. The track (code / no-code) is not this week's decision — M1 is the same either way.</p>
+<p>The one distinction that matters now: <strong>who is the user — the learner, or you?</strong> A teaching-assistant tool is a legitimate capstone. It still needs a population, because the practice it generates is for someone.</p></div>
+
+<div class="do">
+  <span class="tag">Write</span>
+  <label for="q_build">Which type is closest to what you named at your Goal-Setting Meeting — and who is the user, the learner or you?</label>
+  <textarea id="q_build" data-save></textarea>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="prompts">5 · Prompts, tested <span class="t">12 min</span></h2>
+
+<h3>Vague vs. contextualized <span class="status">4 min</span></h3>
+<p>Same tool, same question, twice. Copy each prompt into your chat tool and compare the two answers. <strong>AI output quality depends on the quality of the input</strong> — can you trust the answer?</p>
+
+<div class="cols">
+  <div>
+    <p><strong>Vague</strong></p>
+    <div class="prompt" id="pv">Explain quadratic equations to a student.</div>
+    <button class="copy ghost" type="button" data-copy="pv">Copy</button>
+  </div>
+  <div>
+    <p><strong>Contextualized</strong> <span class="status">developmentally appropriate</span></p>
+    <div class="prompt" id="ps">A 9th grader can execute the quadratic formula but cannot say what the answer is. They learn from diagrams and hands-on work before text. In under 120 words, describe what the two solutions <em>are</em> before any formula.</div>
+    <button class="copy ghost" type="button" data-copy="ps">Copy</button>
+  </div>
+</div>
+
+<p>Notice what the context <em>is</em>: what the learner can do, what she cannot yet, how she learns. Developmental facts, not "make it simple." You should recognise her — this is Maya. A contextualized prompt is a population statement, which is what Milestone 1 Parts 1 and 2 are.</p>
+
+<div class="do">
+  <span class="tag">Write</span>
+  <label for="q_scoped">What did the contextualized answer do that the vague one did not? And: what would break if you sent the same prompt for a 2nd grader?</label>
+  <textarea id="q_scoped" data-save></textarea>
+</div>
+
+<h3>Now pick one <span class="status">8 min</span></h3>
+
+<div class="cols">
+  <div class="card"><h4>Catch one</h4>
+    <p>Ask for something <em>real</em>, at a level of detail the tool cannot actually have. (Made-up studies no longer work — today's models say they cannot find them. A real figure with a real source is where they still slip.)</p>
+    <div class="prompt" id="pc">What percentage of Mississippi 9th graders scored proficient on the Algebra I state test last year? Name the source.</div>
+    <button class="copy ghost" type="button" data-copy="pc">Copy</button>
+    <p style="margin-top:.6rem">Then <strong>open the source it names.</strong> Is that number there, for that year? If the tool hedges — "I can't verify this" — good: that is checkpoint 2 working on its side. It does not replace checkpoint 2 on yours.</p>
+    <p>Other prompts that still catch: a direct quote with a page number from a real textbook; the sample size and method of Gosling, Rentfrow &amp; Swann (2003), the paper behind the Week 4 instrument.</p></div>
+  <div class="card"><h4>Build one</h4>
+    <p>Ask for a tiny tool for <em>your</em> learners, and make the tool tell you what it is unsure about.</p>
+    <div class="prompt" id="pb">Make a five-question quiz for [your learners — can ____, cannot yet ____]. Then tell me which question you are least sure fits them, and why.</div>
+    <button class="copy ghost" type="button" data-copy="pb">Copy</button>
+    <p style="margin-top:.6rem">Read the answer to the <strong>second</strong> sentence first. The tool will name a default assumption about your learners — reading level, prior knowledge, motivation. That is Milestone 1 Part 4, done for you.</p></div>
+</div>
+
+<div class="do">
+  <span class="tag">Write</span>
+  <label for="q_pick">Which did you pick, and what happened? If you caught one: what did it invent, and how did you check? If you built one: what assumption did the tool name, and is it right about your learners?</label>
+  <textarea id="q_pick" data-save></textarea>
+</div>
+
+<div class="gotcha"><p><strong>Hallucination</strong>, defined: fluent output with no source behind it — or with a source that does not say what the output says. The skill is not "AI lies." The skill is "I have a routine for checking," and it runs whether or not the tool sounds sure.</p></div>
+
+<h3>Critical judgement <span class="status">2 min</span></h3>
+<p><strong>How do you know the AI did not hallucinate? Can you verify the output?</strong> Dr. Casey Fiesler, an AI ethicist at the University of Colorado Boulder, in under two minutes:</p>
+<div class="video">
+  <iframe src="https://www.youtube-nocookie.com/embed/0y7BSWoksyo" title="How to get ChatGPT to not hallucinate? — Casey Fiesler" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+<p class="status">If the video does not load here, open it on YouTube: <a href="https://www.youtube.com/watch?v=0y7BSWoksyo">youtube.com/watch?v=0y7BSWoksyo</a></p>
+
+<!-- ============================================================ -->
+<h2 id="agent">6 · Human agency <span class="t">12 min</span></h2>
+
+<p>Everything so far is about what the tool does. This part is about what only you do. The framework is Tina Austin's <strong>UnBlooms™ — the reflective checkpoint process</strong>: five places to stop, with an exit at every one.</p>
+
+<figure>
+''' + SVG + r'''
+<figcaption>UnBlooms™ — The Reflective Checkpoint Process (Austin). Redrawn for this page.</figcaption>
+</figure>
+
+<div class="scroll"><table>
+<tr><th>Checkpoint</th><th>The question you stop and ask</th></tr>
+<tr><td><strong>1 · Intent &amp; Entry</strong></td><td><em>What am I asking for, and why this tool?</em></td></tr>
+<tr><td><strong>2 · Generate &amp; Verify</strong></td><td><em>Is this true? Where and how would I check?</em></td></tr>
+<tr><td><strong>3 · Critique &amp; Judge</strong></td><td><em>Does this fit my need —</em> my <em>learners, or the probable learner?</em></td></tr>
+<tr><td><strong>4 · Refine &amp; Decide</strong></td><td><em>What do I change, and what do I keep?</em></td></tr>
+<tr><td><strong>5 · Create or Resist</strong></td><td><em>Do I build this — or does a simpler handout do the job?</em></td></tr>
+</table></div>
+
+<p>At the centre: <strong>your disciplinary judgement</strong>. At every checkpoint: <strong>× Resist</strong> is an exit. The cycle is not a hierarchy and it is not a line — you can decline to prompt, decline to accept, decline to build. That is what <em>agency</em> in the centre means.</p>
+
+<div class="keyline"><p><strong>Reflection is the process.</strong> Pause at each checkpoint. Question the output. Make a deliberate choice. AI should support learning, not replace thinking.</p>
+<p><strong>You are responsible for the use and consequences of everything the AI gives you.</strong></p></div>
+
+<p>You have already been through the cycle this hour. <em>Be the model</em> was checkpoint 2 — what is this output, and is it the true one? <em>Catch one</em> was 2 and 3. <em>Build one</em> was 3 — the tool named its own default. Milestone 1 Part 3's "what a handout cannot do" is checkpoint 5.</p>
+
+<h3>Cognitive offloading</h3>
+<p>Handing a piece of thinking to something outside your head. It is not a sin — a calculator is offloading, and so is a textbook. The line is between production and judgement. <strong>AI is most useful when it augments what you can do for your students.</strong></p>
+
+<div class="scroll"><table>
+<tr><td><strong>Offload the production</strong></td><td>the HTML, the fifty practice items, the three reading levels, the first draft of the rubric</td></tr>
+<tr><td><strong>Keep the judgement</strong></td><td>who the learner is · whether the output is true · whether it fits · whether to build at all</td></tr>
+<tr><td><strong>Be present for the learner</strong></td><td>if you have gained time, that is time for personal interaction and relationship building</td></tr>
+</table></div>
+
+<div class="keyline"><p><strong>You cannot use a tool well if you do not know what you asked it to do — or if you accept whatever it produces.</strong> Milestone 1 exists so the judgement is written down before any production starts: the population is yours, in your words, and the tool inherits it.</p></div>
+
+<h3>How to prompt, using the checkpoints</h3>
+<div class="scroll"><table>
+<tr><th>Checkpoint</th><th>Habits to decide whether AI is appropriate or not</th></tr>
+<tr><td><strong>Intent</strong></td><td>Write the ask in one line <em>before</em> opening the tab: <em>who · can/cannot yet · what output</em>. <strong>If you cannot determine this, you are not ready to prompt.</strong></td></tr>
+<tr><td><strong>Generate</strong></td><td>Give it the learner, not the age. Ask for under N words. Ask it to name what it is least sure about.</td></tr>
+<tr><td><strong>Verify</strong></td><td>How do you know it is true? One claim, checked by you, every time. Sources named; sources opened.</td></tr>
+<tr><td><strong>Critique</strong></td><td><em>"Which of your assumptions about these learners could be wrong?"</em> — then decide if it is right.</td></tr>
+<tr><td><strong>Refine</strong></td><td>Re-prompt with what it got wrong, not with "try again."</td></tr>
+<tr><td><strong>Decide</strong></td><td>Keep, change, or resist. Say which, and why, in your own words.</td></tr>
+</table></div>
+
+<p>"In your own words" is not a style preference. From Milestone 2 on, your documentation log asks for the decision and the reason at each checkpoint — and a reason pasted from the tool is a reason you did not make.</p>
+
+<h3>Two versions of you</h3>
+<div class="scroll"><table>
+<tr><th>Competent and ethical user</th><th>Not ready for AI</th></tr>
+<tr><td>Used AI as a tool</td><td>Outsourced the thinking</td></tr>
+<tr><td>Struggled, failed, revised, improved</td><td>Never sat with the confusion</td></tr>
+<tr><td>Knows what good reasoning <em>feels</em> like</td><td>Guiding others through confusion they never had</td></tr>
+</table></div>
+<div class="keyline"><p><strong>The tool can do your homework. It cannot do your rehearsal — and if it did the homework, you likely did not learn at all.</strong> The capstone is student teaching before student teaching — feed the tool a unit you will teach, make it roleplay your ten hardest learners, make it write fifty exit tickets for you to answer.</p></div>
+
+<div class="do">
+  <span class="tag">Write</span>
+  <label for="q_agent">Pick one checkpoint you skipped today, or usually skip. What would stopping there have changed?</label>
+  <textarea id="q_agent" data-save></textarea>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="exit">7 · Exit card, then Milestone 1 <span class="t">6 min</span></h2>
+
+<p>Your prompt, twice. This is the week's Engagement Check, and it is also the first three lines of Milestone 1.</p>
+
+<div class="do">
+  <span class="tag">Exit card</span>
+  <label for="q_before"><strong>Before.</strong> The prompt you would have written before this session.</label>
+  <textarea id="q_before" data-save></textarea>
+  <label for="q_after"><strong>After.</strong> The same request, contextualized to <em>your</em> learners — what they can do, cannot yet, how they learn — and one line asking the tool what it is least sure about.</label>
+  <textarea id="q_after" data-save></textarea>
+</div>
+
+<p class="no-print">
+  <button id="copyAll" type="button">Copy all my answers</button>
+  <button class="ghost" type="button" onclick="window.print()">Print / save as PDF</button>
+  <span id="copyStatus" role="status" aria-live="polite" class="status"></span>
+</p>
+<p>Paste the copied text into the <strong>Week 5 Engagement Check</strong> in Canvas. The exit card is the part that is scored; the rest is your record.</p>
+
+<h3>Then: Milestone 1, at home</h3>
+<p>One page, five parts. The instructions and the rubric are in the Week 5 module in Canvas; the milestone itself is done in Packback. Open the instructions now, while the hour is fresh.</p>
+<ol>
+  <li><strong>Who</strong> — a class, a group, or one person; observed behaviours, not labels</li>
+  <li><strong>The problem</strong> — <em>can ____ but cannot yet ____, because ____</em></li>
+  <li><strong>The tool type</strong> — and what it does that a handout cannot</li>
+  <li><strong>Assumptions blind spot</strong> — one default the AI would have about your learners, and how you can tell</li>
+  <li><strong>Synthesis</strong> — what Unit 1 predicts they will do with it</li>
+</ol>
+<p>"Learner" is whoever you will actually work with. Teachers take a class and name the two or three learners who stretch it. Counsellors, coaches and social workers take a group. Nurses, therapists and tutors take one learner, patient or client. Your exit card is Parts 1, 2 and 4 in three lines — start from it.</p>
+<p><strong>Peer feedback</strong> is part of the milestone grade: once drafts are posted, you critically challenge a partner's draft and provide suggestions in the four boxes, and add one line at the end of your own on what you changed. The peer-feedback page in the module has the four boxes; check the module for the deadline.</p>
+
+<!-- ============================================================ -->
+<footer class="footer">
+  <p><strong>Sources and credits</strong></p>
+  <ul>
+    <li>3Blue1Brown (Grant Sanderson). <em>Large Language Models explained briefly.</em> YouTube. <a href="https://www.youtube.com/watch?v=LPZh9BOjkQs">youtube.com/watch?v=LPZh9BOjkQs</a>. Embedded under YouTube's standard embed terms; the "Be the model" activity is built on the video's explanation of next-word prediction and sampling.</li>
+    <li>Austin, T. <em>UnBlooms™ — The Reflective Checkpoint Process.</em> <a href="https://tinaaustin.com/">tinaaustin.com</a>. The five checkpoints, the "Resist" exits, the centre of disciplinary judgement and the line "AI should support learning, not replace thinking" are hers; the figure on this page is a redrawing in the course palette, not the original graphic.</li>
+    <li>Fiesler, C. <em>How to get ChatGPT to not hallucinate? — but a good idea to always verify information!</em> YouTube. <a href="https://www.youtube.com/watch?v=0y7BSWoksyo">youtube.com/watch?v=0y7BSWoksyo</a>. Embedded under YouTube's standard embed terms.</li>
+    <li>Austin, T. R., Gulya, J., et al. <em>Metacognition as Disciplinary Infrastructure in AI-Mediated Learning.</em> International Journal of Educational Innovation and Excellence, 4(1). <a href="https://digitalcommons.lindenwood.edu/ijedie/vol4/iss1/6/">digitalcommons.lindenwood.edu/ijedie/vol4/iss1/6/</a></li>
+    <li>"Two versions of you" and the workshop design: Andy Parra-Martinez, EPY 3143, Mississippi State University. The vague-vs-scoped prompt describes Maya, the learner from this unit's case study.</li>
+    <li>This page was drafted with Claude (Anthropic) from the in-person workshop plan and reviewed by the instructor. It runs entirely in your browser; nothing you type leaves this device.</li>
+  </ul>
+</footer>
+
+<script>
+(function(){
+  var KEY='epy3143-w5-workshop-online';
+  var fields=Array.prototype.slice.call(document.querySelectorAll('[data-save]'));
+  var saveStatus=document.getElementById('saveStatus');
+  function load(){
+    var data={};
+    try{data=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){data={};}
+    fields.forEach(function(f){ if(data[f.id]!==undefined) f.value=data[f.id]; });
+    if(data.__rolls){ rolls=data.__rolls; renderRolls(); }
+    if(saveStatus) saveStatus.textContent = Object.keys(data).length ? 'Restored your saved answers from this browser.' : 'Saves in this browser as you type.';
+  }
+  var t;
+  function save(){
+    var data={};
+    fields.forEach(function(f){ data[f.id]=f.value; });
+    data.__rolls=rolls;
+    try{localStorage.setItem(KEY,JSON.stringify(data)); if(saveStatus) saveStatus.textContent='Saved in this browser.';}
+    catch(e){ if(saveStatus) saveStatus.textContent='Could not save in this browser — copy your answers before you leave.'; }
+  }
+  fields.forEach(function(f){ f.addEventListener('input',function(){clearTimeout(t);t=setTimeout(save,300);updateSum();}); f.addEventListener('change',save); });
+
+  // --- be the model ---
+  var rolls=[];
+  var sumEl=document.getElementById('psum'), genBtn=document.getElementById('genBtn');
+  function rows(){
+    var r=[];
+    for(var i=1;i<=5;i++){
+      var w=(document.getElementById('w'+i).value||'').trim();
+      var p=parseFloat(document.getElementById('p'+i).value);
+      if(w && !isNaN(p) && p>0) r.push({w:w,p:p});
+    }
+    return r;
+  }
+  function updateSum(){
+    var s=0; for(var i=1;i<=5;i++){ var p=parseFloat(document.getElementById('p'+i).value); if(!isNaN(p)) s+=p; }
+    s=Math.round(s*10)/10;
+    sumEl.textContent=s; sumEl.className='sum '+(s===100?'ok':'no');
+    genBtn.disabled=!(s===100 && rows().length>=2);
+  }
+  function renderRolls(){
+    var box=document.getElementById('rolls'); box.innerHTML='';
+    rolls.forEach(function(r,i){
+      var d=document.createElement('div'); d.className='roll';
+      d.innerHTML='<div>Roll '+(i+1)+': <strong>'+r.n+'</strong> → <span class="word"></span> <span class="status">('+r.p+'%)</span></div><div class="walk"></div>';
+      d.querySelector('.word').textContent=r.w;
+      d.querySelector('.walk').textContent=r.walk;
+      box.appendChild(d);
+    });
+    if(rolls.length>=3){
+      var p=document.createElement('p'); p.className='status'; p.textContent='Three rolls done. Now the two questions below, then open "Read after your three rolls".'; box.appendChild(p);
+    }
+  }
+  genBtn.addEventListener('click',function(){
+    var r=rows(); if(!r.length) return;
+    var n=Math.floor(Math.random()*100)+1, acc=0, pick=r[r.length-1], walk=[];
+    for(var i=0;i<r.length;i++){ acc+=r[i].p; walk.push(r[i].w+' ≤'+Math.round(acc)); if(n<=acc){ pick=r[i]; break; } }
+    rolls.push({n:n,w:pick.w,p:pick.p,walk:'walk: '+walk.join(' · ')});
+    renderRolls(); save();
+  });
+  document.getElementById('clearRolls').addEventListener('click',function(){ rolls=[]; renderRolls(); save(); });
+
+  // --- copy buttons ---
+  function copyText(txt,status){
+    var done=function(ok){ if(status) status.textContent= ok?'Copied.':'Could not copy — select the text and copy it by hand.'; };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(function(){done(true)},function(){done(false)}); }
+    else{ try{ var ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); var ok=document.execCommand('copy'); document.body.removeChild(ta); done(ok);}catch(e){done(false);} }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'),function(b){
+    b.addEventListener('click',function(){ var src=document.getElementById(b.getAttribute('data-copy')); copyText(src.textContent.replace(/\s+/g,' ').trim(), null); b.textContent='Copied'; setTimeout(function(){b.textContent='Copy';},1500); });
+  });
+  document.getElementById('copyAll').addEventListener('click',function(){
+    var v=function(id){ var e=document.getElementById(id); return (e&&e.value||'').trim()||'—'; };
+    var sent=document.getElementById('sentence'); var sentLabel=sent.options[sent.selectedIndex].text;
+    var words=[]; for(var i=1;i<=5;i++){ var w=document.getElementById('w'+i).value, p=document.getElementById('p'+i).value; if(w) words.push(w+' '+(p||'?')+'%'); }
+    var out=['EPY 3143 · Week 5 · Workshop 1 (online) — my answers','',
+      'EXIT CARD','Before: '+v('q_before'),'After: '+v('q_after'),'',
+      '2 · What the model does, one word at a time: '+v('q_video'),'',
+      '3 · Be the model — '+sentLabel,'Words: '+(words.join(', ')||'—'),
+      'Rolls: '+(rolls.map(function(r){return r.n+'→'+r.w;}).join(', ')||'—'),
+      'Sentence C: '+v('q_model1'),'Low-probability word: '+v('q_model2'),'',
+      '4 · Tool type and user: '+v('q_build'),'',
+      '5 · Vague vs contextualized: '+v('q_scoped'),'Catch one / build one: '+v('q_pick'),'',
+      '6 · Checkpoint I skip: '+v('q_agent')].join('\n');
+    copyText(out, document.getElementById('copyStatus'));
+  });
+
+  load(); updateSum();
+})();
+</script>
+</body>
+</html>
+'''
+
+open(OUT, "w", encoding="utf-8").write(HTML)
+print("wrote", OUT, len(HTML)//1024, "KB")

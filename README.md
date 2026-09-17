@@ -1,9 +1,14 @@
-# EPY 3143 — AI Workshops
+# AI Workshops
 
-Four workshops that carry the capstone of *Human Development and Learning* (EPY 3143,
-Mississippi State University). Each one is delivered two ways from the same content:
-a slide deck for the in-person section and a self-guided page for the online section.
-Both are hosted here on GitHub Pages.
+Four workshops on building learning tools with AI — what a language model is, how it
+reasons, what an agent is, and how a tool is aligned, adapted and shipped. Each one is
+delivered two ways from the same content: a slide deck for a live session and a
+self-guided page for working alone. Both are hosted here on GitHub Pages.
+
+The workshops currently carry the capstone of EPY 3143, *Human Development and Learning*
+(Mississippi State University, Fall 2026), and the milestone references below are that
+course's. From Spring 2027 they run as a stand-alone course. **This repo is the only
+source for the workshops; the class links here and keeps no copy.**
 
 | | In-person deck | Self-guided page | Status |
 |---|---|---|---|
@@ -54,15 +59,16 @@ is mechanical work — a self-guided setup page plus one office-hours clinic, ne
 
 ```
 w1/                 Workshop 1
-  index.html        self-guided page (online section) — hand-authored, runs in the browser
-  slides.qmd        deck source (Quarto revealjs), speaker notes removed for the public copy
+  index.html        self-guided page — generated, runs in the browser
+  build_index.py    the generator; edit it, run it, commit both
+  slides.qmd        deck source (Quarto revealjs), speaker notes included
   slides.html       rendered deck
 shared/             MSU theme and the reveal.js accessibility patch
 index.html          landing page
 ```
 
-Render a deck with `quarto render wN/slides.qmd`. Self-guided pages are single files with no
-build step; everything a student types stays in their browser.
+Render a deck with `quarto render wN/slides.qmd`. Self-guided pages are single files built
+by `wN/build_index.py`; everything a student types stays in their browser.
 
 ## Credits
 
