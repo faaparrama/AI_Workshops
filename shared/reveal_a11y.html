@@ -1,0 +1,13 @@
+<!-- a11y-ok: ZOOM Reveal hard-codes user-scalable=no in its own template; the
+     script below rewrites the meta at runtime. These decks require JavaScript
+     to function at all, so a JS correction is sound here in a way it would not
+     be on a document page. -->
+<script>
+// Reveal pins the viewport to user-scalable=no, which blocks pinch zoom
+// (WCAG 1.4.4). A second <meta> is not reliably honoured, so rewrite the one
+// Reveal wrote. Zooming does not interfere with Reveal's own scaling.
+(function () {
+  var m = document.querySelector('meta[name="viewport"]');
+  if (m) m.setAttribute('content', 'width=device-width, initial-scale=1.0, minimal-ui');
+})();
+</script>

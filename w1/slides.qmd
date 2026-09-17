@@ -1,0 +1,316 @@
+---
+title: "What the tool is, and who stays in charge"
+subtitle: "Week 5 · Workshop 1 · AI foundations for the capstone · TPACK: TK"
+author: "Andy Parra-Martinez, Ph.D."
+format:
+  revealjs:
+    theme: [default, ../shared/msstate.scss]
+    slide-number: c/t
+    footer: "EPY 3143 · Workshop 1"
+    history: false
+    embed-resources: true
+    slide-level: 2
+    include-after-body: ../shared/reveal_a11y.html
+editor: visual
+---
+
+## Today
+
+|  |  |
+|---:|----|
+| 0–5 | **The deal** — AI produces the tool. You stay the judge. |
+| 5–14 | **Video** — *Large Language Models explained briefly* |
+| 14–24 | **Activity** — be the model for ten minutes |
+| 24–34 | **What you could build** — tool types, code and no-code |
+| 34–44 | **Prompts, tested** — on your own device |
+| 44–55 | **Staying the agent** — UnBlooms, and cognitive offloading |
+| 55–60 | **Exit card** — and Milestone 1, at home |
+
+
+## The deal {.divider}
+
+## Four milestones, one project
+
+|  |  |
+|----|----|
+| **M1** · today, at home | **who** it is for, and the problem |
+| M2 | **how** it teaches |
+| M3 | **how** it motivates |
+| M4 | **who** it leaves out |
+| Showcase | the tool, and your defence of it |
+
+**The AI will produce the tool.** *You* will decide who it is for, whether it is right, and whether it should exist.
+
+
+## Video {.divider}
+
+## *Large Language Models explained briefly*
+
+3Blue1Brown · 8 minutes
+
+<https://www.youtube.com/watch?v=LPZh9BOjkQs>
+
+Watch for one thing: **what does the model actually do, one word at a time?**
+
+
+## Activity {.divider}
+
+## Be the model
+
+**Groups of three. Ten minutes.**
+
+| Sentence | |
+|---|---|
+| A | The cat sat on the \_\_\_\_. |
+| B | The student raised her \_\_\_\_. |
+| C | During the exam, Maya passed Leo a \_\_\_\_. |
+| D | The best way to learn algebra is to \_\_\_\_. |
+| E | AI and educational psychology could \_\_\_\_. |
+
+1.  **Train** *(4 min)* — five candidate words. Give each a probability. They must sum to 100.
+2.  **Generate** *(3 min)* — random number 1–100 on a phone. Walk the list until the numbers add past it. That word is the output. **Do it three times.**
+3.  **Discuss** *(3 min)* — what happened when a low-probability word came up?
+
+
+## Prediction, not knowledge
+
+An LLM predicts the **most likely next text**, given what it has read.
+
+It has not met your learner. It has read a great many paragraphs *about learners like the one you described*, and it produces the most probable next paragraph.
+
+**Fluent ≠ true.** **Confident ≠ sourced.**
+
+
+## What you could build {.divider}
+
+## The tool, in plain terms {.smaller}
+
+| Type | What it is | For whom | Example |
+|----|----|----|----|
+| **Chatbot tutor** | a chat with a written role, rules and a knowledge file — a *Socratic tutor* that asks before it tells | the learner | a Custom GPT · a Gem · a Claude Project · a Poe bot |
+| **Teaching assistant** | the same chat, pointed at *your* work — practice sets, feedback, exit tickets, rubrics, differentiated versions | you | a bot that turns one lesson into three reading levels |
+| **Artifact** | a single interactive page the chat generates on request — a simulation, a visualiser, a quiz, a card sort | the learner | *"make a quadratic I can drag"* |
+| **Stand-alone page — static** | an HTML file that lives on its own: Google Sites, GitHub Pages, a Canvas file. Same every visit. | learner or you | **Tuesday's Week 4 instrument** |
+| **Stand-alone page — dynamic** | a page that keeps state or talks to a model — a form that scores itself, an app with a login, a tutor with memory | learner | Forms + Sheets · Apps Script · Streamlit |
+
+
+## Code or no-code
+
+::::: columns
+::: {.column width="50%"}
+**No-code**
+
+-   a written role and rules *(system prompt)*
+-   a knowledge file you upload
+-   a form that scores itself
+-   an artifact you asked for and kept
+
+*You never see the code. The tool is the configuration.*
+:::
+
+::: {.column width="50%"}
+**Code**
+
+-   you ask for the HTML, JavaScript or Python
+-   you run it, and it breaks, and you ask again
+-   you own the file — it works without the chat
+
+*You never write the code. You read it, run it, and decide.*
+:::
+:::::
+
+**Either way, the same two questions:** *who is it for, and what does it do that a handout cannot?*
+
+
+## Prompts, tested {.divider}
+
+## Vague vs. scoped {.smaller}
+
+**Live.** Same tool, same question, twice.
+
+::::: columns
+::: {.column width="50%"}
+**Vague**
+
+> *Explain quadratic equations to a student.*
+:::
+
+::: {.column width="50%"}
+**Scoped**
+
+> *A 9th grader can execute the quadratic formula but cannot say what the answer is. She learns from diagrams and hands-on work before text. In under 120 words, give her a picture of what the two solutions* are *before any formula.*
+:::
+:::::
+
+
+## Your turn — pick one {.smaller}
+
+**Seven minutes, your own device, any chat tool.**
+
+::::: columns
+::: {.column width="50%"}
+**Catch one**
+
+Ask for something *real*, at a level of detail it cannot actually have:
+
+> *What percentage of Mississippi 9th graders scored proficient on the Algebra I state test last year? Name the source.*
+
+Then **open the source.** Is the number there?
+:::
+
+::: {.column width="50%"}
+**Build one**
+
+> *Make a five-question quiz for [your learners — can \_\_\_, cannot yet \_\_\_]. Then tell me which question you are least sure fits them, and why.*
+
+Read the answer to the second sentence first.
+:::
+:::::
+
+
+## Staying the agent {.divider}
+
+## UnBlooms™ — the reflective checkpoint process
+
+```{=html}
+<svg viewBox="0 0 900 600" role="img" aria-label="UnBlooms reflective checkpoint cycle by Tina Austin: five checkpoints — Intent and Entry, Generate and Verify, Critique and Judge, Refine and Decide, Create or Resist — arranged in a loop around a centre labelled Agency, disciplinary judgement, reflection throughout. The loop leads to an Outcome of deliberate judgement. A dashed Resist exit sits outside every checkpoint." style="max-height:62vh;width:auto;display:block;margin:0 auto">
+<defs><marker id="ub-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5D1725"/></marker></defs>
+<path d="M496.6,126.1 A180,180 0 0 1 577.3,172.7" fill="none" stroke="#5D1725" stroke-width="3" marker-end="url(#ub-arrow)"/>
+<path d="M623.9,253.4 A180,180 0 0 1 623.9,346.6" fill="none" stroke="#5D1725" stroke-width="3" marker-end="url(#ub-arrow)"/>
+<path d="M577.3,427.3 A180,180 0 0 1 496.6,473.9" fill="none" stroke="#5D1725" stroke-width="3" marker-end="url(#ub-arrow)"/>
+<path d="M403.4,473.9 A180,180 0 0 1 322.7,427.3" fill="none" stroke="#5D1725" stroke-width="3" marker-end="url(#ub-arrow)"/>
+<path d="M276.1,346.6 A180,180 0 0 1 276.1,253.4" fill="none" stroke="#5D1725" stroke-width="3" marker-end="url(#ub-arrow)"/>
+<path d="M322.7,172.7 A180,180 0 0 1 403.4,126.1" fill="none" stroke="#5D1725" stroke-width="3" marker-end="url(#ub-arrow)"/>
+<line x1="450.0" y1="88.0" x2="450.0" y2="43.0" stroke="#6E6E6E" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="395.0" y="9.0" width="110" height="32" rx="6" fill="#fff" stroke="#6E6E6E" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="450.0" y="30.0" text-anchor="middle" font-size="15" fill="#6E6E6E">× Resist</text>
+<line x1="633.6" y1="194.0" x2="672.6" y2="171.5" stroke="#6E6E6E" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="633.2" y="146.5" width="110" height="32" rx="6" fill="#fff" stroke="#6E6E6E" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="688.2" y="167.5" text-anchor="middle" font-size="15" fill="#6E6E6E">× Resist</text>
+<line x1="633.6" y1="406.0" x2="672.6" y2="428.5" stroke="#6E6E6E" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="633.2" y="421.5" width="110" height="32" rx="6" fill="#fff" stroke="#6E6E6E" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="688.2" y="442.5" text-anchor="middle" font-size="15" fill="#6E6E6E">× Resist</text>
+<line x1="450.0" y1="512.0" x2="450.0" y2="557.0" stroke="#6E6E6E" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="395.0" y="559.0" width="110" height="32" rx="6" fill="#fff" stroke="#6E6E6E" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="450.0" y="580.0" text-anchor="middle" font-size="15" fill="#6E6E6E">× Resist</text>
+<line x1="266.4" y1="406.0" x2="227.4" y2="428.5" stroke="#6E6E6E" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="156.8" y="421.5" width="110" height="32" rx="6" fill="#fff" stroke="#6E6E6E" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="211.8" y="442.5" text-anchor="middle" font-size="15" fill="#6E6E6E">× Resist</text>
+<circle cx="450" cy="300" r="118" fill="none" stroke="#6E6E6E" stroke-width="1.5" stroke-dasharray="3 5"/>
+<circle cx="450" cy="300" r="96" fill="#5D1725"/>
+<text x="450" y="270" text-anchor="middle" font-size="15" letter-spacing="2" fill="#DAC79D">AGENCY</text>
+<text x="450" y="298" text-anchor="middle" font-size="21" font-weight="700" fill="#fff">Disciplinary</text>
+<text x="450" y="322" text-anchor="middle" font-size="21" font-weight="700" fill="#fff">judgement</text>
+<text x="450" y="350" text-anchor="middle" font-size="12" letter-spacing="1" fill="#DAC79D">REFLECTION THROUGHOUT</text>
+<rect x="370.0" y="89.0" width="160" height="62" rx="8" fill="#fff" stroke="#5D1725" stroke-width="2.5"/>
+<text x="386.0" y="128.0" font-size="24" font-weight="700" fill="#5D1725">1</text>
+<text x="462.0" y="127.0" text-anchor="middle" font-size="18" fill="#40101A">Intent &amp; Entry</text>
+<rect x="525.9" y="179.0" width="160" height="62" rx="8" fill="#fff" stroke="#5D1725" stroke-width="2.5"/>
+<text x="541.9" y="218.0" font-size="24" font-weight="700" fill="#5D1725">2</text>
+<text x="617.9" y="217.0" text-anchor="middle" font-size="18" fill="#40101A">Generate &amp; Verify</text>
+<rect x="525.9" y="359.0" width="160" height="62" rx="8" fill="#fff" stroke="#5D1725" stroke-width="2.5"/>
+<text x="541.9" y="398.0" font-size="24" font-weight="700" fill="#5D1725">3</text>
+<text x="617.9" y="397.0" text-anchor="middle" font-size="18" fill="#40101A">Critique &amp; Judge</text>
+<rect x="370.0" y="449.0" width="160" height="62" rx="8" fill="#fff" stroke="#5D1725" stroke-width="2.5"/>
+<text x="386.0" y="488.0" font-size="24" font-weight="700" fill="#5D1725">4</text>
+<text x="462.0" y="487.0" text-anchor="middle" font-size="18" fill="#40101A">Refine &amp; Decide</text>
+<rect x="214.1" y="359.0" width="160" height="62" rx="8" fill="#fff" stroke="#5D1725" stroke-width="2.5"/>
+<text x="230.1" y="398.0" font-size="24" font-weight="700" fill="#5D1725">5</text>
+<text x="306.1" y="397.0" text-anchor="middle" font-size="18" fill="#40101A">Create or Resist</text>
+<rect x="214.1" y="179.0" width="160" height="62" rx="8" fill="#fff" stroke="#6E6E6E" stroke-width="2.5"/>
+<text x="294.1" y="208.0" text-anchor="middle" font-size="19" font-weight="700" fill="#40101A">Outcome</text>
+<text x="294.1" y="229.0" text-anchor="middle" font-size="13" fill="#6E6E6E">deliberate judgement</text>
+</svg>
+```
+
+::: {style="font-size:0.6em;text-align:right"}
+Austin, T. *UnBlooms™ — The Reflective Checkpoint Process.* Redrawn.
+:::
+
+
+## The five questions {.smaller}
+
+| Checkpoint | The question you stop and ask |
+|---:|----|
+| **1 · Intent & Entry** | *What am I asking for, and why this tool?* |
+| **2 · Generate & Verify** | *Is this true? Where would I check?* |
+| **3 · Critique & Judge** | *Does this fit* my *learners — or the probable learner?* |
+| **4 · Refine & Decide** | *What do I change, and what do I keep?* |
+| **5 · Create or Resist** | *Do I build this — or does a handout do the job?* |
+
+At the centre: **your disciplinary judgement.** At every checkpoint: **× Resist** is an exit.
+
+> **Reflection is the process.** Pause at each checkpoint. Question the output. Make a deliberate choice.
+
+
+## Cognitive offloading
+
+Handing a piece of thinking to something outside your head.
+
+|  |  |
+|----|----|
+| **Offload the production** | the HTML, the fifty practice items, the three reading levels, the first draft of the rubric |
+| **Keep the judgement** | who the learner is · whether the output is true · whether it fits · whether to build at all |
+
+**You cannot use a tool well if you do not know what you asked it to do — or if you accept whatever it produces.**
+
+
+## Prompting, by checkpoint {.smaller}
+
+| Checkpoint | The habit |
+|---:|----|
+| **Intent** | Write the ask in one line *before* opening the tab: *who · can/cannot yet · what output.* If you cannot, you are not ready to prompt. |
+| **Generate** | Give it the learner, not the age. Ask for under N words. Ask it to name what it is least sure about. |
+| **Verify** | One claim, checked by you, every time. Sources named; sources opened. |
+| **Critique** | *"Which of your assumptions about these learners could be wrong?"* — then decide if it is right. |
+| **Refine** | Re-prompt with what it got wrong, not with "try again." |
+| **Decide** | Keep, change, or resist. Say which, and why, in your own words. |
+
+
+## Two versions of you
+
+|  |  |
+|----|----|
+| Used AI as a tool | Outsourced the thinking |
+| Struggled, failed, revised, improved | Never sat with the confusion |
+| Knows what good reasoning *feels* like | Guiding others through confusion they never had |
+
+**The tool can do your homework. It cannot do your rehearsal.**
+
+
+## Exit card {.divider}
+
+## Your prompt, twice
+
+On the card — **three minutes:**
+
+**Before.** The prompt you would have written on Monday.
+
+**After.** The same request, scoped to *your* learners — what they can do, cannot yet, how they learn — and one line asking the tool what it is least sure about.
+
+
+## Milestone 1 — at home {.smaller}
+
+**One page. Five parts.** Instructions in `02_milestone.md` — you have had them since Tuesday.
+
+1.  **Who** — *a class, a group, or one person; observed behaviours, not labels*
+2.  **The problem** — *can \_\_\_ but cannot yet \_\_\_, because \_\_\_*
+3.  **The tool type** — *and what it does that a handout cannot*
+4.  **Assumptions blind spot** — *one default the AI would have about your learners, and how you can tell*
+5.  **Synthesis** — *what Unit 1 predicts they will do with it*
+
+Then **peer feedback** — `03_peer_feedback.md`, four boxes on a partner's draft, before the milestone closes.
+
+
+## Tuesday
+
+-   Unit 2 opens — **Topic T05**, memory and cognition
+-   *Nine minutes* — a timed lesson transcript
+-   Reflection 4
+
+
+## Sources {.smaller}
+
+-   3Blue1Brown. *Large Language Models explained briefly.* <https://www.youtube.com/watch?v=LPZh9BOjkQs>
+-   Austin, T. *UnBlooms™ — The Reflective Checkpoint Process.* <https://tinaaustin.com/>
+-   Austin, T. R., Gulya, J., et al. *Metacognition as Disciplinary Infrastructure in AI-Mediated Learning.* International Journal of Educational Innovation and Excellence, 4(1). <https://digitalcommons.lindenwood.edu/ijedie/vol4/iss1/6/>

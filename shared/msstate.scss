@@ -1,0 +1,207 @@
+/*-- scss:defaults --*/
+// Mississippi State University brand palette
+// Maroon is the dominant color; accents may only appear alongside it.
+//
+// CONTRAST RULE (measured, WCAG 2.1 on white):
+//   maroon  #5D1725  13.01:1  -> body text OK
+//   gold    #C99700   2.65:1  -> FAILS, even large text
+//   gold-br #FFB81C   1.73:1  -> FAILS on white; 7.51:1 on maroon -> OK there
+//   teal    #00A3AD   3.07:1  -> large text only
+//   grey    #777777   4.48:1  -> FAILS AA body (needs 4.5) -- raised to #6E6E6E below
+//
+// Gold and teal are FILLS, RULES and BORDERS. Never text on white.
+// On a maroon ground, gold is the readable accent.
+$msu-maroon:      #5D1725;
+$msu-maroon-deep: #40101A;
+$msu-grey-lt:     #C1C6C8;
+$msu-grey-dk:     #6E6E6E;   // was #777777 (4.48:1) -- now 5.02:1, clears AA body
+$msu-gold:        #C99700;
+$msu-gold-br:     #FFB81C;
+$msu-teal:        #00A3AD;
+$msu-sand:        #DAC79D;
+$msu-stone:       #A69F88;
+
+$body-bg:    #FFFFFF;
+$body-color: #2A2426;
+$link-color: $msu-maroon;
+
+$font-family-sans-serif: "Source Sans 3", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+$presentation-font-size-root: 33px;
+$presentation-heading-font: "Source Sans 3", "Segoe UI", sans-serif;
+$presentation-heading-color: $msu-maroon;
+$presentation-heading-font-weight: 600;
+$presentation-h1-font-size: 2.0em;
+$presentation-h2-font-size: 1.32em;
+$presentation-h3-font-size: 1.02em;
+$code-block-font-size: 0.62em;
+
+/*-- scss:rules --*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+.reveal { -webkit-font-smoothing: antialiased; }
+
+// Maroon rule under every slide title
+.reveal h2 {
+  border-bottom: 3px solid $msu-maroon;
+  padding-bottom: .22em;
+  margin-bottom: .6em;
+  letter-spacing: -.01em;
+}
+
+.reveal ul, .reveal ol { margin-left: .4em; }
+.reveal li { margin-bottom: .42em; line-height: 1.38; }
+.reveal li::marker { color: $msu-maroon; }
+.reveal ul ul { margin-top: .3em; }
+.reveal ul ul li { font-size: .88em; color: #4A4143; }
+
+.reveal strong { color: $msu-maroon-deep; font-weight: 600; }
+.reveal em { color: #4A4143; }
+
+// ---- title slide ----
+#title-slide {
+  text-align: left;
+  .title      { color: $msu-maroon; font-size: 1.9em; font-weight: 600; line-height: 1.05; }
+  .subtitle   { color: $body-color; font-size: .92em; margin-top: .35em; font-weight: 400; }
+  .author, .quarto-title-author-name { color: $body-color; font-size: .72em; margin-top: 1.1em; }
+  .date, .institute { color: $msu-grey-dk; font-size: .55em; line-height: 1.45; }
+}
+
+// ---- section dividers ----
+.reveal section.divider  { text-align: left; }
+.reveal .divider h2 {
+  color: #FFFFFF; border-bottom: none; font-size: 2.1em;
+}
+.reveal section.divider  { background: $msu-maroon; }
+.reveal .divider p { color: rgba(255,255,255,.86); font-size: .82em; }
+
+// ---- definition pattern:  term = meaning ----
+.defn { margin-bottom: .78em; line-height: 1.36; }
+.defn .t {
+  color: $msu-maroon; font-weight: 600;
+}
+.defn .d { color: $body-color; }
+.defn .note {
+  display: block; font-size: .74em; color: $msu-grey-dk; margin-top: .12em;
+}
+
+// ---- error-anticipation callout ----
+.gotcha {
+  border-left: 5px solid $msu-gold;
+  background: #FBF6E9;
+  padding: .5em .8em;
+  font-size: .8em;
+  margin-top: .7em;
+  line-height: 1.4;
+  code { background: none; color: $msu-maroon-deep; }
+}
+
+// ---- key line / thesis ----
+.keyline {
+  border-left: 5px solid $msu-maroon;
+  background: #F7F2F3;
+  padding: .55em .85em;
+  font-size: .96em;
+  line-height: 1.4;
+  margin: .5em 0;
+}
+
+// ---- two/three column comparison blocks ----
+.cols3, .cols2 { display: flex; gap: 1.1em; margin-top: .3em; }
+.cols3 > div, .cols2 > div {
+  flex: 1;
+  border-top: 4px solid $msu-maroon;
+  padding-top: .5em;
+  font-size: .78em;
+  line-height: 1.35;
+  h3 { color: $msu-maroon; font-size: 1.14em; margin: 0 0 .35em; font-weight: 600; }
+  ul { margin: .2em 0 0 .1em; padding-left: 1em; }
+  li { margin-bottom: .22em; }
+}
+.cols3 > div.alt, .cols2 > div.alt { border-top-color: $msu-teal; h3 { color: #01717A; } }
+.cols3 > div.warn, .cols2 > div.warn { border-top-color: $msu-gold; h3 { color: #8A6600; } }
+
+// ---- tables ----
+.reveal table { font-size: .74em; border-collapse: collapse; }
+.reveal table th {
+  background: #F3EEEF; color: $msu-maroon; font-weight: 600;
+  border-bottom: 2px solid $msu-maroon; text-align: left; padding: .34em .6em;
+}
+.reveal table td { border-bottom: 1px solid #E4DDDE; padding: .32em .6em; }
+.reveal table tr:last-child td { border-bottom: none; }
+.num { text-align: right; font-variant-numeric: tabular-nums; font-family: "IBM Plex Mono", monospace; }
+
+// ---- code ----
+.reveal code { font-family: "IBM Plex Mono", monospace; }
+.reveal :not(pre) > code { color: $msu-maroon-deep; background: #F3EEEF; padding: .06em .3em; border-radius: 2px; }
+.reveal pre { box-shadow: none; border: 1px solid #E4DDDE; border-radius: 3px; }
+
+// ---- footer / slide number ----
+.reveal .footer { color: $msu-grey-dk; font-size: .5em; }
+.reveal .slide-number {
+  background: none; color: $msu-grey-dk; font-family: "IBM Plex Mono", monospace; font-size: .5em;
+}
+.small { font-size: .78em; }
+.tiny  { font-size: .66em; color: $msu-grey-dk; }
+
+
+// ---- EPY 3143 additions ----
+
+// The four weekly moments. Used as section dividers in decks and briefs.
+.moment {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .62em;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: $msu-grey-dk;
+  display: block;
+  margin-bottom: .3em;
+}
+
+// Case-vignette block: the ENCOUNTER text, quoted from the spine.
+.vignette {
+  border-left: 5px solid $msu-grey-lt;
+  background: #FAFAFA;
+  padding: .6em .9em;
+  font-size: .86em;
+  line-height: 1.45;
+  margin: .5em 0;
+  .who { color: $msu-maroon; font-weight: 600; }
+}
+
+// Diagnosis / re-diagnosis pairing, for the reveal weeks.
+.rediagnosis {
+  display: flex; gap: 1em; margin-top: .4em;
+  > div { flex: 1; padding-top: .45em; font-size: .78em; line-height: 1.35; }
+  > div.was  { border-top: 4px solid $msu-grey-lt; color: #4A4143; }
+  > div.now  { border-top: 4px solid $msu-maroon; }
+  h3 { font-size: 1.1em; margin: 0 0 .3em; font-weight: 600; }
+  > div.was h3 { color: $msu-grey-dk; }
+  > div.now h3 { color: $msu-maroon; }
+}
+
+/* ---------------------------------------------------------------------
+   Accessibility corrections to Reveal's defaults.
+
+   Reveal ships `outline:none` on the slide container and pins the
+   viewport to `user-scalable=no`. Both are WCAG failures (2.4.7 and
+   1.4.4) and both are framework defaults rather than anything we wrote,
+   so they are corrected here once for every deck in the course.
+   The viewport half cannot be done in CSS - see shared/reveal_a11y.html.
+   --------------------------------------------------------------------- */
+
+.reveal a:focus-visible,
+.reveal button:focus-visible,
+.reveal .slide-menu-button:focus-visible,
+.reveal [tabindex]:focus-visible {
+  outline: 3px solid $msu-gold !important;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal .slides section,
+  .reveal .progress span,
+  .reveal .fragment {
+    transition: none !important;
+    animation: none !important;
+  }
+}
