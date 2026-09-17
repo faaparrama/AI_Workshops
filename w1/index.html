@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Workshop 1 — Online</title>
+<title>Introduction to AI co-creation</title>
 <meta name="description" content="EPY 3143 Workshop 1, self-guided: what a language model is, what you could build with one, how to prompt it, and how to stay the one deciding.">
 <style>
 :root{
@@ -111,8 +111,8 @@ details[open] summary{margin-bottom:.5rem}
 
 <header class="head">
   <p class="moment">EPY 3143 · Week 5 · Workshop 1 · Online</p>
-  <h1>What the tool is, and who stays in charge</h1>
-  <p class="sub">AI foundations for the capstone. About sixty minutes, self-guided.</p>
+  <h1>Introduction to AI co-creation</h1>
+  <p class="sub">AI foundations for the capstone. About sixty minutes, self-guided — what the tool is, and who stays in charge.</p>
 </header>
 
 <div class="keyline">
@@ -123,35 +123,35 @@ details[open] summary{margin-bottom:.5rem}
 </div>
 
 <ol class="toc">
-  <li><a href="#deal">The deal</a> <span class="status">2 min</span></li>
-  <li><a href="#video">Watch: what a language model does</a> <span class="status">8 min</span></li>
-  <li><a href="#model">Be the model</a> <span class="status">10 min</span></li>
-  <li><a href="#build">What you could build</a> <span class="status">10 min</span></li>
+  <li><a href="#deal">Basics</a> <span class="status">2 min</span></li>
+  <li><a href="#video">Video: what a language model does</a> <span class="status">8 min</span></li>
+  <li><a href="#model">Activity: be the AI model</a> <span class="status">10 min</span></li>
+  <li><a href="#build">Your project: what you could build</a> <span class="status">10 min</span></li>
   <li><a href="#prompts">Prompts, tested</a> <span class="status">12 min</span></li>
-  <li><a href="#agent">Staying the agent</a> <span class="status">12 min</span></li>
+  <li><a href="#agent">Human agency</a> <span class="status">12 min</span></li>
   <li><a href="#exit">Exit card, then Milestone 1</a> <span class="status">6 min</span></li>
 </ol>
 
 <!-- ============================================================ -->
-<h2 id="deal">1 · The deal <span class="t">2 min</span></h2>
+<h2 id="deal">1 · Basics <span class="t">2 min</span></h2>
 
 <p>Your capstone is a learning tool you will design across four milestones and defend at the showcase. Workshop 1 is the first of four, and it is about one thing: what the AI is, and what it is not.</p>
 
 <div class="scroll"><table>
-<tr><th></th><th>What it answers</th></tr>
-<tr><td><strong>M1</strong> · this week</td><td><strong>who</strong> the tool is for, and the problem it solves</td></tr>
+<tr><th>Final project structure</th><th>What it answers</th></tr>
+<tr><td><strong>M1</strong> · now</td><td><strong>who</strong> the tool is for, and the problem it solves</td></tr>
 <tr><td>M2</td><td><strong>how</strong> it teaches</td></tr>
 <tr><td>M3</td><td><strong>how</strong> it motivates</td></tr>
 <tr><td>M4</td><td><strong>who</strong> it leaves out</td></tr>
 <tr><td>Showcase</td><td>the tool, and your defence of it</td></tr>
 </table></div>
 
-<div class="keyline"><p><strong>The AI will produce the tool.</strong> <em>You</em> will decide who it is for, whether it is right, and whether it should exist. The production is outsourceable. The judgement is not.</p></div>
+<div class="keyline"><p><strong>AI will help create the tool.</strong> <em>You</em> will decide who it is for, whether it is right, and whether it should exist. The production is outsourceable. The judgement is not.</p></div>
 
 <p>If you are worried you cannot code: no one in this course writes code by hand. The <em>code track</em> means you read and run what the tool writes. The <em>no-code track</em> means you never see it. Both are legitimate, and both need Milestone 1 first.</p>
 
 <!-- ============================================================ -->
-<h2 id="video">2 · Watch: what a language model does <span class="t">8 min</span></h2>
+<h2 id="video">2 · Video: what a language model does <span class="t">8 min</span></h2>
 
 <p><strong>3Blue1Brown — <em>Large Language Models explained briefly</em></strong> (about eight minutes). Watch the whole thing, holding one question: <strong>what does the model actually do, one word at a time?</strong></p>
 
@@ -167,7 +167,7 @@ details[open] summary{margin-bottom:.5rem}
 </div>
 
 <!-- ============================================================ -->
-<h2 id="model">3 · Be the model <span class="t">10 min</span></h2>
+<h2 id="model">3 · Activity: be the AI model <span class="t">10 min</span></h2>
 
 <p>The video's key moment is at 0:36–0:51: the model assigns a probability to every possible next word, then <em>samples</em> one — it does not always take the most likely. For ten minutes, you are the model.</p>
 
@@ -216,19 +216,19 @@ details[open] summary{margin-bottom:.5rem}
 
 <div class="keyline">
   <p><strong>Prediction, not knowledge.</strong> A language model predicts the most likely next text, given what it has read. It has not met your learner. It has read a great many paragraphs <em>about learners like the one you described</em>, and it produces the most probable next paragraph.</p>
-  <p><strong>Fluent ≠ true. Confident ≠ sourced.</strong></p>
+  <p><strong>Fluent ≠ true. Confident ≠ verifiable sources.</strong></p>
 </div>
 
 <!-- ============================================================ -->
-<h2 id="build">4 · What you could build <span class="t">10 min</span></h2>
+<h2 id="build">4 · Your project: what you could build <span class="t">10 min</span></h2>
 
 <p>"A learning tool" sounds abstract until you see the five shapes it usually takes. All five can be produced with an AI; the question for you is which one your learners' problem actually needs.</p>
 
 <div class="scroll"><table>
 <tr><th>Type</th><th>What it is</th><th>For whom</th><th>Example</th></tr>
 <tr><td><strong>Chatbot tutor</strong></td><td>a chat with a written role, rules and a knowledge file — a <em>Socratic tutor</em> that asks before it tells</td><td>the learner</td><td>a Custom GPT · a Gem · a Claude Project · a Poe bot</td></tr>
-<tr><td><strong>Teaching assistant</strong></td><td>the same chat, pointed at <em>your</em> work — practice sets, feedback, exit tickets, rubrics, differentiated versions</td><td>you</td><td>a bot that turns one lesson into three reading levels</td></tr>
-<tr><td><strong>Artifact</strong></td><td>a single interactive page the chat generates on request — a simulation, a visualiser, a quiz, a card sort</td><td>the learner</td><td><em>"make a quadratic I can drag"</em></td></tr>
+<tr><td><strong>Teaching assistant</strong><br><span class="status" style="margin:0">only with instructor approval</span></td><td>the same chat, pointed at <em>your</em> work — practice sets, feedback, exit tickets, rubrics, differentiated versions</td><td>you</td><td>a bot that turns one lesson into three reading levels</td></tr>
+<tr><td><strong>Artifact</strong></td><td>a single interactive page the chat generates on request — a simulation, a visualiser, a quiz, a card sort</td><td>the learner</td><td><em>"make a quadratic I can drag"</em> · practice for your unit</td></tr>
 <tr><td><strong>Stand-alone page — static</strong></td><td>an HTML file that lives on its own: Google Sites, GitHub Pages, a Canvas file. Same every visit.</td><td>learner or you</td><td>the Week 4 instrument you filled in</td></tr>
 <tr><td><strong>Stand-alone page — dynamic</strong></td><td>a page that keeps state or talks to a model — a form that scores itself, an app with a login, a tutor with memory</td><td>learner</td><td>Forms + Sheets · Apps Script · Streamlit</td></tr>
 </table></div>
@@ -257,8 +257,8 @@ details[open] summary{margin-bottom:.5rem}
 <!-- ============================================================ -->
 <h2 id="prompts">5 · Prompts, tested <span class="t">12 min</span></h2>
 
-<h3>Vague vs. scoped <span class="status">4 min</span></h3>
-<p>Same tool, same question, twice. Copy each prompt into your chat tool and compare the two answers.</p>
+<h3>Vague vs. contextualized <span class="status">4 min</span></h3>
+<p>Same tool, same question, twice. Copy each prompt into your chat tool and compare the two answers. <strong>AI output quality depends on the quality of the input</strong> — can you trust the answer?</p>
 
 <div class="cols">
   <div>
@@ -267,17 +267,17 @@ details[open] summary{margin-bottom:.5rem}
     <button class="copy ghost" type="button" data-copy="pv">Copy</button>
   </div>
   <div>
-    <p><strong>Scoped</strong></p>
-    <div class="prompt" id="ps">A 9th grader can execute the quadratic formula but cannot say what the answer is. She learns from diagrams and hands-on work before text. In under 120 words, give her a picture of what the two solutions <em>are</em> before any formula.</div>
+    <p><strong>Contextualized</strong> <span class="status">developmentally appropriate</span></p>
+    <div class="prompt" id="ps">A 9th grader can execute the quadratic formula but cannot say what the answer is. They learn from diagrams and hands-on work before text. In under 120 words, describe what the two solutions <em>are</em> before any formula.</div>
     <button class="copy ghost" type="button" data-copy="ps">Copy</button>
   </div>
 </div>
 
-<p>Notice what the scoping <em>is</em>: what the learner can do, what she cannot yet, how she learns. Developmental facts, not "make it simple." You should recognise her — this is Maya. A scoped prompt is a population statement, which is what Milestone 1 Parts 1 and 2 are.</p>
+<p>Notice what the context <em>is</em>: what the learner can do, what she cannot yet, how she learns. Developmental facts, not "make it simple." You should recognise her — this is Maya. A contextualized prompt is a population statement, which is what Milestone 1 Parts 1 and 2 are.</p>
 
 <div class="do">
   <span class="tag">Write</span>
-  <label for="q_scoped">What did the scoped answer do that the vague one did not? And: what would break if you sent the scoped prompt for a 2nd grader?</label>
+  <label for="q_scoped">What did the contextualized answer do that the vague one did not? And: what would break if you sent the same prompt for a 2nd grader?</label>
   <textarea id="q_scoped" data-save></textarea>
 </div>
 
@@ -305,8 +305,15 @@ details[open] summary{margin-bottom:.5rem}
 
 <div class="gotcha"><p><strong>Hallucination</strong>, defined: fluent output with no source behind it — or with a source that does not say what the output says. The skill is not "AI lies." The skill is "I have a routine for checking," and it runs whether or not the tool sounds sure.</p></div>
 
+<h3>Critical judgement <span class="status">2 min</span></h3>
+<p><strong>How do you know the AI did not hallucinate? Can you verify the output?</strong> Dr. Casey Fiesler, an AI ethicist at the University of Colorado Boulder, in under two minutes:</p>
+<div class="video">
+  <iframe src="https://www.youtube-nocookie.com/embed/0y7BSWoksyo" title="How to get ChatGPT to not hallucinate? — Casey Fiesler" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+<p class="status">If the video does not load here, open it on YouTube: <a href="https://www.youtube.com/watch?v=0y7BSWoksyo">youtube.com/watch?v=0y7BSWoksyo</a></p>
+
 <!-- ============================================================ -->
-<h2 id="agent">6 · Staying the agent <span class="t">12 min</span></h2>
+<h2 id="agent">6 · Human agency <span class="t">12 min</span></h2>
 
 <p>Everything so far is about what the tool does. This part is about what only you do. The framework is Tina Austin's <strong>UnBlooms™ — the reflective checkpoint process</strong>: five places to stop, with an exit at every one.</p>
 
@@ -365,34 +372,36 @@ details[open] summary{margin-bottom:.5rem}
 <div class="scroll"><table>
 <tr><th>Checkpoint</th><th>The question you stop and ask</th></tr>
 <tr><td><strong>1 · Intent &amp; Entry</strong></td><td><em>What am I asking for, and why this tool?</em></td></tr>
-<tr><td><strong>2 · Generate &amp; Verify</strong></td><td><em>Is this true? Where would I check?</em></td></tr>
-<tr><td><strong>3 · Critique &amp; Judge</strong></td><td><em>Does this fit</em> my <em>learners — or the probable learner?</em></td></tr>
+<tr><td><strong>2 · Generate &amp; Verify</strong></td><td><em>Is this true? Where and how would I check?</em></td></tr>
+<tr><td><strong>3 · Critique &amp; Judge</strong></td><td><em>Does this fit my need —</em> my <em>learners, or the probable learner?</em></td></tr>
 <tr><td><strong>4 · Refine &amp; Decide</strong></td><td><em>What do I change, and what do I keep?</em></td></tr>
-<tr><td><strong>5 · Create or Resist</strong></td><td><em>Do I build this — or does a handout do the job?</em></td></tr>
+<tr><td><strong>5 · Create or Resist</strong></td><td><em>Do I build this — or does a simpler handout do the job?</em></td></tr>
 </table></div>
 
 <p>At the centre: <strong>your disciplinary judgement</strong>. At every checkpoint: <strong>× Resist</strong> is an exit. The cycle is not a hierarchy and it is not a line — you can decline to prompt, decline to accept, decline to build. That is what <em>agency</em> in the centre means.</p>
 
-<div class="keyline"><p><strong>Reflection is the process.</strong> Pause at each checkpoint. Question the output. Make a deliberate choice. AI should support learning, not replace thinking.</p></div>
+<div class="keyline"><p><strong>Reflection is the process.</strong> Pause at each checkpoint. Question the output. Make a deliberate choice. AI should support learning, not replace thinking.</p>
+<p><strong>You are responsible for the use and consequences of everything the AI gives you.</strong></p></div>
 
 <p>You have already been through the cycle this hour. <em>Be the model</em> was checkpoint 2 — what is this output, and is it the true one? <em>Catch one</em> was 2 and 3. <em>Build one</em> was 3 — the tool named its own default. Milestone 1 Part 3's "what a handout cannot do" is checkpoint 5.</p>
 
 <h3>Cognitive offloading</h3>
-<p>Handing a piece of thinking to something outside your head. It is not a sin — a calculator is offloading, and so is a textbook. The line is between production and judgement.</p>
+<p>Handing a piece of thinking to something outside your head. It is not a sin — a calculator is offloading, and so is a textbook. The line is between production and judgement. <strong>AI is most useful when it augments what you can do for your students.</strong></p>
 
 <div class="scroll"><table>
 <tr><td><strong>Offload the production</strong></td><td>the HTML, the fifty practice items, the three reading levels, the first draft of the rubric</td></tr>
 <tr><td><strong>Keep the judgement</strong></td><td>who the learner is · whether the output is true · whether it fits · whether to build at all</td></tr>
+<tr><td><strong>Be present for the learner</strong></td><td>if you have gained time, that is time for personal interaction and relationship building</td></tr>
 </table></div>
 
 <div class="keyline"><p><strong>You cannot use a tool well if you do not know what you asked it to do — or if you accept whatever it produces.</strong> Milestone 1 exists so the judgement is written down before any production starts: the population is yours, in your words, and the tool inherits it.</p></div>
 
-<h3>Prompting, by checkpoint</h3>
+<h3>How to prompt, using the checkpoints</h3>
 <div class="scroll"><table>
-<tr><th>Checkpoint</th><th>The habit</th></tr>
-<tr><td><strong>Intent</strong></td><td>Write the ask in one line <em>before</em> opening the tab: <em>who · can/cannot yet · what output</em>. If you cannot, you are not ready to prompt.</td></tr>
+<tr><th>Checkpoint</th><th>Habits to decide whether AI is appropriate or not</th></tr>
+<tr><td><strong>Intent</strong></td><td>Write the ask in one line <em>before</em> opening the tab: <em>who · can/cannot yet · what output</em>. <strong>If you cannot determine this, you are not ready to prompt.</strong></td></tr>
 <tr><td><strong>Generate</strong></td><td>Give it the learner, not the age. Ask for under N words. Ask it to name what it is least sure about.</td></tr>
-<tr><td><strong>Verify</strong></td><td>One claim, checked by you, every time. Sources named; sources opened.</td></tr>
+<tr><td><strong>Verify</strong></td><td>How do you know it is true? One claim, checked by you, every time. Sources named; sources opened.</td></tr>
 <tr><td><strong>Critique</strong></td><td><em>"Which of your assumptions about these learners could be wrong?"</em> — then decide if it is right.</td></tr>
 <tr><td><strong>Refine</strong></td><td>Re-prompt with what it got wrong, not with "try again."</td></tr>
 <tr><td><strong>Decide</strong></td><td>Keep, change, or resist. Say which, and why, in your own words.</td></tr>
@@ -402,11 +411,12 @@ details[open] summary{margin-bottom:.5rem}
 
 <h3>Two versions of you</h3>
 <div class="scroll"><table>
+<tr><th>Competent and ethical user</th><th>Not ready for AI</th></tr>
 <tr><td>Used AI as a tool</td><td>Outsourced the thinking</td></tr>
 <tr><td>Struggled, failed, revised, improved</td><td>Never sat with the confusion</td></tr>
 <tr><td>Knows what good reasoning <em>feels</em> like</td><td>Guiding others through confusion they never had</td></tr>
 </table></div>
-<div class="keyline"><p><strong>The tool can do your homework. It cannot do your rehearsal.</strong> The capstone is student teaching before student teaching — feed the tool a unit you will teach, make it roleplay your ten hardest learners, make it write fifty exit tickets for you to answer.</p></div>
+<div class="keyline"><p><strong>The tool can do your homework. It cannot do your rehearsal — and if it did the homework, you likely did not learn at all.</strong> The capstone is student teaching before student teaching — feed the tool a unit you will teach, make it roleplay your ten hardest learners, make it write fifty exit tickets for you to answer.</p></div>
 
 <div class="do">
   <span class="tag">Write</span>
@@ -421,9 +431,9 @@ details[open] summary{margin-bottom:.5rem}
 
 <div class="do">
   <span class="tag">Exit card</span>
-  <label for="q_before"><strong>Before.</strong> The prompt you would have written for your learners last week.</label>
+  <label for="q_before"><strong>Before.</strong> The prompt you would have written before this session.</label>
   <textarea id="q_before" data-save></textarea>
-  <label for="q_after"><strong>After.</strong> The same request, scoped to <em>your</em> learners — what they can do, cannot yet, how they learn — and one line asking the tool what it is least sure about.</label>
+  <label for="q_after"><strong>After.</strong> The same request, contextualized to <em>your</em> learners — what they can do, cannot yet, how they learn — and one line asking the tool what it is least sure about.</label>
   <textarea id="q_after" data-save></textarea>
 </div>
 
@@ -435,16 +445,16 @@ details[open] summary{margin-bottom:.5rem}
 <p>Paste the copied text into the <strong>Week 5 Engagement Check</strong> in Canvas. The exit card is the part that is scored; the rest is your record.</p>
 
 <h3>Then: Milestone 1, at home</h3>
-<p>One page, five parts. The full instructions and the rubric are in the Week 5 module — open them now, while the hour is fresh.</p>
+<p>One page, five parts. The instructions and the rubric are in the Week 5 module in Canvas; the milestone itself is done in Packback. Open the instructions now, while the hour is fresh.</p>
 <ol>
   <li><strong>Who</strong> — a class, a group, or one person; observed behaviours, not labels</li>
-  <li><strong>The problem</strong> — <em>can ____ but cannot yet ____, and the usual way fails because ____</em></li>
+  <li><strong>The problem</strong> — <em>can ____ but cannot yet ____, because ____</em></li>
   <li><strong>The tool type</strong> — and what it does that a handout cannot</li>
   <li><strong>Assumptions blind spot</strong> — one default the AI would have about your learners, and how you can tell</li>
   <li><strong>Synthesis</strong> — what Unit 1 predicts they will do with it</li>
 </ol>
 <p>"Learner" is whoever you will actually work with. Teachers take a class and name the two or three learners who stretch it. Counsellors, coaches and social workers take a group. Nurses, therapists and tutors take one learner, patient or client. Your exit card is Parts 1, 2 and 4 in three lines — start from it.</p>
-<p><strong>Peer feedback</strong> is part of the milestone grade: once drafts are posted, you write the four boxes on a partner's draft, and add one line at the end of your own on what you changed. The peer-feedback page in the module has the four boxes; check the module for the deadline.</p>
+<p><strong>Peer feedback</strong> is part of the milestone grade: once drafts are posted, you critically challenge a partner's draft and provide suggestions in the four boxes, and add one line at the end of your own on what you changed. The peer-feedback page in the module has the four boxes; check the module for the deadline.</p>
 
 <!-- ============================================================ -->
 <footer class="footer">
@@ -452,6 +462,7 @@ details[open] summary{margin-bottom:.5rem}
   <ul>
     <li>3Blue1Brown (Grant Sanderson). <em>Large Language Models explained briefly.</em> YouTube. <a href="https://www.youtube.com/watch?v=LPZh9BOjkQs">youtube.com/watch?v=LPZh9BOjkQs</a>. Embedded under YouTube's standard embed terms; the "Be the model" activity is built on the video's explanation of next-word prediction and sampling.</li>
     <li>Austin, T. <em>UnBlooms™ — The Reflective Checkpoint Process.</em> <a href="https://tinaaustin.com/">tinaaustin.com</a>. The five checkpoints, the "Resist" exits, the centre of disciplinary judgement and the line "AI should support learning, not replace thinking" are hers; the figure on this page is a redrawing in the course palette, not the original graphic.</li>
+    <li>Fiesler, C. <em>How to get ChatGPT to not hallucinate? — but a good idea to always verify information!</em> YouTube. <a href="https://www.youtube.com/watch?v=0y7BSWoksyo">youtube.com/watch?v=0y7BSWoksyo</a>. Embedded under YouTube's standard embed terms.</li>
     <li>Austin, T. R., Gulya, J., et al. <em>Metacognition as Disciplinary Infrastructure in AI-Mediated Learning.</em> International Journal of Educational Innovation and Excellence, 4(1). <a href="https://digitalcommons.lindenwood.edu/ijedie/vol4/iss1/6/">digitalcommons.lindenwood.edu/ijedie/vol4/iss1/6/</a></li>
     <li>"Two versions of you" and the workshop design: Andy Parra-Martinez, EPY 3143, Mississippi State University. The vague-vs-scoped prompt describes Maya, the learner from this unit's case study.</li>
     <li>This page was drafted with Claude (Anthropic) from the in-person workshop plan and reviewed by the instructor. It runs entirely in your browser; nothing you type leaves this device.</li>
@@ -540,7 +551,7 @@ details[open] summary{margin-bottom:.5rem}
       'Rolls: '+(rolls.map(function(r){return r.n+'→'+r.w;}).join(', ')||'—'),
       'Sentence C: '+v('q_model1'),'Low-probability word: '+v('q_model2'),'',
       '4 · Tool type and user: '+v('q_build'),'',
-      '5 · Vague vs scoped: '+v('q_scoped'),'Catch one / build one: '+v('q_pick'),'',
+      '5 · Vague vs contextualized: '+v('q_scoped'),'Catch one / build one: '+v('q_pick'),'',
       '6 · Checkpoint I skip: '+v('q_agent')].join('\n');
     copyText(out, document.getElementById('copyStatus'));
   });

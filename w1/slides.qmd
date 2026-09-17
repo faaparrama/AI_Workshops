@@ -1,6 +1,6 @@
 ---
-title: "What the tool is, and who stays in charge"
-subtitle: "Week 5 · Workshop 1 · AI foundations for the capstone · TPACK: TK"
+title: "Introduction to AI co-creation"
+subtitle: "Week 5 · Workshop 1 · AI foundations for capstone · TPACK: TK"
 author: "Andy Parra-Martinez, Ph.D."
 format:
   revealjs:
@@ -16,30 +16,32 @@ editor: visual
 
 ## Today
 
-|  |  |
-|---:|----|
-| 0–5 | **The deal** — AI produces the tool. You stay the judge. |
-| 5–14 | **Video** — *Large Language Models explained briefly* |
-| 14–24 | **Activity** — be the model for ten minutes |
-| 24–34 | **What you could build** — tool types, code and no-code |
-| 34–44 | **Prompts, tested** — on your own device |
-| 44–55 | **Staying the agent** — UnBlooms, and cognitive offloading |
-| 55–60 | **Exit card** — and Milestone 1, at home |
+Use the accompanying worksheet file to take notes and track your progress
+
+|       |                                                          |
+|------:|----------------------------------------------------------|
+|   0–5 | **Basics** AI helps create the tool. You stay the judge. |
+|  5–14 | **Video** — *Large Language Models explained briefly*    |
+| 14–24 | **Activity** — be the model for ten minutes              |
+| 24–34 | **What you could build** — tool types, code and no-code  |
+| 34–44 | **Prompts, tested** — on your own device                 |
+| 44–55 | **Human Agency** — UnBlooms, and cognitive offloading    |
+| 55–60 | **Exit card** — and Milestone 1                          |
 
 
-## The deal {.divider}
+## Basics {.divider}
 
-## Four milestones, one project
+## Final Project Structure
 
-|  |  |
-|----|----|
-| **M1** · today, at home | **who** it is for, and the problem |
-| M2 | **how** it teaches |
-| M3 | **how** it motivates |
-| M4 | **who** it leaves out |
-| Showcase | the tool, and your defence of it |
+|              |                                          |
+|--------------|------------------------------------------|
+| **M1** · Now | **who** it is for what problem it solves |
+| M2           | **how** it teaches                       |
+| M3           | **how** it motivates                     |
+| M4           | **who** it leaves out                    |
+| Showcase     | the tool, and your defence of it         |
 
-**The AI will produce the tool.** *You* will decide who it is for, whether it is right, and whether it should exist.
+**AI will help create the tool.** *You* will decide who it is for, whether it is right, and whether it should exist.
 
 
 ## Video {.divider}
@@ -55,20 +57,18 @@ Watch for one thing: **what does the model actually do, one word at a time?**
 
 ## Activity {.divider}
 
-## Be the model
+## Be the AI Model **Groups by table. Ten minutes.**
 
-**Groups of three. Ten minutes.**
+| Pick a Sentence |                                               |
+|-----------------|-----------------------------------------------|
+| A               | The cat sat on the \_\_\_\_.                  |
+| B               | The student raised her \_\_\_\_.              |
+| C               | During the exam, Maya passed Leo a \_\_\_\_.  |
+| D               | The best way to learn algebra is to \_\_\_\_. |
+| E               | AI and educational psychology could \_\_\_\_. |
 
-| Sentence | |
-|---|---|
-| A | The cat sat on the \_\_\_\_. |
-| B | The student raised her \_\_\_\_. |
-| C | During the exam, Maya passed Leo a \_\_\_\_. |
-| D | The best way to learn algebra is to \_\_\_\_. |
-| E | AI and educational psychology could \_\_\_\_. |
-
-1.  **Train** *(4 min)* — five candidate words. Give each a probability. They must sum to 100.
-2.  **Generate** *(3 min)* — random number 1–100 on a phone. Walk the list until the numbers add past it. That word is the output. **Do it three times.**
+1.  **Train** *(4 min)* — write five candidate words. Give each a probability. They must sum to 100.
+2.  **Generate** *(3 min)* — draw a random number 1–100 on your phone. Pick the word in the list that is closest to the random number. That word is the output. **Do it three times.**
 3.  **Discuss** *(3 min)* — what happened when a low-probability word came up?
 
 
@@ -76,22 +76,31 @@ Watch for one thing: **what does the model actually do, one word at a time?**
 
 An LLM predicts the **most likely next text**, given what it has read.
 
-It has not met your learner. It has read a great many paragraphs *about learners like the one you described*, and it produces the most probable next paragraph.
+It has not met your learner. It has read a great many paragraphs *about learners like the one you described*, and it produces the most probable text about them.
 
-**Fluent ≠ true.** **Confident ≠ sourced.**
+**Fluent ≠ true.** **Confident ≠ verifiable sources.**
 
 
-## What you could build {.divider}
+## Your Project {.divider}
 
-## The tool, in plain terms {.smaller}
+## What you could build in your final project
 
-| Type | What it is | For whom | Example |
-|----|----|----|----|
-| **Chatbot tutor** | a chat with a written role, rules and a knowledge file — a *Socratic tutor* that asks before it tells | the learner | a Custom GPT · a Gem · a Claude Project · a Poe bot |
-| **Teaching assistant** | the same chat, pointed at *your* work — practice sets, feedback, exit tickets, rubrics, differentiated versions | you | a bot that turns one lesson into three reading levels |
-| **Artifact** | a single interactive page the chat generates on request — a simulation, a visualiser, a quiz, a card sort | the learner | *"make a quadratic I can drag"* |
-| **Stand-alone page — static** | an HTML file that lives on its own: Google Sites, GitHub Pages, a Canvas file. Same every visit. | learner or you | **Tuesday's Week 4 instrument** |
-| **Stand-alone page — dynamic** | a page that keeps state or talks to a model — a form that scores itself, an app with a login, a tutor with memory | learner | Forms + Sheets · Apps Script · Streamlit |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
+| Type                              | What it is                                                                                                           | Example                                                |
++===================================+======================================================================================================================+========================================================+
+| **Chatbot tutor**                 | a chat with a written role, rules and a knowledge file — a *Socratic tutor* that asks before it tells                | a Custom GPT · a Gem · a Claude Project · a Poe bot    |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
+| **Teaching assistant**\            | the same chat, pointed at *your* work — practice sets, feedback, exit tickets, rubrics, differentiated versions      | a bot that turns one lesson into three reading levels\ |
+| *(only with instructor approval)* |                                                                                                                      |                                                        |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
+| **Artifact**                      | a single interactive page the chat generates on request — a simulation, animation, a visualiser, a quiz, a card sort | *"make a quadratic I can drag"\                        |
+|                                   |                                                                                                                      | *Practice for your unit                                |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
+| **Stand-alone page — static**     | an HTML file that lives on its own: Google Sites, GitHub Pages, a Canvas file. Same every visit.                     | **Tuesday's \                                          |
+|                                   |                                                                                                                      | Week 4 instrument**                                    |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
+| **Stand-alone page — dynamic**    | a page that keeps state or talks to a model — a form that scores itself, an app with a login, a tutor with memory    | Forms + Sheets · Apps Script · Streamlit               |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------+
 
 
 ## Code or no-code
@@ -124,9 +133,11 @@ It has not met your learner. It has read a great many paragraphs *about learners
 
 ## Prompts, tested {.divider}
 
-## Vague vs. scoped {.smaller}
+## Vague vs. Contextualized {.smaller}
 
 **Live.** Same tool, same question, twice.
+
+AI output quality depends on the quality of the input: Can you trust the answer?
 
 ::::: columns
 ::: {.column width="50%"}
@@ -136,9 +147,9 @@ It has not met your learner. It has read a great many paragraphs *about learners
 :::
 
 ::: {.column width="50%"}
-**Scoped**
+**Contextualized** Developmentally appropriate
 
-> *A 9th grader can execute the quadratic formula but cannot say what the answer is. She learns from diagrams and hands-on work before text. In under 120 words, give her a picture of what the two solutions* are *before any formula.*
+> *A 9th grader can execute the quadratic formula but cannot say what the answer is. They learn from diagrams and hands-on work before text. In under 120 words, describe what the two solutions* are *before any formula.*
 :::
 :::::
 
@@ -161,11 +172,15 @@ Then **open the source.** Is the number there?
 ::: {.column width="50%"}
 **Build one**
 
-> *Make a five-question quiz for [your learners — can \_\_\_, cannot yet \_\_\_]. Then tell me which question you are least sure fits them, and why.*
+> *Make a five-question quiz for \[your learners — can \_\_\_, cannot yet \_\_\_\]. Then tell me which question you are least sure fits them, and why.*
 
 Read the answer to the second sentence first.
 :::
 :::::
+
+**Critical Judgement:** How do you know the AI didn't hallucinate? Can you verify the output?
+
+See this video from Dr. Casey Fiesler, an AI ethicist at the University of Colorado Boulder: <https://www.youtube.com/watch?v=0y7BSWoksyo>
 
 
 ## Staying the agent {.divider}
@@ -228,70 +243,95 @@ Austin, T. *UnBlooms™ — The Reflective Checkpoint Process.* Redrawn.
 :::
 
 
-## The five questions {.smaller}
+## Austin's Five Questions {.smaller}
 
-| Checkpoint | The question you stop and ask |
-|---:|----|
-| **1 · Intent & Entry** | *What am I asking for, and why this tool?* |
-| **2 · Generate & Verify** | *Is this true? Where would I check?* |
-| **3 · Critique & Judge** | *Does this fit* my *learners — or the probable learner?* |
-| **4 · Refine & Decide** | *What do I change, and what do I keep?* |
-| **5 · Create or Resist** | *Do I build this — or does a handout do the job?* |
++---------------------------+-------------------------------------------------------------+
+| Checkpoint                | The question you stop and ask                               |
++==========================:+=============================================================+
+| **1 · Intent & Entry**    | *What am I asking for, and why this tool?*                  |
++---------------------------+-------------------------------------------------------------+
+| **2 · Generate & Verify** | *Is this true? Where and how would I check?*                |
++---------------------------+-------------------------------------------------------------+
+| **3 · Critique & Judge**  | *Does this fit my need (learners or the probable learner)?* |
++---------------------------+-------------------------------------------------------------+
+| **4 · Refine & Decide**   | *What do I change, and what do I keep?*                     |
++---------------------------+-------------------------------------------------------------+
+| **5 · Create or Resist**  | *Do I build this — or does a simpler handout do the job?*   |
++---------------------------+-------------------------------------------------------------+
 
 At the centre: **your disciplinary judgement.** At every checkpoint: **× Resist** is an exit.
 
 > **Reflection is the process.** Pause at each checkpoint. Question the output. Make a deliberate choice.
+>
+> You are responsible for the use and consequences of everything the AI gives you.
 
 
 ## Cognitive offloading
 
 Handing a piece of thinking to something outside your head.
 
-|  |  |
-|----|----|
-| **Offload the production** | the HTML, the fifty practice items, the three reading levels, the first draft of the rubric |
-| **Keep the judgement** | who the learner is · whether the output is true · whether it fits · whether to build at all |
+AI is most useful when it augments what you can do for your students
+
++--------------------------------+---------------------------------------------------------------------------------------------+
+| **Offload the production**     | the HTML, the fifty practice items, the three reading levels, the first draft of the rubric |
++--------------------------------+---------------------------------------------------------------------------------------------+
+| **Keep the judgement**         | who the learner is · whether the output is true · whether it fits · whether to build at all |
++--------------------------------+---------------------------------------------------------------------------------------------+
+| **Be present for the learner** | if you've gained time, that's time for personal interaction and relationship building       |
++--------------------------------+---------------------------------------------------------------------------------------------+
 
 **You cannot use a tool well if you do not know what you asked it to do — or if you accept whatever it produces.**
 
 
-## Prompting, by checkpoint {.smaller}
+## How to prompt using the checkpoints {.smaller}
 
-| Checkpoint | The habit |
-|---:|----|
-| **Intent** | Write the ask in one line *before* opening the tab: *who · can/cannot yet · what output.* If you cannot, you are not ready to prompt. |
-| **Generate** | Give it the learner, not the age. Ask for under N words. Ask it to name what it is least sure about. |
-| **Verify** | One claim, checked by you, every time. Sources named; sources opened. |
-| **Critique** | *"Which of your assumptions about these learners could be wrong?"* — then decide if it is right. |
-| **Refine** | Re-prompt with what it got wrong, not with "try again." |
-| **Decide** | Keep, change, or resist. Say which, and why, in your own words. |
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Checkpoint   | Habits to decide whether AI is appropriate or not                                                                                                        |
++=============:+==========================================================================================================================================================+
+| **Intent**   | Write the ask in one line *before* opening the tab: *who · can/cannot yet · what output.* **If you cannot determine this, you are not ready to prompt.** |
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Generate** | Give it the learner, not the age. Ask for under N words. Ask it to name what it is least sure about.                                                     |
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Verify**   | How do you know it's true?\                                                                                                                              |
+|              | One claim, checked by you, every time. Sources named; sources opened.                                                                                    |
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Critique** | *"Which of your assumptions about these learners could be wrong?"* — then decide if it is right.                                                         |
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Refine**   | Re-prompt with what it got wrong, not with "try again."                                                                                                  |
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Decide**   | Keep, change, or resist. Say which, and why, in your own words.                                                                                          |
++--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 ## Two versions of you
 
-|  |  |
-|----|----|
-| Used AI as a tool | Outsourced the thinking |
-| Struggled, failed, revised, improved | Never sat with the confusion |
++----------------------------------------+-------------------------------------------------+
+| **Competent and ethical user**         | **Not ready for AI**                            |
++----------------------------------------+-------------------------------------------------+
+| Used AI as a tool                      | Outsourced the thinking                         |
++----------------------------------------+-------------------------------------------------+
+| Struggled, failed, revised, improved   | Never sat with the confusion                    |
++----------------------------------------+-------------------------------------------------+
 | Knows what good reasoning *feels* like | Guiding others through confusion they never had |
++----------------------------------------+-------------------------------------------------+
 
-**The tool can do your homework. It cannot do your rehearsal.**
+**The tool can do your homework. It cannot do your rehearsal — and if it did the homework, you likely didn't learn at all.**
 
 
 ## Exit card {.divider}
 
 ## Your prompt, twice
 
-On the card — **three minutes:**
+On the tool — **three minutes:**
 
-**Before.** The prompt you would have written on Monday.
+**Before.** Write the prompt you would have written before this session.
 
-**After.** The same request, scoped to *your* learners — what they can do, cannot yet, how they learn — and one line asking the tool what it is least sure about.
+**After.** The same request, contextualized to *your* learners — what they can do, cannot yet, how they learn — and one line asking the tool what it is least sure about.
 
 
-## Milestone 1 — at home {.smaller}
+## Milestone 1 {.smaller}
 
-**One page. Five parts.** Instructions in `02_milestone.md` — you have had them since Tuesday.
+**One page. Five parts.** Instructions in Canvas, done in Packback.
 
 1.  **Who** — *a class, a group, or one person; observed behaviours, not labels*
 2.  **The problem** — *can \_\_\_ but cannot yet \_\_\_, because \_\_\_*
@@ -299,14 +339,12 @@ On the card — **three minutes:**
 4.  **Assumptions blind spot** — *one default the AI would have about your learners, and how you can tell*
 5.  **Synthesis** — *what Unit 1 predicts they will do with it*
 
-Then **peer feedback** — `03_peer_feedback.md`, four boxes on a partner's draft, before the milestone closes.
+Then **peer feedback** — critically challenge the work and provide suggestions.
 
 
-## Tuesday
+## Next
 
--   Unit 2 opens — **Topic T05**, memory and cognition
--   *Nine minutes* — a timed lesson transcript
--   Reflection 4
+-   Unit 2 opens — Memory and cognition
 
 
 ## Sources {.smaller}

@@ -7,7 +7,7 @@ Both are hosted here on GitHub Pages.
 
 | | In-person deck | Self-guided page | Status |
 |---|---|---|---|
-| **Workshop 1 — What the tool is, and who stays in charge** | [`w1/slides.html`](w1/slides.html) | [`w1/`](w1/) | ✅ |
+| **Workshop 1 — Introduction to AI co-creation** | [`w1/slides.html`](w1/slides.html) | [`w1/`](w1/) | ✅ |
 | Workshop 2 — Reasoning structure | `w2/slides.html` | `w2/` | planned |
 | Workshop 3 — Agents | `w3/slides.html` | `w3/` | planned |
 | Workshop 4 — Alignment, adaptability, and the production line | `w4/slides.html` | `w4/` | planned |
