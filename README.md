@@ -13,8 +13,8 @@ source for the workshops; the class links here and keeps no copy.**
 | | In-person deck | Self-guided page | Status |
 |---|---|---|---|
 | **Workshop 1 — Introduction to AI co-creation** | [`w1/slides.html`](w1/slides.html) | [`w1/`](w1/) | ✅ |
-| Workshop 2 — Reasoning structure | `w2/slides.html` | `w2/` | planned |
-| Workshop 3 — Agents | `w3/slides.html` | `w3/` | planned |
+| Workshop 2 — Curation: teaching the tool what to teach | `w2/slides.html` | `w2/` | planned |
+| Workshop 3 — Agents: teaching the tool how to talk | `w3/slides.html` | `w3/` | planned |
 | Workshop 4 — Alignment, adaptability, and the production line | `w4/slides.html` | `w4/` | planned |
 
 The workshops are **detached from the milestones**: a milestone is written at home, after its
@@ -23,19 +23,28 @@ pages carry no dates; deadlines live in Canvas.
 
 ## The spine
 
-Each workshop teaches one idea about language models and pairs it with one idea about
-learners. The four milestones are stations on a production line; Workshop 4 is where the
-belt runs end to end.
+Each workshop teaches one idea about language models and pairs it with the unit the class
+has just finished. The four milestones are stations on a production line: the tool exists
+from Workshop 2 (v0) and Workshop 4 is where the belt runs end to end. Students test their
+own prompts v0 → v1 → v2; the workshop is where each version is built, not graded.
 
 | | Workshop 1 | Workshop 2 | Workshop 3 | Workshop 4 |
 |---|---|---|---|---|
+| Theme | Introduction to AI co-creation | **Curation** — teaching the tool what to teach | **Agents** — teaching the tool how to talk | **Alignment & adaptability** — rules, edge learners, ship |
 | Milestone | **M1** who / what | **M2** how it teaches | **M3** how it motivates | **M4** who it leaves out → **ship** |
-| The LLM idea | prediction, not knowledge | chain-of-thought is a worked example; the context window is working memory; decomposition is chunking | an agent is a perceive → decide → act loop with memory — a self-regulation loop, and a feedback loop | system prompts, RLHF, guardrails: rules the tool is made to follow — and every rule set has a default learner it was written for |
-| The learner idea | developmentally appropriate ≠ simpler-sounding | schema, not pattern; cognitive load lived | contingent, informational feedback; scaffolds that fade | aligned *to whom* — reading level, language, modality, attention |
-| "Be the ___" | be the model | be the reasoner · overload me | be the agent (agent · learner · observer) | be the rulebook (write five rules; the next group breaks them) |
-| Build block | the tool types | the system prompt as a worked example + a knowledge file | conditional feedback rules, persona-tested by a partner | red-team + accessibility audit → combine → deploy |
-| Ships | — | **v0** — system prompt in a builder, one test question | **v1** — feedback rules added | **v2** — final, deployed |
+| Unit anchor | development (T02–T04) | memory, cognitive load, complex cognition (T05–T07) | motivation: behaviourism · SDT / C.A.R.E. · self-efficacy · value · self-regulation | individual differences, exceptionalities |
+| The LLM idea | prediction, not knowledge | the context window is working memory; a knowledge file is the tool's fund of knowledge; chain-of-thought is a worked example | an agent is a perceive → decide → act loop with memory — a self-regulation loop, and a feedback loop | system prompts, RLHF, guardrails: rules the tool is made to follow — and every rule set has a default learner it was written for |
+| The learner idea | developmentally appropriate ≠ simpler-sounding | what should they *remember*, and what should they reason, critique, create or transfer? Nobody memorises what they trust the web or the AI to hold — and long AI output is itself a working-memory bottleneck the reader has to pay | how the message is packaged: autonomy, competence, relatedness (C.A.R.E.), plus self-efficacy, value, intrinsic motivation, self-regulation — the same principles the weekly handouts are built on | aligned *to whom* — reading level, language, modality, attention |
+| What the student brings | a population (M1) | a **fund of knowledge**: topic list, sequencing, the standard, how achievement is measured | three learner personas from M1, including the two who break the design | their v1 and its rules |
+| "Be the ___" | be the model | be the reasoner · overload me (cognitive load lived, not defined) | be the agent (agent · learner · observer triads) | be the rulebook (write five rules; the next group breaks them) |
+| Build block | the tool types | curate the knowledge file, ask the same question with and without it, diff; then the system prompt as a worked example — role → steps → what to hold back → stopping rule | conditional feedback rules in C.A.R.E. language — if the learner does X, the tool says Y — persona-tested by a partner | red-team + accessibility audit → combine → deploy |
+| Ships | — | **v0** — grounded system prompt in a builder, one test question | **v1** — feedback rules added | **v2** — final, deployed |
 | UnBlooms emphasis | the whole cycle | Generate & Verify | Critique & Judge | Refine & Decide → Create or Resist |
+
+**The weeks between workshops build toward the next one.** Each weekly handout carries one
+short bridge from that week's topic to the tool — Week 6 (memory) asks why nobody memorises
+what they trust the AI to hold, and what that means for the tool's fund of knowledge — so a
+workshop opens on ground the class has already walked.
 
 Every deck keeps the same seven blocks — the deal · watch · be the ___ · what this changes
 for your tool · prompts, tested · staying the agent · exit card — so a new workshop is a
