@@ -13,7 +13,7 @@ source for the workshops; the class links here and keeps no copy.**
 | | In-person deck | Self-guided page | Status |
 |---|---|---|---|
 | **Workshop 1 — Introduction to AI co-creation** | [`w1/slides.html`](w1/slides.html) | [`w1/`](w1/) | ✅ |
-| Workshop 2 — Curation: teaching the tool what to teach | `w2/slides.html` | `w2/` | planned |
+| **Workshop 2 — Curation: teaching the tool what to teach** | [`w2/slides.html`](w2/slides.html) | [`w2/`](w2/) | ✅ |
 | Workshop 3 — Agents: teaching the tool how to talk | `w3/slides.html` | `w3/` | planned |
 | Workshop 4 — Alignment, adaptability, and the production line | `w4/slides.html` | `w4/` | planned |
 
@@ -33,7 +33,7 @@ own prompts v0 → v1 → v2; the workshop is where each version is built, not g
 | Theme | Introduction to AI co-creation | **Curation** — teaching the tool what to teach | **Agents** — teaching the tool how to talk | **Alignment & adaptability** — rules, edge learners, ship |
 | Milestone | **M1** who / what | **M2** how it teaches | **M3** how it motivates | **M4** who it leaves out → **ship** |
 | Unit anchor | development (T02–T04) | memory, cognitive load, complex cognition (T05–T07) | motivation: behaviourism · SDT / C.A.R.E. · self-efficacy · value · self-regulation | individual differences, exceptionalities |
-| The LLM idea | prediction, not knowledge | the context window is working memory; a knowledge file is the tool's fund of knowledge; chain-of-thought is a worked example | an agent is a perceive → decide → act loop with memory — a self-regulation loop, and a feedback loop | system prompts, RLHF, guardrails: rules the tool is made to follow — and every rule set has a default learner it was written for |
+| The LLM idea | prediction, not knowledge | the context window is working memory; a knowledge file is the tool's fund of knowledge; chain-of-thought is a worked example | an agent is a perceive → decide → act loop with memory — a self-regulation loop, and a feedback loop | system prompts, RLHF, guardrails: rules the tool is made to follow — and every rule set has a default learner it was written for. Fine-tuning is conceptual change (an existing structure reshaped by new examples). Emergent capabilities ↔ expertise development: complex performance from accumulated knowledge — taught with the open question of whether emergence is real or an artefact of how it is measured (Schaeffer et al., 2023) |
 | The learner idea | developmentally appropriate ≠ simpler-sounding | what should they *remember*, and what should they reason, critique, create or transfer? Nobody memorises what they trust the web or the AI to hold — and long AI output is itself a working-memory bottleneck the reader has to pay | how the message is packaged: autonomy, competence, relatedness (C.A.R.E.), plus self-efficacy, value, intrinsic motivation, self-regulation — the same principles the weekly handouts are built on | aligned *to whom* — reading level, language, modality, attention |
 | What the student brings | a population (M1) | a **fund of knowledge**: topic list, sequencing, the standard, how achievement is measured | three learner personas from M1, including the two who break the design | their v1 and its rules |
 | "Be the ___" | be the model | be the reasoner · overload me (cognitive load lived, not defined) | be the agent (agent · learner · observer triads) | be the rulebook (write five rules; the next group breaks them) |

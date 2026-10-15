@@ -1,0 +1,606 @@
+---
+title: "Curation: teaching the tool what to teach"
+subtitle: "Workshop 2 · how the model processes, and what you feed it · TPACK: TK + PK"
+author: "Andy Parra-Martinez, Ph.D."
+format:
+  revealjs:
+    theme: [default, ../shared/msstate.scss]
+    slide-number: c/t
+    footer: "AI Workshops · Workshop 2"
+    history: false
+    embed-resources: true
+    slide-level: 2
+    include-after-body: ../shared/reveal_a11y.html
+editor: visual
+---
+
+## Today
+
+```{=html}
+<style>.reveal table{font-size:.9em} .reveal section#today table{font-size:.74em}</style>
+```
+
+Bring: your **M1**, your **standard** (quoted, with its source), and your **Readiness Checks from Weeks 6–8**.
+
+|       |                                                                       |
+|------:|-----------------------------------------------------------------------|
+|   0–3 | **The map** — two kinds of learning                                   |
+|  3–26 | **Inside the model** — what it reads, and how it reasons              |
+| 26–30 | **Overload me** — predict which rule the tool will drop               |
+| 30–58 | **Curate** — what it fills in, your file in your lane, then v0         |
+| 58–70 | **Staying the agent** — catch your v0 pattern-matching                |
+| 70–75 | **Exit card** — your v0, one test, one fix                            |
+
+::: notes
+Workshop 2 of four. Seventy-five minutes. Two kinds of learning in one session, in this order: first how a model processes what you give it (technical), then what you give it (curation). The first half is the reason for the second: every mechanism ends with "so the file has to look like this."
+
+Say this sentence early: "You have three of five parts of M2 in your Readiness Checks already. Today builds the other two, and puts all five inside a tool."
+
+Before class: one chat tool open with a **fresh** chat (web search stays on; the main tools do not let you turn it off), your own state standard's code, Case Study 2's Matthew paragraph ready to paste, the overload prompt (slide "Overload me") copied to the clipboard, and the bat-and-ball item and the sit-in ask from part 4 ready to paste.
+
+If time runs short, stop where you are: students finish at home on the online page, which has every block and both full videos. Protect the v0 and the exit card.
+
+The README rule applies today: every lane ships v0 by the end of this workshop, or the student works in lane A for the semester. Lane B and C setup is not workshop time.
+:::
+
+## Two kinds of learning · Week 6, memory
+
+| LLM concept | Cognitive theory | What it means | Part |
+|---|---|---|---|
+| context window | working memory (Baddeley) | limited active capacity, in both | 1 |
+| attention | selective attention | focus on what is relevant | 2 |
+| RAG | long-term memory retrieval | pulled from a store when cued | 3 |
+| hallucination | constructive memory (Bartlett) | recall rebuilds the gist | 3 |
+| embeddings | semantic memory | meaning lives in relationships | 3 |
+
+::: notes
+Three minutes across this slide and the next two. This is the map for the hour; come back to it as each part starts. The rows follow the three weeks of Unit 2 they just finished, in the order today's parts take them, so every LLM idea lands on a theory they already own. The last column is the numbered part of "Inside the model" where it comes up; "verify" is the Staying the agent block.
+
+Every mechanism you can name is a design decision you can make on purpose. Say "behaves like," not "is": the parallels are useful, not exact.
+
+Hallucination appears twice on purpose. Under memory, it explains *why* it happens (Workshop 1: the probable, rebuilt from the gist). Under complex processes, it names what the learner and the designer must do about it.
+:::
+
+## Two kinds of learning · Week 7, knowledge construction
+
+| LLM concept | Cognitive theory | What it means | Part |
+|---|---|---|---|
+| training | schema theory | structure built from repeated patterns | 3 |
+| chain-of-thought | worked examples, *not yet* metacognition | visible steps, without monitoring them | 4 |
+
+::: notes
+Fine-tuning, the parallel to conceptual change, comes back in Workshop 4; it is not on the slide.
+
+Each row sits in the week whose topic it comes from: semantic memory is T05 (Week 6); worked examples and metacognition are T07 (Week 7). Week 8's pattern-matching row is T08 twice over. Algorithms versus heuristics: next-token prediction is a heuristic, fast and usually right, and its written steps imitate an algorithm without running one. And "why the same problem reworded stops being the same problem for a student": a novice sorts problems by surface features, and the model answers the familiar version. That is the part 4 demo and the "change one detail" check in the verify block.
+
+Chain-of-thought is the parallel to push on. Written steps look like metacognition, but metacognition means monitoring your own thinking, and the model's written steps do not reliably reflect what drove its answer (Turpin et al., 2023). The monitoring is the human's job. That is part 4 and the verify block.
+
+If someone asks about fine-tuning: it is real, it is how a model's existing structure is changed by new examples after training, the parallel to conceptual change, and none of them will fine-tune for the capstone. Workshop 4 is where rules and training meet.
+:::
+
+## Two kinds of learning · Week 8, complex processes
+
+| LLM concept | Cognitive theory | What it means | Part |
+|---|---|---|---|
+| pattern-matching | heuristics vs. algorithms; the reworded problem | a heuristic; its steps imitate an algorithm | 4 |
+| hallucination | critical evaluation | you verify; it does not | verify |
+
+**Then curation:** your knowledge file is your fund of knowledge; your system prompt, an advance organiser.
+
+::: notes
+The Week 8 rows are explained on the previous slide's notes. Land the curation line: the second half of today is the two files.
+:::
+
+## Inside the model {.divider}
+
+## *AI vs human thinking*
+
+IBM Technology · Martin Keen · from **3:55**
+
+<https://www.youtube.com/watch?v=-ovM0daP6bw>
+
+Watch for one thing: **what does each one do when it runs out of room?**
+
+::: notes
+Three minutes. You stop it. Suggested: start at 3:55 (tokens), stop at 6:35, after the memory segment, which answers the watch-for. The whole video (about 12 minutes) is on the online page for anyone who wants the rest.
+
+The answer to the watch-for: a person's memory is associative, and what falls out of working memory can be cued back from long-term memory. The model's window has a fixed size; once a long chat passes it, the oldest text drops out (or the tool summarises it), and nothing from the chat goes into its training. Keen says the window "clears"; say "drops the oldest text," which is closer to how the tools behave. That is part 1, next.
+
+The rest of the video maps onto today's table, for anyone who wants it (the online page links the full video):
+
+- 0:52–3:00 learning: neuroplasticity vs. back-propagation on huge datasets. Training, Week 7 schema row.
+- 6:36–8:05 reasoning: System 1 and 2; the model simulates reasoning with plausible tokens. Part 4.
+- 8:06–9:43 error: hallucination as confabulation, the brain filling in missing detail. Bartlett, the map's hallucination row, and slide "Whatever you leave out, it fills in."
+- 9:44–12:11 embodiment: no sensory experience of the world. Workshop 4, edge learners.
+:::
+
+## 1 · The context window is working memory
+
+:::: {.columns}
+::: {.column width="55%"}
+Everything the model "knows" during a chat sits in one window: **your instructions, the file, the chat so far, its own answers.**
+
+- Big: about **1 million tokens** in most current models, some 750,000 words.
+- But the start and end beat the middle: **primacy and recency** (Week 6).
+:::
+::: {.column width="45%"}
+```{=html}
+<svg viewBox="0 0 470 300" width="100%" role="img" aria-label="Two U-shaped curves: recall by position for people and for models, both higher at the start and the end than in the middle" style="font-family:inherit">
+  <line x1="50" y1="240" x2="450" y2="240" stroke="#6E6E6E" stroke-width="2"/>
+  <line x1="50" y1="240" x2="50" y2="30" stroke="#6E6E6E" stroke-width="2"/>
+  <text x="50" y="270" font-size="17" fill="#2A2426">start</text>
+  <text x="250" y="270" font-size="17" fill="#2A2426" text-anchor="middle">middle</text>
+  <text x="450" y="270" font-size="17" fill="#2A2426" text-anchor="end">end</text>
+  <text x="250" y="294" font-size="15" fill="#6E6E6E" text-anchor="middle">position in the list · in the window</text>
+  <text x="38" y="135" font-size="15" fill="#6E6E6E" text-anchor="middle" transform="rotate(-90 38 135)">recalled · used</text>
+  <path d="M60,70 C150,215 330,215 440,48" fill="none" stroke="#5D1725" stroke-width="5"/>
+  <path d="M60,52 C160,235 330,235 440,95" fill="none" stroke="#6E6E6E" stroke-width="4" stroke-dasharray="10 7"/>
+  <line x1="170" y1="40" x2="200" y2="40" stroke="#5D1725" stroke-width="5"/><text x="208" y="46" font-size="17" fill="#5D1725" font-weight="600">you · Week 6</text>
+  <line x1="170" y1="68" x2="200" y2="68" stroke="#6E6E6E" stroke-width="4" stroke-dasharray="10 7"/><text x="208" y="74" font-size="17" fill="#6E6E6E" font-weight="600">the model · Liu 2024</text>
+  <rect x="200" y="185" width="100" height="40" rx="6" fill="#C99700" opacity=".18"/>
+  <text x="250" y="210" font-size="15" fill="#40101A" text-anchor="middle">lost here</text>
+</svg>
+```
+<p style="font-size:.5em;color:#6E6E6E;margin:0">Illustrative shape, not data.</p>
+:::
+::::
+
+**Design consequence:** the rules that matter go first, the file stays short, and long chats drift.
+
+::: notes
+Three minutes. Debrief the clip, then add the one new finding. This is a callback: Week 6's brief already named the context window.
+
+Size: most current models hold about a million tokens, roughly 750,000 words, several novels. Free tiers and some apps give less, so a student's tool may hold far fewer. A two-page knowledge file fits anywhere. A window that big rarely fills in one chat, so the clip's "runs out of room" matters less than it used to. What still matters is the middle, the next point.
+
+"Lost in the middle" (Liu et al., 2024): on long inputs, models retrieve information placed at the beginning or the end of the context much better than information in the middle. The class knows the human version as the serial-position curve. The parallel is useful, not exact; say "behaves like" rather than "is."
+
+Matthew kept only the first of several verbal instructions (Case Study 2). A tool given a 3,000-word system prompt drops the rules buried in the middle. Same design error: too much in one window, no structure.
+:::
+
+## 2 · Attention is selective attention
+
+> *The trophy didn't fit in the suitcase because **it** was too big.*
+>
+> *The trophy didn't fit in the suitcase because **it** was too small.*
+
+**Pairs, 1 minute:** what does *it* point to in each sentence, and which word told you?
+
+The model does the same thing for every word: it **weighs which other words in the window matter** for this one.
+
+**Design consequence:** whatever you put in the window competes for attention. Irrelevant text is noise the model has to weigh.
+
+::: notes
+Three minutes. Let pairs answer: big → trophy, small → suitcase. The single word that flips it, "big" or "small," sits far from "it."
+
+Unit 2 twin: selective attention. A learner attends to some of what is in front of them; the model's attention weights do the same job across the whole window. Both can be pulled toward salient but irrelevant material.
+
+This is why "paste the whole 200-page curriculum guide" is a bad knowledge file. Everything in the window gets weighed. Curation is deciding what deserves attention.
+:::
+
+## 3 · Does it read the internet?
+
+**True or false:** *When I ask a chatbot a question, it reads the internet and understands it.*
+
+Watch, in a fresh chat. Predict before each.
+
+1. Quote a standard, word for word.
+2. Ask about Matthew from Case Study 2.
+3. Paste Matthew's paragraph and ask again.
+
+::: notes
+Five minutes with the next slide. Take the vote by hands first; most will say true. That is the misconception to replace.
+
+You drive, live. Three asks in one fresh chat; predict before each.
+
+1. **Dense.** "Quote, word for word, [standard code]." It gets it right. Tested October 2026 on Gemini, Claude and ChatGPT: all three quoted it exactly. That is the point, not a failed demo. Common Core text is on thousands of pages, so it is deep in training and one search away. Where text is common, the probable *is* the true (McCoy et al., 2024: models do best where the answer is probable in their training text).
+2. **Thin.** "In EPY 3143's Case Study 2, why does Matthew stop halfway through his independent work?" The case lives only in our Canvas; no search can reach it. Either it says it cannot find the case, or it answers from the probable: a generic student with attention or motivation trouble. Both outcomes teach the same thing. It never met Matthew, and the class read him on Tuesday, so they can judge the answer themselves.
+3. **Paste.** Paste the case's Matthew paragraph and ask again. Now it uses the case: two or three verbal instructions, only the first remembered, "I forgot what I was supposed to do next." Working memory. Nothing about the model changed. What changed is what was in the window.
+
+On the next slide, say the line: right where the internet is dense, probable where it is thin. Their classroom, their learners and their unit are as thin as it gets. That is what M2 is for, and it is the reason the tracer test works later.
+:::
+
+## Where the words come from
+
+| | What actually happens |
+|------|------------------------|
+| **Training** | Billions of pages read **once**, before release, compressed into probabilities. No pages kept, no sources. |
+| **Web search** *(always on)* | It searches, copies a few pages **into the window**, and answers from them. |
+| **Your file** | Your text is copied **into the window**. A page or two fits whole. |
+
+It never reads anything outside the window. It **predicts from what is in it.**
+
+::: {.fragment}
+**Right where the internet is dense, probable where it is thin. Your classroom is where it is thin.**
+:::
+
+*Far bigger collections are searched first, and only the closest pieces copied in. That is* **RAG**. *Your file will not need it.*
+
+::: notes
+Debrief the dense step first: ask the room *which row of the table did that come from?* Check the screen together. If it shows "Searched the web," source links or citations, it copied the page into the window, the same mechanism as pasting your file. If not, it regenerated the text from training: a passage repeated on that many pages makes each next word close to certain, so ordinary prediction rebuilds it word for word (Carlini et al., 2023). Either way, it did not read and understand. Their classroom material fails both ways: it was never repeated enough to memorise, and search cannot reach it.
+
+Unit 2 twins: training builds something like a schema from repeated patterns (Week 7), and recall from it is constructive, Bartlett's point (Week 6). It answers from the gist, the way a learner rebuilds a memory from a schema. The window is working memory. A web search or a file is what you put into working memory so it does not have to reconstruct.
+
+If they ask about search: it is always on in the main tools and cannot be switched off. It copies whatever ranked first into the window and still predicts from it. It cannot reach Canvas, their lesson plans or their students. Search widens the window; it does not check it, and it does not reach your classroom.
+
+RAG, one sentence and move on (Lewis et al., 2020): it is web search pointed at your own documents, an open book where the model sees only the few pages the search hands it. It is the twin of long-term memory retrieval: a cue pulls the closest match into working memory. The search works by meaning (embeddings, the twin of semantic memory, Week 7). Their knowledge files are a page or two, and current models hold about a million tokens, so the whole file goes in. Long context is not the same as well used: that is part 1, the middle gets lost, and it is why the file stays short.
+
+The small print, for questions: collections far bigger than the window, a district's whole curriculum, are searched instead, and only the closest pieces copied in. That is RAG. Their file will not need it.
+:::
+
+## *How AI learned to reason*
+
+Engineering Visualized · from **0:00**
+
+<https://www.youtube.com/watch?v=hoPF9QbeGdc>
+
+Watch for one thing: **where does the model keep its in-between steps?**
+
+::: notes
+Three minutes. You stop it. Suggested stop: 2:29, after self-consistency. The whole video (about 7 minutes) is on the online page. The first four steps are the ones today uses: next-token prediction; the model's own output as a scratchpad; chain-of-thought; self-consistency (several reasoning paths, then the most common answer; Wang et al., 2023).
+
+The answer to the watch-for: in its own output, which goes back into the window. That is the first bullet on the next slide, and the context window from part 1.
+
+If you let it run, one sentence each: reinforcement learning (2:29–3:16) is training, which comes back in Workshop 4. Test-time compute (3:16–4:06) is the "Thinking…" they see in ChatGPT, Gemini or Claude: the model writes its scratchpad privately before it answers.
+
+The video's own conclusion is the bridge: reasoning models do not abandon next-token prediction; they transform it. Every step is still a prediction. The next slide tests what that means.
+:::
+
+## 4 · It reasons by writing, and pattern-matches
+
+**You drive, 6 minutes.** Predict before each.
+
+> **1 · Dense:** *A bat and a ball cost \$1.10. The bat costs \$1.00 more than the ball. How much is the ball?*
+>
+> **2 · Thin:** *I'm a 10th grader. Help me work out whether a newspaper report of the 1963 Jackson sit-in is reliable. Don't tell me the answer.*
+
+::: notes
+Six minutes, you drive, live, two asks in one fresh chat.
+
+**1 · Dense.** The Week 8 Friction Move item, so they know the trap (10 cents is the System 1 answer; 5 cents is right). Tested October 2026: every major provider gets it right, and also gets a changed version right. That is the point. A famous problem is dense in training, and reasoning models check their written steps, which is what the video just showed. Ask the room: *why does it pass?* Passing a famous item is not evidence that it will reason about *your* learner.
+
+**2 · Thin.** The sit-in ask. Have the room count out loud: questions it asks the learner versus things it explains. The usual result is a full sourcing checklist (author, date, purpose, audience, corroboration), each item explained, perhaps one question at the end. Nothing in it is wrong, and it did the learner's sourcing for them. "Don't tell me the answer" lost to the probable tutoring move, which is to explain. That is the pattern-matching that matters for their tools: it answered the usual question, *how do you source a document?*, instead of this learner's, *help me do it*. If your provider does ask good questions, show it, then ask what in the prompt made the difference; that is the HOLD BACK line coming up.
+
+Build on Workshop 1's one idea, "it predicts the next word": chain-of-thought is that same prediction, run over its own steps. Chain-of-thought prompting (Wei et al., 2022) improves answers on multi-step problems. "Reasoning" models now do this internally before they answer. Turpin et al. (2023) showed the written explanation does not always reflect what actually drove the answer: it can be a plausible story after the fact. Models also do better on problems whose answers are probable in their training text than on equally easy problems whose answers are not (McCoy et al., 2024).
+
+Week 8 link, algorithms versus heuristics (T08). Next-token prediction is a heuristic: a fast shortcut that is usually right. Written steps let it work through a procedure, and on short or familiar ones that looks like running an algorithm. It is imitating one: each step is still a prediction, and accuracy falls as the procedure gets longer or less familiar (long multiplication is the standard case; Dziri et al., 2023). The exception is code. When ChatGPT, Gemini or Claude writes and runs code, a real algorithm does the work, and the screen says so ("Analyzing," "Ran code"). Optional thirty-second aside if time allows: ask for 739,284 × 518,097 "using code" and point at the indicator. On novelty: it can combine familiar patterns in new ways, and some combinations are useful, but performance drops the further a problem sits from its training (McCoy et al., 2024). That is the reworded problem.
+
+It is tempting to call this metacognition. It is not yet: metacognition is *monitoring* your thinking, and these steps are generated, not monitored. Visible reasoning is what makes monitoring possible; the monitoring is the learner's and yours.
+
+Unit 2 twin: worked examples and faded guidance. A worked example helps a novice; for someone who could do the step, it is redundant load and it removes the generation that builds the schema. M2 Part 2 is this decision: remember, or reason.
+
+Say the bridge: "Overload me shows what a prompt cannot hold; HOLD BACK in your v0 is how you stop this. In half an hour, you will catch your own v0 answering the usual question instead of your learner's."
+:::
+
+## What the two asks show
+
+- **1 passes.** It has seen this item thousands of times, and it writes its steps **into the window**, predicting each from the last.
+- **On 2, count** the questions it asks and the things it explains. It answered **the usual question** instead of **this learner's.**
+- **Its steps imitate an algorithm.** When it writes and runs code, the algorithm is real.
+
+**Design consequence:** a tutor that shows every step does the learner's thinking. Decide which steps the tool shows and which it **asks for.**
+
+::: notes
+The debrief for the two asks; the full notes are on the previous slide. Land the design consequence: it is M2 Part 2, remember or reason, and the HOLD BACK line of the v0.
+:::
+
+## Overload me
+
+**Lee asks:** *"This newspaper article is a primary source, so it's true, right?"* **Predict which rules break.**
+
+:::: {.columns}
+::: {.column width="50%"}
+1. Be encouraging.
+2. Mississippi examples.
+3. Ask; don't explain.
+4. [Under 60 words.]{.fragment .highlight-red fragment-index=1}
+5. ["Evidence," never "proof."]{.fragment .highlight-red fragment-index=1}
+6. [End with a question.]{.fragment .highlight-red fragment-index=1}
+:::
+::: {.column width="50%"}
+7. [No "bias" before the purpose.]{.fragment .highlight-red fragment-index=1}
+8. [Sources can disagree.]{.fragment .highlight-red fragment-index=1}
+9. [No bullet points.]{.fragment .highlight-red fragment-index=1}
+10. One question per turn.
+11. Use their name.
+12. Explain only what was asked.
+:::
+::::
+
+::: notes
+Four minutes, you drive, live. The slide shows short labels; paste the full prompt as one paragraph, the way a first-time builder writes it:
+
+*You are a tutor for 10th graders learning to source historical documents. Be encouraging. Use real examples from Mississippi history. Never explain a document; ask a question instead. Keep every reply under 60 words. Say "evidence," never "proof." Always end with a question. Avoid the word "bias" until the student has named the author's purpose. Mention that primary sources can disagree. Don't use bullet points. Do not ask more than one question per turn. Refer to the student by name if they give one. Do not explain what you were not asked.*
+
+*Student: my name is Lee. This newspaper article is a primary source, so it's true, right?*
+
+Four minutes total. The student turn is "my name is Lee" plus the question on the slide. The class scores the reply against the numbered list: call out the numbers it kept, then first, middle or last? Then advance once: rules 4–9, the middle, turn red. Most tools keep the first and last few and drop some middle ones: the word limit and the "bias" rule are the usual casualties. The student's yes-or-no question pulls against rule 3; watch whether it simply answers. Results vary by tool; if it dropped a first or last rule, say so, and ask what that one had in common with the middle ones.
+
+One debrief question: how would you rewrite it? Expected answers: put the non-negotiables first, number them, group them, cut the ones that do not matter. That is chunking, and it is the structure of the v0 template coming up.
+
+"Overload me" is the lived version of Week 6's load budget. The prompt is the tool's extraneous load; its reply is the learner's.
+:::
+
+## Curate {.divider}
+
+## Whatever you leave out, it fills in
+
+What you leave out, it fills with the **probable**. M2 replaces it with **what you actually teach.**
+
+| M2 part | Left out, the tool fills it with… | In your v0 |
+|-----------|---------------------------|---------|
+| **1 · Knowledge** | the textbook-average topic, in chapter order | KNOWLEDGE |
+| **2 · Remember or reason** | explaining everything; the learner reasons nothing | HOLD BACK |
+| **3 · Load** | long replies, every detail at once | LIMIT |
+| **4 · Misconception** | the right answer, delivered straight past the misconception | STEPS 3 |
+| **5 · Measure** | no endpoint: it praises and keeps going | STOP |
+
+**The closer your file is to your classroom, the less it has to guess.**
+
+::: notes
+Two minutes. This is the reason for M2, in one slide. Workshop 1: the probable, not the true. Part 3: it predicts from what is in the window. Put together: everything you do not put in the window, it predicts.
+
+The sit-in example makes it concrete. Ask a fresh chat Lee's question, "This newspaper article is a primary source, so it's true, right?" The probable answer is a friendly yes-but: "primary sources are valuable firsthand accounts…", followed by a full explanation. Nothing in it is wrong. It is the average lesson, and it does the student's sourcing for them. Every row of this table is visible in that one reply.
+
+Say: "M2 is the part of the tool you write."
+:::
+
+## The knowledge file is your fund of knowledge
+
+**M2 Part 1.** Fill it now, in a document.
+
+| | Write |
+|---------|---------------------|
+| **Standard** | the actual line, quoted, with its source |
+| **Topic list** | 4–8 **ideas**, each a sentence a learner could get wrong |
+| **Sequence** | the order, and why |
+| **Sources** | something you can open and check |
+| **Your example** | from your own teaching: your names, your numbers |
+| **Off limits** | what the tool must not teach or answer |
+
+*Heading:* "The Civil Rights Movement." *Idea:* "A primary source is evidence of what its author saw and wanted, not proof of what happened."
+
+::: notes
+Nine minutes, the longest block. Show the two worked slides for one minute, then come back to this one while they write. Circulate. They write; you look for headings and push them into ideas. A heading gives the tool nothing to teach and the learner nothing to be wrong about; an idea gives the tool a claim to check the learner against.
+
+Look-fors, from the M1 review:
+
+- **Population too wide.** "K–5" cannot have one topic list. One grade, one unit, now.
+- **The problem is motivation, practice or access.** Fine for M3 and M4. Today they name what the learner *learns*.
+- **The tool serves the teacher.** Still needs a topic list: the practice it generates is about something.
+
+Sources: if a student lists "the internet" or "ChatGPT", the source is the thing they would open to check. A textbook chapter, a state framework, a protocol, their own worked problems. Part 3 is the reason: the chatbot gives a reconstruction, so it cannot be a source.
+
+Off limits is the row people skip. Health, counselling, court and safety tools need it most: the tool never asks what happened, never acts as a counsellor, always names the trusted adult.
+:::
+
+## Worked: 10th-grade history · the content
+
+**Topic list**, as ideas a learner could get wrong
+
+1. A source's date and origin tell you what its author could know.
+2. A primary source is evidence of what its author saw and wanted, not proof of what happened.
+3. Every author wrote for a purpose and an audience, which shapes what they put in and left out.
+4. Two accounts of one event can disagree, and each can be accurate about what its author saw.
+5. A claim is stronger when sources with different purposes agree.
+
+::: notes
+Show this and the next slide for one minute together, then go back to the blank template while they write.
+:::
+
+## Worked: 10th-grade history · the frame
+
+| | |
+|------|------------------------|
+| **Standard** | "Cite specific textual evidence to support analysis of primary and secondary sources, attending to such features as the date and origin of the information." *Common Core RH.9-10.1* |
+| **Sequence** | 1 and 2 first, on one document; 3 once they can source it without help; 4 and 5 need the second document. |
+| **Sources** | the standard above; the two documents; our textbook's civil rights chapter |
+| **Your example** | two accounts of the May 1963 Woolworth's sit-in in Jackson: the *Jackson Daily News* report, and Anne Moody's memoir *Coming of Age in Mississippi* (1968) |
+| **Off limits** | writing their analysis; saying which account is "true"; documents not in this file |
+
+::: notes
+"Your example" is the tracer for the test two slides ahead: nothing on the internet contains this teacher's document pair.
+:::
+
+## M2 in your lane · where the files go
+
+M2 becomes **two files**. Same files in every lane; only where they go changes.
+
+| | **A · Provider** | **B · OpenRouter** | **C · Antigravity** |
+|------|---------|---------|---------|
+| **Knowledge file** | upload as the GPT's, Gem's or Project's knowledge | paste into the system prompt, under the v0 | `knowledge.md`, sent with every message |
+| **v0 prompt** | the Instructions box | the system prompt | `prompt.md`, sent as the system message |
+| **Test it** | the preview chat | a fresh chat | open the page |
+
+::: notes
+Two minutes. Point at their own column only; nobody needs the other two.
+
+Lane A: the builder holds both files. The upload is the knowledge file; the Instructions box is the v0.
+
+Lane B: no upload. The file's text is pasted into the system prompt, so it is sent with every message. That is a token cost on every turn: a page or two is about a thousand tokens, which is fine on a small model and one more reason to keep the file short.
+
+Lane C: the agent builds a page that reads both files and sends them with each message. Ask the agent for the token cap and the turn counter by name; those are M2 Parts 3 and 5 written as code instead of requests. The API key never goes into a page published to GitHub Pages; the setup page covers how.
+
+Whatever the lane, the three tests on the next slide still apply. A file in the window is not proof the tool used it.
+:::
+
+## M2 in your lane · ask or enforce
+
+| | **A · Provider** | **B · OpenRouter** | **C · Antigravity** |
+|------|---------|---------|---------|
+| **LIMIT** (Part 3) | asked for in the prompt | the prompt, plus a max-length setting | the prompt, plus a token cap in code |
+| **STOP** (Part 5) | asked for in the prompt | asked for in the prompt | a turn counter in code |
+
+Further right, the build can **enforce** parts of M2 that lane A can only **ask for**.
+
+::: notes
+Lane C: ask the agent for the token cap and the turn counter by name. Those are M2 Parts 3 and 5 written as code instead of requests.
+:::
+
+## Is it using your file?
+
+**8 minutes, your device.** Upload or paste your file, and add: *Teach only from the attached file. If the question is outside it, say so.*
+
+| Test | Do this | It used the file if… |
+|---|---|---|
+| **Tracer** | Ask a question that needs **your example**. | your example comes back, not a textbook one |
+| **Edge** | Ask about something **just outside** the file, in the same subject. | it says so, instead of answering from training |
+| **Quote** | Ask *which line it used*, then **find it** yourself. | the line is really there |
+
+Then the same question in a **fresh chat without the file.** What changed?
+
+
+::: notes
+Eight minutes. The question to plant: "How do you know it read your file?" Most will say "the answer sounded right." Part 3 is why that is not evidence: training produces the probable, fluent version of their subject without the file.
+
+Tracer: their own worked example is the cleanest signal, because nothing on the internet contains *their* document pair, *their* students' names, *their* questions. Use a real example from their teaching, never a planted false fact; the file is what learners will be taught from.
+
+Edge: a question one step outside the topic list (the next unit's idea). If it answers fluently, the KNOWLEDGE line is not holding, or the tool is falling back on training when the file has nothing on it.
+
+Quote: models will invent a plausible quote (Workshop 1). The test is that the student opens the file and finds the line. A quote that is not in the file means the answer did not come from it.
+
+If all three fail: the file is too long (the rule sat in the middle), the ideas are headings (nothing specific to use), or the file was never attached to this chat. All curation problems, all fixable today.
+
+Lanes: in lane A, upload to a Project / Gem / GPT. In lane B (OpenRouter) and lane C (Antigravity), the file's text is pasted into the system prompt, so it is all in the window; the tests still apply, because being in the window is not the same as being used. Pair anyone stuck with someone in lane A.
+:::
+
+## v0: the system prompt as a worked example
+
+```{=html}
+<style>.reveal pre{width:100%;font-size:.7em} .reveal pre code{max-height:none!important;line-height:1.3}</style>
+```
+
+```
+ROLE      You are a [tool type] for [learners: they can ___, cannot yet ___].
+
+KNOWLEDGE Teach only the ideas in the attached file, in its order.
+          Outside the file: say so and send them to [the teacher].
+
+STEPS     1. Ask what the learner already thinks before you explain.
+          2. One idea at a time. Check it before moving on.
+          3. When you hear [the misconception], respond by ___.
+
+HOLD BACK Never give [what they must reason]. Give a question,
+          then a hint, then one worked step. Ask them to retrieve
+          [what they must remember] instead of reminding them.
+
+LIMIT     At most [N] words per reply. One question per turn.
+
+STOP      End when the learner [does the measure], or after
+          [N] turns: summarise in two lines and send them back.
+```
+
+::: notes
+Seven minutes: two to walk it, five to fill it. The four blocks the README names (role → steps → what to hold back → stopping rule) plus knowledge and the limit.
+
+Each line is an M2 part. KNOWLEDGE is Part 1. HOLD BACK is Part 2 (remember or reason). LIMIT is Part 3, the output-limit number from Week 6's load budget. STEPS line 3 is Part 4, Week 7's rule. STOP is Part 5, the measure.
+
+Why "worked example": the prompt shows the tool the steps of a good tutoring turn, in order, the way a worked example shows a novice the steps of a solution. Structured, numbered, non-negotiables first: everything the overload test just taught them.
+
+Then each student runs **one test question** in the tool with the prompt and the file. That run is v0. Lane B and C students paste the prompt as the system prompt.
+:::
+
+## v0, worked: the sit-in tutor
+
+```
+ROLE      You are a Socratic tutor for 10th graders: they can summarise
+          a document, cannot yet explain how its author shaped it.
+
+KNOWLEDGE Teach only the ideas in the attached file, in its order.
+          Outside the file: say so and send them to their teacher.
+
+STEPS     1. Ask what they think the document says before you explain.
+          2. One idea at a time. Check it against the second account.
+          3. When they say a source is true because it is primary,
+             ask what its author could and could not see.
+
+HOLD BACK Never say which account is more reliable. Give a question,
+          then a hint, then one modelled step. Ask them to retrieve
+          "date, origin, purpose, audience" instead of reminding them.
+
+LIMIT     At most 60 words per reply. One question per turn.
+
+STOP      End when they explain on their own why the two sit-in
+          accounts differ, or after 12 turns: summarise in two lines.
+```
+
+::: notes
+One minute. Read STEPS 3 and HOLD BACK aloud: those are the two lines most first drafts leave out.
+:::
+
+## Staying the agent {.divider}
+
+## Catch your v0 pattern-matching
+
+**Change one detail** of your test question: a number, a condition, the order. Ask again.
+
+Find the step where it answered **the usual question** instead of **your learner's**:
+
+- its step 2 is the textbook's next heading, not your learner's next need;
+- it names the misconception, then explains the right idea instead of asking;
+- it praises and moves on without checking.
+
+That step goes on your exit card.
+
+**Then, quickly:** every claim from the file? · held back what they must reason? · under your word limit?
+
+::: notes
+Twelve minutes. UnBlooms checkpoint 2 (Generate & Verify) is this workshop's emphasis, per the spine. Walk one volunteer's v0 through it on the screen, then they do their own.
+
+This is part 4 again, on their own tool. The changed detail is what exposes it: a tool that followed their STEPS handles the variation; a tool that pattern-matched answers the familiar version. Each failure is fixable with one line in the prompt or one sentence in the file.
+
+The three quick checks are the KNOWLEDGE, HOLD BACK and LIMIT lines of the template. If a claim did not come from the file, ask whether the file says it at all, or says it only as a heading.
+
+The documentation log starts with M2. The decision and the reason at each checkpoint, in their own words.
+:::
+
+## Exit card {.divider}
+
+## Your v0, one test, one fix
+
+**Three minutes.** Paste into the exit card:
+
+1. Your **test question** and the **first two lines** of the tool's answer.
+2. **The step where its reasoning pattern-matched.**
+3. **The one line you will change** in the prompt or the file before M3.
+
+::: notes
+This is the Readiness Check for the week. It is also M2 Part 5's last paragraph, drafted: what the answer got right, what it pattern-matched, the one change before M3. Say that.
+
+Anyone without a running v0: lane A, now, before they leave. That is the lane rule.
+:::
+
+## Milestone 2
+
+**One page, plus your knowledge file and your v0.** Written at home, after today.
+
+1. **The fund of knowledge** *(today's table)*
+2. **Remember, or reason?** *(the HOLD BACK line)*
+3. **How the tool manages load** *(Week 6, and the LIMIT line)*
+4. **The misconception** *(Week 7, and STEPS line 3)*
+5. **The measure, and v0** *(today's exit card)*
+
+Then **peer feedback**: run your partner's v0 and tell them what a learner would have to know already for it to work.
+
+::: notes
+Two minutes. Point at the file; do not re-explain it. Deadline: whatever the course calendar says.
+
+Online section: the self-guided page carries the same blocks in the same order. M2 is built after it, in the Week 9 module.
+:::
+
+## Sources · 1 of 2 {.smaller}
+
+- Lewis, P., et al. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. *NeurIPS.*
+- Liu, N. F., et al. (2024). Lost in the middle: How language models use long contexts. *Transactions of the ACL, 12*, 157–173.
+- McCoy, R. T., et al. (2024). Embers of autoregression show how large language models are shaped by the problem they are trained to solve. *PNAS, 121*(41).
+- IBM Technology (Keen, M.). *AI vs human thinking: How large language models really work.* <https://www.youtube.com/watch?v=-ovM0daP6bw>
+- Dziri, N., et al. (2023). Faith and fate: Limits of transformers on compositionality. *NeurIPS.*
+- Engineering Visualized. *How AI learned to reason: From next token prediction to reasoning models.* <https://www.youtube.com/watch?v=hoPF9QbeGdc>
+
+## Sources · 2 of 2 {.smaller}
+
+- Wang, X., et al. (2023). Self-consistency improves chain of thought reasoning in language models. *ICLR.*
+- Wei, J., et al. (2022). Chain-of-thought prompting elicits reasoning in large language models. *NeurIPS.*
+- Turpin, M., et al. (2023). Language models don't always say what they think. *NeurIPS.*
+- Carlini, N., et al. (2023). Quantifying memorization across neural language models. *ICLR.*
+- Levesque, H., Davis, E., & Morgenstern, L. (2012). The Winograd schema challenge. *KR.*
+- Austin, T. *UnBlooms™ — The Reflective Checkpoint Process.* <https://tinaaustin.com/>
