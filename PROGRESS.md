@@ -114,3 +114,6 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 - **Incident checked against sources:** Hugging Face disclosure (Jul 16, 2026), METR investigation (Aug 26, 2026), CSA research notes. Some details (which model, the timeline) are still disputed, so the deck says so.
 - **Saved:** `w3/PLAN.md`, `w4/PLAN.md` and `w3/before_class.md`. Survey Q3 now asks whether Antigravity ran on Thursday.
 - **Course repo:** the Week 13 README and `_sections/*.yml` were updated (M3 at home, Sun Nov 15; the W3 title).
+
+**2026-11-10 (later) — W3 gets a hopeful example (Andy: "not everything is apocalypse and hype").** Navier–Stokes (OpenAI, Sep 2026: ≈10,000 agents, 88 hours, Lean-checked proof of finite-time blow-up) pairs with the Hugging Face incident. The lesson for both is the same: the stop rule and an outside check decide the ending. The claim is **contested**: mathematicians are still checking it, the Clay Institute lists the problem as open, and an Oct 13 Scientific American survey found the proof departs from the Córdoba–Martínez-Zoroa program. The deck says so. Settled backup: AlphaEvolve (2025). Recheck the status the morning of Nov 12.
+
