@@ -63,7 +63,7 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 
 ### Before Workshop 3 (Thu Nov 12)
 - [ ] **Tue Nov 10 · Andy:** send MSU ITS one line: *"Can a self-hosted Open WebUI with student logins be used for EPY 3143 coursework?"*
-- [ ] **Tue Nov 10 · Andy:** send students `w3/before_class.md` (optional Antigravity install), both sections. Check first that Antigravity is still free with a personal Google account.
+- [ ] **Tue Nov 10 · Andy:** send students `w3/before_class.md` (optional Antigravity install), both sections. ✅ Antigravity confirmed still free (Andy, 2026-11-10).
 - [ ] **Wed Nov 11 · Claude:** build `w3/agent_lab/`, the agent-log sheet, `w3/slides.qmd` and `w3/build_index.py` from `w3/PLAN.md`.
 - [ ] **Wed Nov 11 · Andy:** test the agent lab once on his Mac and record the ≈5-min run for online and non-installers. The recording is the Plan B if the live demo fails.
 - [ ] **Wed Nov 11 · Andy + Claude:** write `Week_13/02_milestone.md` (M3: HOW YOU TALK + three guardrails, at home, due Nov 15). It doesn't exist yet and has to be released with W3.
