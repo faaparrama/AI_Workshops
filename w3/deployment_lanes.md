@@ -56,8 +56,9 @@ Every tool starts from the same **skill folder**: `SKILL.md` (LEARNER · TASK ·
 3. Did Antigravity install and run on your laptop on Thursday? Yes · Tried, it failed · Didn't try.
 4. May your finished tool appear in a public catalog? With my name · Without my name · No.
 5. Do you have a GitHub account? Yes · No · I'll make one.
+6. What do you picture your tool looking like on screen? Describe the first thing the learner sees. Then upload a sketch, or a screenshot of a site or app that looks close. *(Text + file upload.)*
 
-**Reading the result.** Q2 = "No" or "none" on Q1, among chatbot students → proxy needed, with that many seats. Q3 = "Yes" → Lane C on Antigravity is possible. Q3 = "No" among hard-static students → those builds move to an office-hours clinic, or fall back to a chatbot. Q4 sets the catalog.
+**Reading the result.** Q2 = "No" or "none" on Q1, among chatbot students → proxy needed, with that many seats. Q3 = "Yes" → Lane C on Antigravity is possible. Q3 = "No" among hard-static students → those builds move to an office-hours clinic, or fall back to a chatbot. Q4 sets the catalog. Q6 goes straight into each student's P2 (Plan the page).
 
 ## Option to weigh after the survey: OpenRouter + Open WebUI
 

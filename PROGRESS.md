@@ -69,7 +69,7 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 - [ ] **Wed Nov 11 · Claude:** build `w3/agent_lab/`, the agent-log sheet, `w3/slides.qmd` and `w3/build_index.py` from `w3/PLAN.md`.
 - [ ] **Wed Nov 11 · Andy:** test the agent lab once on his Mac and record the ≈5-min run for online and non-installers. The recording is the Plan B if the live demo fails.
 - [ ] **Wed Nov 11 · Andy + Claude:** write `Week_13/02_milestone.md` (M3: HOW YOU TALK + three guardrails, at home, due Nov 15). It doesn't exist yet and has to be released with W3.
-- [ ] **Wed Nov 11 · Andy:** paste the four survey questions into a Canvas quiz, both sections.
+- [ ] **Wed Nov 11 · Andy:** paste the six survey questions (`w3/deployment_lanes.md`) into a Canvas quiz; Q6 needs a file-upload question, both sections.
 - [ ] **Wed Nov 11 · Andy:** Canvas message to the 8 online "not yet" students. Ask the two in-person students whose M2 looks like the wrong file.
 
 ### Release W4 early (by Fri Nov 13, course-build block)
@@ -132,3 +132,4 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 - **The W3 goal is built into every prompt:** the agent shows its plan and waits. `SETUP_LOG.md` splits "what the agent did" from "what I decided", and the student writes the second part.
 - **Survey:** Q5 added (GitHub account).
 
+**2026-11-11 — Survey Q6: the interface.** Andy asked each student what they picture on screen, with a sketch or a screenshot. The answer feeds P2. The per-student M2 feedback (course repo, gitignored) now ends with a Stretch line (one realistic way to grow the tool) and the same interface question.
