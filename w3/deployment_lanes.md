@@ -71,4 +71,12 @@ Open WebUI is a self-hosted chat interface, similar to ChatGPT, that connects to
 
 **Fit:** a class sandbox for Lane B chatbots during the build. The public showcase stays static pages + the proxy. Decide after Q1–Q2: if many chatbot students have no usable account, Open WebUI beats building the proxy.
 
+## Considered: bolt.diy (2026-11-10)
+
+An open-source app builder in the browser that runs on an OpenRouter key.
+
+- **As a builder for static pages:** it works. Ask for Vite + React or plain HTML, and the built files go to Pages. It is the OpenRouter-funded equivalent of Antigravity. Costs: someone installs and hosts it (Node or Docker), and a build re-sends the whole project to the model, so it burns tokens.
+- **As the route for chatbots: no.** The suggested design (Next.js API routes + a key in `.env.local`, deployed to Vercel or Netlify) gives every student their own server app holding a key, on a public URL anyone can use to spend credits. It can't run on Pages. A `.env.local` committed by mistake leaks the key. Supabase adds student data on another service. That makes 17 apps to maintain where the plan has one shared runtime (proxy or Open WebUI).
+- **Use only if** the survey shows Antigravity won't work for the Lane C students.
+
 The free-tier limits named here change often. Check them the week the lanes are fixed.
