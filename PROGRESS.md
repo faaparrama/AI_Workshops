@@ -35,6 +35,7 @@ A logged decision is not reopened. W-numbers are this repo's. Decisions inherite
 | W11 | **W3 = Agents: beyond the chatbot.** Agents read files, run commands, change and build. Anchor: the Hugging Face incident (Jul 2026). Agents pushed to finish a task behave in ways nobody asked for, so tools need guardrails (C3). | 2026-11-10 · Andy |
 | W12 | **W4 turns to accessibility and the ethics of AI.** The guardrails piece of the old W4 spine moved to W3. | 2026-11-10 · Andy |
 | W13 | **Release W3 and W4 early**, with the M3 and M4 tasks, so students have more time (C8). | 2026-11-10 · Andy |
+| W15 | **Every student ends with one website and deploys it themselves**, on GitHub Pages or Vercel. A static tool is the page; a chatbot or teacher tool gets a page that shows it. One prompt path, P0–P7 (`w3/lane_c/PROMPTS.md`). The agent proposes and the student accepts or rejects, with reasons in the student's own words. *Supersedes* "Andy publishes Nov 30" (C8). | 2026-11-10 · Andy |
 | W14 | **W3 room format: drivers and observers check the agent's properties** on a lab folder. This replaces playing the AI. Antigravity install instructions go out before class, optional (C4). | 2026-11-10 · Andy proposed, Claude designed |
 
 ------------------------------------------------------------------------
@@ -53,6 +54,7 @@ The original plan is `EPY3143_In_Person/EPY3143_Capstone_Workshops.md` (four 75-
 | C6 | README: "every lane ships v0 at W2 or it is not a lane; no v0 → Lane A for the semester" | 12 students have no working v0; lanes now follow shape (W6) | Rule retired by W6. Students with no v0 start from the template in whatever lane their shape needs. |
 | C7 | README Lane B = "issued key, pointed at a chosen front end" | Lane B = shared runtime for chatbot students with no account: **Open WebUI** (needs MSU ITS) or **proxy + Pages chat template** | Decided by the survey (Q1–Q2) and the ITS answer. Students never hold a key for running a chatbot. Keys are for Lane C builds only. |
 | C8 | W4 (Nov 24, single session): accessibility audit, 2+ changes, **submit M4**, executive summary for the **Dec 1 Showcase** | Spine: be the rulebook → red-team + audit → combine → **deploy**. Deployment adds Pages publishing, a catalog and consent | ✅ **Partly resolved (W13):** W3 and W4 and both tasks release early. Still recommended: static HTML + skill folders due with M4, Andy publishes Nov 30. Plan: `w4/PLAN.md`. |
+| C10 | C8 recommendation: students submit HTML, Andy publishes to Pages; students need no GitHub account | Students deploy themselves (W15) | ✅ **Resolved (W15).** Survey adds Q5 (GitHub account). Andy's catalog links to student addresses. The zipped folder in Canvas is the grant record. Template folder `site/` renamed `docs/` so Pages can deploy from `/docs` with no workflow file. |
 | C9 | Course `Week_13/` and `Week_15/` list `04_workshop.qmd` as a course file | W1: the class links and never copies | Fixed 2026-11-10: both READMEs now point here. |
 
 ------------------------------------------------------------------------
@@ -76,7 +78,7 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 
 ### After the survey (Nov 13–17)
 - [ ] Count chatbot students with no usable account → **Open WebUI vs proxy vs neither** (with the ITS answer).
-- [ ] **Andy, office hours:** run the Lane C setup prompt once on his Mac. Confirm Zoo Code installs in Antigravity and the default model builds one page.
+- [ ] **Andy, office hours:** run P0–P3 and P7 (`w3/lane_c/PROMPTS.md`) once on his Mac, deploying a test page to both GitHub Pages and Vercel. Confirm Zoo Code installs in Antigravity and the default model builds one page.
 - [ ] Issue capped OpenRouter keys (≈$5) to Lane C students only. Run the setup clinic in office hours, never in workshop time.
 - [ ] Rewrite the README Lanes section (C5–C7) to match the survey.
 - [ ] Decide where student tools live: a new public repo (`skill/` · `site/` · `card.md` per tool + catalog page) or a folder here. Consent from survey Q4 applies.
@@ -116,4 +118,17 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 - **Course repo:** the Week 13 README and `_sections/*.yml` were updated (M3 at home, Sun Nov 15; the W3 title).
 
 **2026-11-10 (later) — W3 gets a hopeful example (Andy: "not everything is apocalypse and hype").** Navier–Stokes (OpenAI, Sep 2026: ≈10,000 agents, 88 hours, Lean-checked proof of finite-time blow-up) pairs with the Hugging Face incident. The lesson for both is the same: the stop rule and an outside check decide the ending. The claim is **contested**: mathematicians are still checking it, the Clay Institute lists the problem as open, and an Oct 13 Scientific American survey found the proof departs from the Córdoba–Martínez-Zoroa program. The deck says so. Settled backup: AlphaEvolve (2025). Recheck the status the morning of Nov 12.
+
+**2026-11-10 (later) — The build kit became the path from M2 to a live website.**
+- **Checked:** the Lane C prompts against what M2 shows students actually have. Most have M1/M2 text, not a skill folder. Many lack an idea list, a STOP line or a real test. Neither SETUP nor BUILD covered that, and nothing covered deployment.
+- **Now:** one `PROMPTS.md` with eight prompts:
+  - P0 gathers M1/M2 into the skill folder in any chat, quoting the student and marking `[MISSING]`, never inventing.
+  - P1 sets up the folder.
+  - P2 plans the page by shape.
+  - P3 builds; P4 runs the persona test (report only); P5 fixes one thing.
+  - P6 runs the W4 accessibility + ethics check.
+  - P7 deploys to GitHub Pages or Vercel, after a safety scan for keys, names and consent; static only.
+- **Removed:** `SETUP_PROMPT.md` and `BUILD_PROMPT.md`, so there are no two copies to drift.
+- **The W3 goal is built into every prompt:** the agent shows its plan and waits. `SETUP_LOG.md` splits "what the agent did" from "what I decided", and the student writes the second part.
+- **Survey:** Q5 added (GitHub account).
 

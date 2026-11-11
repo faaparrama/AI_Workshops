@@ -23,7 +23,7 @@ Every tool starts from the same **skill folder**: `SKILL.md` (LEARNER · TASK ·
 2. **Lane A:** in your own account, make a project and paste `SKILL.md` as its instructions. Upload `knowledge.md`.
 3. Persona test, pasted as a transcript: one wrong answer, one off-topic turn, one refusal.
 4. **Lane B (no account):** submit the folder. It runs through the course chat template + proxy on a capped cheap model.
-5. Submit the folder plus a share link (A) or nothing extra (B).
+5. The website is a page that shows the tool, with the share link and one real transcript (`lane_c/PROMPTS.md`, P2 and P7). Submit the address and the folder.
 
 ### 2 · Static page
 1. Fill in the skill folder.
@@ -31,13 +31,13 @@ Every tool starts from the same **skill folder**: `SKILL.md` (LEARNER · TASK ·
 3. **Simple (Lane A):** paste the spec into any assistant that writes a page (Claude artifact, ChatGPT canvas, Gemini canvas). Ask for **one self-contained HTML file with no API key**, and download it.
    **Hard (Lane C): Google Antigravity** for the most advanced students. It is easier to use than VS Code, and its agent can install Python and set up the environment for the student. The agent reads the folder and builds the page. Fallback: a coding agent with a capped OpenRouter key (Cline, Kilo Code, OpenCode).
 4. Open it in a browser and run the persona test against it.
-5. Submit the HTML file in Canvas. Pages publishing is done by the instructor. Students need no GitHub account.
+5. Deploy it yourself on GitHub Pages or Vercel (`lane_c/PROMPTS.md`, P7), then submit the live address and the zipped folder in Canvas.
 
 ### 3 · Teacher tool
 1. Fill in the skill folder. LEARNER is the teacher. HOW YOU TALK covers the student who receives the output.
 2. Load it in your own account (same as Chatbot, Lane A).
 3. Test with three real inputs. Check the length against your LIMIT and **verify every fact**.
-4. Submit the folder plus three sample outputs. No deployment.
+4. The website is a page that shows the tool: what it does, how to use it, three sample outputs (`lane_c/PROMPTS.md`, P2 and P7). Submit the address and the folder.
 
 ## What the instructor builds, by survey result
 
@@ -55,6 +55,7 @@ Every tool starts from the same **skill folder**: `SKILL.md` (LEARNER · TASK ·
 2. In that account, can you make a project and upload a file to it? Yes · No · Don't know. *(Ask them to check live, in the room.)*
 3. Did Antigravity install and run on your laptop on Thursday? Yes · Tried, it failed · Didn't try.
 4. May your finished tool appear in a public catalog? With my name · Without my name · No.
+5. Do you have a GitHub account? Yes · No · I'll make one.
 
 **Reading the result.** Q2 = "No" or "none" on Q1, among chatbot students → proxy needed, with that many seats. Q3 = "Yes" → Lane C on Antigravity is possible. Q3 = "No" among hard-static students → those builds move to an office-hours clinic, or fall back to a chatbot. Q4 sets the catalog.
 
