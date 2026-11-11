@@ -29,7 +29,7 @@ Every tool starts from the same **skill folder**: `SKILL.md` (LEARNER · TASK ·
 1. Fill in the skill folder.
 2. Write a half-page spec: what is on screen, the items (from `knowledge.md`), what a right answer and a wrong answer each trigger (from HOW YOU TALK), and when it ends (STOP).
 3. **Simple (Lane A):** paste the spec into any assistant that writes a page (Claude artifact, ChatGPT canvas, Gemini canvas). Ask for **one self-contained HTML file with no API key**, and download it.
-   **Hard (Lane B/C):** a coding agent (Cline, Kilo Code, OpenCode, Aider, or Antigravity) with a capped OpenRouter key reads the folder and builds the page.
+   **Hard (Lane C): Google Antigravity** for the most advanced students. It is easier to use than VS Code, and its agent can install Python and set up the environment for the student. The agent reads the folder and builds the page. Fallback: a coding agent with a capped OpenRouter key (Cline, Kilo Code, OpenCode).
 4. Open it in a browser and run the persona test against it.
 5. Submit the HTML file in Canvas. Pages publishing is done by the instructor. Students need no GitHub account.
 
@@ -53,9 +53,22 @@ Every tool starts from the same **skill folder**: `SKILL.md` (LEARNER · TASK ·
 
 1. Which AI accounts do you have? ChatGPT (free / paid) · Gemini (free / paid) · Claude (free / paid) · Copilot via MSU · none.
 2. In that account, can you make a project and upload a file to it? Yes · No · Don't know. *(Ask them to check live, in the room.)*
-3. Would you install VS Code and one extension to build your tool? Yes · No · Already use one.
+3. Would you install Google Antigravity (an AI coding app) to build your tool? Yes · No · Already use it.
 4. May your finished tool appear in a public catalog? With my name · Without my name · No.
 
-**Reading the result.** Q2 = "No" or "none" on Q1, among chatbot students → proxy needed, with that many seats. Q3 = "No" among hard-static students → those builds move to an office-hours clinic, or fall back to a chatbot. Q4 sets the catalog.
+**Reading the result.** Q2 = "No" or "none" on Q1, among chatbot students → proxy needed, with that many seats. Q3 = "Yes" → Lane C on Antigravity. Q3 = "No" among hard-static students → those builds move to an office-hours clinic, or fall back to a chatbot. Q4 sets the catalog.
+
+## Option to weigh after the survey: OpenRouter + Open WebUI
+
+Open WebUI is a self-hosted chat interface, similar to ChatGPT, that connects to OpenRouter. Each student's tool would be a "model" inside it: `SKILL.md` as the system prompt, `knowledge.md` as its knowledge file. The key stays on the server.
+
+| For | Against |
+|---|---|
+| Replaces Gems/GPTs for the whole class, with no code to write; the proxy + chat template would not be needed for class use | Needs a server that stays on (a small paid VM, or a free tier that sleeps or wipes storage), plus updates |
+| One place for every chatbot; students need no AI account | Students get logins and their chats are stored: student data on a server. **Check with MSU ITS before using it with students** |
+| You can read the transcripts, which is the prompt log and the persona test in one place | Login-only, so it is a weak fit for a public catalog or for K–12 learners |
+| Model allowlist and one capped key | It runs on the server, not on Pages; the grant record is the folders in the repo |
+
+**Fit:** a class sandbox for Lane B chatbots during the build. The public showcase stays static pages + the proxy. Decide after Q1–Q2: if many chatbot students have no usable account, Open WebUI beats building the proxy.
 
 The free-tier limits named here change often. Check them the week the lanes are fixed.
