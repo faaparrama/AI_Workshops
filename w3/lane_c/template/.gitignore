@@ -1,0 +1,10 @@
+# keys and secrets never enter this folder's history
+.env
+.env.*
+*.key
+*.token
+# local environments
+.venv/
+node_modules/
+__pycache__/
+.DS_Store
