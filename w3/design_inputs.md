@@ -71,6 +71,14 @@ Use these as examples. They come from the students' own M1/M2 pages, anonymized.
 
 Students arrive with three drafts of block 4. The workshop combines and tests them. They don't start from scratch.
 
-## Open
+## Online section (17, read 2026-11-10)
 
-- Online M2 submissions not yet read; these notes come from the in-person section only.
+**Where they are.** 3 of 17 are ready. 6 need one fix. 8 have no working v0: four submitted M1 again, and four have no prompt or standard. Online M3 is due Nov 15, with no live workshop.
+
+1. **The template didn't reach them.** Only three online prompts use ROLE → STOP. The rest are generic paragraphs ("You are a friendly tutor… ask questions, give hints"). **Design move:** the online W3 page hands out the four-block `SKILL.md` as a file to download and paste into. It should not be a picture on a slide.
+2. **Imagined tests.** Two replies were written by the student ("illustrative," "not a recorded result"). One "test" asked the chatbot how to use the tool. **Design move:** require the pasted transcript of a run, including one wrong answer.
+3. **M1 resubmitted as M2.** Four pages answer the M1 questions only. **Check:** does the online M2 Canvas page make the five parts unmissable?
+4. **Seven PE students, one shared problem.** A chat can't see the throw, the pass or the squat. **Design move:** a PE example in W3. The learner reports what they did ("which foot did you step with?"). The tool teaches the cue and the decision, and the teacher judges the movement. Motivation is the PE story (embarrassment, comparing to peers), so relatedness rules land well here.
+5. **Same pattern as in person: value and efficacy beliefs filed as misconceptions.** "We don't need to know this." "AI isn't helpful and there's no hope." "Students feel defeated when they can't find a starting place." These open M3.
+6. **The topic changed between M1 and M2** in a few cases, in both sections. The LEARNER block has to be rewritten for the new topic. The M1 population doesn't carry over automatically.
+7. **Professional learners need a confidentiality rule.** One tool coaches lawyers who interview children. Add one guardrail: never paste a real person's case details. It is an M4 seed.
