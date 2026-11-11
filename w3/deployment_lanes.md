@@ -53,10 +53,10 @@ Every tool starts from the same **skill folder**: `SKILL.md` (LEARNER · TASK ·
 
 1. Which AI accounts do you have? ChatGPT (free / paid) · Gemini (free / paid) · Claude (free / paid) · Copilot via MSU · none.
 2. In that account, can you make a project and upload a file to it? Yes · No · Don't know. *(Ask them to check live, in the room.)*
-3. Would you install Google Antigravity (an AI coding app) to build your tool? Yes · No · Already use it.
+3. Did Antigravity install and run on your laptop on Thursday? Yes · Tried, it failed · Didn't try.
 4. May your finished tool appear in a public catalog? With my name · Without my name · No.
 
-**Reading the result.** Q2 = "No" or "none" on Q1, among chatbot students → proxy needed, with that many seats. Q3 = "Yes" → Lane C on Antigravity. Q3 = "No" among hard-static students → those builds move to an office-hours clinic, or fall back to a chatbot. Q4 sets the catalog.
+**Reading the result.** Q2 = "No" or "none" on Q1, among chatbot students → proxy needed, with that many seats. Q3 = "Yes" → Lane C on Antigravity is possible. Q3 = "No" among hard-static students → those builds move to an office-hours clinic, or fall back to a chatbot. Q4 sets the catalog.
 
 ## Option to weigh after the survey: OpenRouter + Open WebUI
 

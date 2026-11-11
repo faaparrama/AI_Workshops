@@ -31,6 +31,11 @@ A logged decision is not reopened. W-numbers are this repo's. Decisions inherite
 | W7 | **Lane C = Antigravity + Zoo Code**, one self-contained project folder. Antigravity's agent sets up; Zoo Code builds on a capped OpenRouter key kept in its settings. Kit: `w3/lane_c/`. | 2026-11-10 · Andy |
 | W8 | **bolt.diy is a backup builder only**, never a chatbot runtime (one app + one key per student is unsafe and unmaintainable). | 2026-11-10 · Andy considered; recorded |
 | W9 | **Lanes are not fixed until the Thursday survey.** | 2026-11-10 · Andy |
+| W10 | **M3 is written at home** (C1). In person and online both due Sun Nov 15. | 2026-11-10 · Andy |
+| W11 | **W3 = Agents: beyond the chatbot.** Agents read files, run commands, change and build. Anchor: the Hugging Face incident (Jul 2026). Agents pushed to finish a task behave in ways nobody asked for, so tools need guardrails (C3). | 2026-11-10 · Andy |
+| W12 | **W4 turns to accessibility and the ethics of AI.** The guardrails piece of the old W4 spine moved to W3. | 2026-11-10 · Andy |
+| W13 | **Release W3 and W4 early**, with the M3 and M4 tasks, so students have more time (C8). | 2026-11-10 · Andy |
+| W14 | **W3 room format: drivers and observers check the agent's properties** on a lab folder. This replaces playing the AI. Antigravity install instructions go out before class, optional (C4). | 2026-11-10 · Andy proposed, Claude designed |
 
 ------------------------------------------------------------------------
 
@@ -40,14 +45,14 @@ The original plan is `EPY3143_In_Person/EPY3143_Capstone_Workshops.md` (four 75-
 
 | # | Original plan | Now | Resolution |
 |---|---|---|---|
-| C1 | W3: **submit M3 in the room** (65–75 min). The course `Week_13/README.md` still says "Thu Nov 12 (in workshop)." | W3: the milestone is written at home (W3 decision; W1 and W2 both ran that way) | **Andy decides by Wed Nov 11.** Recommended: at home, due with online (Nov 15). Then fix the Week 13 README and `_sections/*.yml` (`milestone: "day of the capstone workshop"`, open since Sep 17). |
+| C1 | W3: **submit M3 in the room** (65–75 min). The course `Week_13/README.md` still says "Thu Nov 12 (in workshop)." | W3: the milestone is written at home (W3 decision; W1 and W2 both ran that way) | ✅ **Resolved (W10).** At home, due Sun Nov 15. Week 13 README and `_sections/*.yml` updated 2026-11-10. |
 | C2 | W3 guided practice **is** the M3 peer feedback: a partner tests the W2 prototype against a short rubric (informational or evaluative? autonomy-supportive?) | Spine: persona triads (agent · learner · observer). M2 lesson: tests must script a wrong answer, an off-topic turn and a refusal | **Merge.** The persona test is the peer feedback. The partner plays the learner with the three scripted moves, then scores the replies with the original two questions. No separate activity is needed. |
-| C3 | W3 title: *Designing for Motivation: Feedback, Autonomy, and Scaffolded Growth* | README: *Agents: teaching the tool how to talk* | Compatible content. The motivation is what goes in the HOW YOU TALK block, and the agent loop is the LLM idea. **Andy picks one title**; the Week 13 README and the README table then match it. |
-| C4 | W3 hook + demo: rewrite a blunt AI reply into an autonomy-supportive one | Room format proposed: human agent first (triads, the agent may only use the printed milestones), then the template as take-home and online | **Andy confirms the format.** Both fit in 75 minutes if the demo is 5 minutes: the rewrite *is* the agent's first move. |
+| C3 | W3 title: *Designing for Motivation: Feedback, Autonomy, and Scaffolded Growth* | README: *Agents: teaching the tool how to talk* | ✅ **Resolved (W11).** *Agents: beyond the chatbot.* Motivation stays in M3 (HOW YOU TALK); guardrails and motivation rules share the if-then shape. Week 13 README updated. The README table gets the new title when W3 ships. |
+| C4 | W3 hook + demo: rewrite a blunt AI reply into an autonomy-supportive one | Room format proposed: human agent first (triads, the agent may only use the printed milestones), then the template as take-home and online | ✅ **Resolved (W14).** Drivers + observers on an agent lab. The observer's log replaces the triads. The persona test stays as the peer feedback. Plan: `w3/PLAN.md`. **New clash it creates:** the README says Lane C setup is "never workshop time." Here the install happens *before* class and is optional, and project setup in the room is a guided lab, not lane setup. |
 | C5 | Lane A = provider builders (Gem, Custom GPT, Claude Project) | Gems/GPTs close (W4) | Lane A = **the student's own account: a project with `SKILL.md` + `knowledge.md`**. Rewrite the README Lanes section after the survey. W2 materials are fixed for Spring. |
 | C6 | README: "every lane ships v0 at W2 or it is not a lane; no v0 → Lane A for the semester" | 12 students have no working v0; lanes now follow shape (W6) | Rule retired by W6. Students with no v0 start from the template in whatever lane their shape needs. |
 | C7 | README Lane B = "issued key, pointed at a chosen front end" | Lane B = shared runtime for chatbot students with no account: **Open WebUI** (needs MSU ITS) or **proxy + Pages chat template** | Decided by the survey (Q1–Q2) and the ITS answer. Students never hold a key for running a chatbot. Keys are for Lane C builds only. |
-| C8 | W4 (Nov 24, single session): accessibility audit, 2+ changes, **submit M4**, executive summary for the **Dec 1 Showcase** | Spine: be the rulebook → red-team + audit → combine → **deploy**. Deployment adds Pages publishing, a catalog and consent | **The deploy can't happen in the room or over Thanksgiving week.** Recommended: static HTML and skill folders are due with M4 (Nov 24). Andy publishes Nov 30. The Showcase uses own-account links for chatbots, Pages links for static tools. |
+| C8 | W4 (Nov 24, single session): accessibility audit, 2+ changes, **submit M4**, executive summary for the **Dec 1 Showcase** | Spine: be the rulebook → red-team + audit → combine → **deploy**. Deployment adds Pages publishing, a catalog and consent | ✅ **Partly resolved (W13):** W3 and W4 and both tasks release early. Still recommended: static HTML + skill folders due with M4, Andy publishes Nov 30. Plan: `w4/PLAN.md`. |
 | C9 | Course `Week_13/` and `Week_15/` list `04_workshop.qmd` as a course file | W1: the class links and never copies | Fixed 2026-11-10: both READMEs now point here. |
 
 ------------------------------------------------------------------------
@@ -58,11 +63,16 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 
 ### Before Workshop 3 (Thu Nov 12)
 - [ ] **Tue Nov 10 · Andy:** send MSU ITS one line: *"Can a self-hosted Open WebUI with student logins be used for EPY 3143 coursework?"*
-- [ ] **Wed Nov 11 · Andy:** decide C1 (M3 at home?), C3 (title) and C4 (room format). Each is a one-word answer.
-- [ ] **Wed Nov 11 · Claude, after those answers:** build W3: `w3/slides.qmd` + `w3/build_index.py` (self-guided online page) from `w3/design_inputs.md`, with the four-block template as a downloadable `SKILL.md` and the survey link. Seven blocks as always.
-- [ ] **Wed Nov 11 · Andy:** paste the four survey questions (`w3/deployment_lanes.md`) into a Canvas quiz, for both sections.
-- [ ] **Wed Nov 11 · Andy:** Canvas message to the 8 online "not yet" students (M2 has no prompt; online M3 due Nov 15).
-- [ ] **Wed Nov 11 · Andy:** ask the two in-person students whose M2 looks like the wrong file.
+- [ ] **Tue Nov 10 · Andy:** send students `w3/before_class.md` (optional Antigravity install), both sections. Check first that Antigravity is still free with a personal Google account.
+- [ ] **Wed Nov 11 · Claude:** build `w3/agent_lab/`, the agent-log sheet, `w3/slides.qmd` and `w3/build_index.py` from `w3/PLAN.md`.
+- [ ] **Wed Nov 11 · Andy:** test the agent lab once on his Mac and record the ≈5-min run for online and non-installers. The recording is the Plan B if the live demo fails.
+- [ ] **Wed Nov 11 · Andy + Claude:** write `Week_13/02_milestone.md` (M3: HOW YOU TALK + three guardrails, at home, due Nov 15). It doesn't exist yet and has to be released with W3.
+- [ ] **Wed Nov 11 · Andy:** paste the four survey questions into a Canvas quiz, both sections.
+- [ ] **Wed Nov 11 · Andy:** Canvas message to the 8 online "not yet" students. Ask the two in-person students whose M2 looks like the wrong file.
+
+### Release W4 early (by Fri Nov 13, course-build block)
+- [ ] **Claude:** build W4 from `w4/PLAN.md` (deck + self-guided page). Write `Week_15/02_milestone.md` (M4).
+- [ ] **Andy:** release the W4 page and M4 in Canvas (due Tue Nov 24, with the skill folder + HTML or link).
 
 ### After the survey (Nov 13–17)
 - [ ] Count chatbot students with no usable account → **Open WebUI vs proxy vs neither** (with the ITS answer).
@@ -73,8 +83,7 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 
 ### Before Workshop 4 (Tue Nov 24)
 - [ ] Confirm the Nov 17 discussion (Ch. 4–5) runs. W4 depends on it.
-- [ ] Build W4: the accessibility audit (original plan) + "be the rulebook" (spine) + the M4 block in `SKILL.md` ("who it leaves out"). Hand-in = skill folder + HTML (static) or share link (chatbot).
-- [ ] Decide C8 (deploy timing) and tell students on Nov 24 what is due, and when.
+- [ ] Tell students on Nov 24 what is due with M4 and when Andy publishes (Nov 30).
 
 ### Showcase (Dec 1)
 - [ ] **Nov 30 · Andy:** publish the static tools to Pages and the catalog (consenting students only).
@@ -99,3 +108,9 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
   - The bolt.diy video: dated early 2025; its synth-keyboard demo is the closest match to the hardest music tool.
 - **What nearly shipped** (course repo): 17 student .docx files sat in an unignored folder. They are gitignored now.
 - **What broke:** W3 is being built two days out, against the build-two-weeks-ahead rule.
+
+**2026-11-10 (later) — Andy's answers on the clashes.**
+- **Decisions:** C1 M3 at home (W10); W3 = agents beyond the chatbot, anchored on the Hugging Face incident (W11); W4 = accessibility + ethics (W12); release W3–W4 early (W13); drivers + observers check agent properties (W14). C5–C7 wait for the survey.
+- **Incident checked against sources:** Hugging Face disclosure (Jul 16, 2026), METR investigation (Aug 26, 2026), CSA research notes. Some details (which model, the timeline) are still disputed, so the deck says so.
+- **Saved:** `w3/PLAN.md`, `w4/PLAN.md` and `w3/before_class.md`. Survey Q3 now asks whether Antigravity ran on Thursday.
+- **Course repo:** the Week 13 README and `_sections/*.yml` were updated (M3 at home, Sun Nov 15; the W3 title).
