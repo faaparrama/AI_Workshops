@@ -536,6 +536,6 @@ Building with an agent is optional and comes after M3. The build kit, `lane_c/`,
 -   Cardenete, R. *Why AI agents went cute: Dots, Muse, Grok Bot* \[Video\]. YouTube. <https://www.youtube.com/shorts/B4J7Bj9Ftd4>
 -   Doria, C. *Stop anthropomorphizing AI!* \[Video\]. YouTube. <https://www.youtube.com/shorts/Oq5YjtU7EPA>
 -   Zimmerman, B. J. (2002). Becoming a self-regulated learner: An overview. *Theory Into Practice, 41*(2), 64–70.
--   Eggen, P., & Kauchak, D. (2025). *Educational psychology: Windows on classrooms* (12th ed.). Pearson.
+-   Eggen, P. D., & Kauchak, D. P. (2025). *Using educational psychology in teaching* (12th ed.). Pearson.
 -   OpenAI. *Codex pricing.* <https://developers.openai.com/codex/pricing> · Anthropic. *Claude plans.* <https://claude.com/pricing> · Google. *Antigravity.* <https://antigravity.google> · *OpenCode.* <https://opencode.ai>
 -   Austin, T. *UnBlooms™ — The Reflective Checkpoint Process.* <https://tinaaustin.com/>

@@ -17,7 +17,7 @@ Each one is a sentence a learner can get wrong.
 
 ## Sources
 
-- Eggen, P., & Kauchak, D. (2025). *Educational psychology: Windows on classrooms* (12th ed.). Pearson. The chapter on social cognitive theory.
+- Eggen, P. D., & Kauchak, D. P. (2025). *Using educational psychology in teaching* (12th ed.). Pearson. Chapter 10 (motivation: self-efficacy and its four sources).
 - Bandura, A. (1997). *Self-efficacy: The exercise of control.* Freeman.
 
 ## Off limits

@@ -2,7 +2,7 @@
 
 ## Source
 
-Eggen, P., & Kauchak, D. (2025). *Educational psychology: Windows on classrooms* (12th ed.). Pearson. Chapter on behaviorism (operant conditioning).
+Eggen, P. D., & Kauchak, D. P. (2025). *Using educational psychology in teaching* (12th ed.). Pearson. Chapter 6 (behaviorism: operant conditioning).
 
 ## Ideas, in order
 
