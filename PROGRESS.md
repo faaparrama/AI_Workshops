@@ -8,7 +8,7 @@ The entry point for planning the workshops and supporting the student tool build
 |---|---|---|
 | **W1** · Introduction to AI co-creation | ✅ delivered (deck + self-guided page) | — |
 | **W2** · Curation (ships v0) | ✅ delivered | Spring: Lane A wording names Gems/GPTs |
-| **W3** · Agents / motivation (ships v1) | ⚠ **not built**; runs **Thu Nov 12** | design inputs ready: `w3/design_inputs.md` |
+| **W3** · Agents: beyond the chatbot (ships v1) | ✅ built Nov 12 (deck + self-guided page + sim lab); runs **Thu Nov 12** | Andy: rehearse Round 2 and record it |
 | **W4** · Alignment & production line (ships v2) | ☐ not started; runs **Tue Nov 24** (single session) | depends on the survey and on the Nov 17 discussion |
 | **Tool deployment** | planned: `w3/deployment_lanes.md` · Lane C kit `w3/lane_c/` | Thursday survey decides the lanes |
 
@@ -68,7 +68,7 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 - [ ] **Tue Nov 10 · Andy:** send MSU ITS one line: *"Can a self-hosted Open WebUI with student logins be used for EPY 3143 coursework?"*
 - [ ] **Tue Nov 10 · Andy:** send students `w3/before_class.md` (optional Antigravity install), both sections. ✅ Antigravity confirmed still free (Andy, 2026-11-10).
 - [x] ✅ **Thu Nov 12 · Claude:** `w3/sim_lab/` + observer log built and check tested (W16).
-- [ ] **Claude:** build `w3/slides.qmd` and `w3/build_index.py` from `w3/PLAN.md`.
+- [x] ✅ **Thu Nov 12 · Claude:** `w3/slides.qmd` (rendered) and `w3/build_index.py` → `w3/index.html`; landing page and README list W3 from `w3/PLAN.md`.
 - [ ] **Wed Nov 11 · Andy:** test the agent lab once on his Mac and record the ≈5-min run for online and non-installers. The recording is the Plan B if the live demo fails.
 - [ ] **Wed Nov 11 · Andy + Claude:** write `Week_13/02_milestone.md` (M3: HOW YOU TALK + three guardrails, at home, due Nov 15). It doesn't exist yet and has to be released with W3.
 - [ ] **Wed Nov 11 · Andy:** paste the six survey questions (`w3/deployment_lanes.md`) into a Canvas quiz; Q6 needs a file-upload question, both sections.
@@ -137,3 +137,5 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 **2026-11-11 — Survey Q6: the interface.** Andy asked each student what they picture on screen, with a sketch or a screenshot. The answer feeds P2. The per-student M2 feedback (course repo, gitignored) now ends with a Stretch line (one realistic way to grow the tool) and the same interface question.
 
 **2026-11-12 — W3 lab becomes a live context-engineering demo (W16).** `w3/sim_lab/`: Round 1 thin folder, Round 2 full skill folder for a fictional operant-conditioning drill, Round 3 "pass every check" with one check only real learners can pass. Fabricating the evidence file or editing `check.py` is the task-pressure move to watch for. `check.py` tested: a good page passes 6 of 7. Model for the live run: Claude in Antigravity (reliability in front of the room; no key on screen). The roleplay persona test left the room; P4 at home replaces it. **Not yet done for today:** Andy's rehearsal and recording, slides, M3 task file.
+
+**2026-11-12 — W3 built: deck, self-guided page, provider comparison.** Deck follows `w3/PLAN.md` (W16): the deal, the agent loop as Week 12's self-regulation cycle, Hugging Face + Navier–Stokes, sim lab rounds 1–3, guardrails, staying the agent, exit card + six-question survey, M3. **Added at Andy's request:** a slide comparing ChatGPT Codex, Claude Code and Antigravity (where it runs, cost, good for, watch). Checked live: Codex is in ChatGPT plans with a capped free tier; Claude Code needs Pro or higher; Antigravity is a free preview that may need a personal Gmail. **Navier–Stokes rechecked:** still unsettled; the proof file is not public; the deck says so. **What nearly shipped:** the first draft of the speaker notes named six students (as M3-seed and teacher-tool examples) in this public repo. The write was blocked, the names were removed, and a scan of the whole repo against the M2 roster found none in W3. **Not done:** Andy's rehearsal and recording; the online page links the recording through the Week 13 module; `Week_13/02_milestone.md` (M3) still unwritten.
