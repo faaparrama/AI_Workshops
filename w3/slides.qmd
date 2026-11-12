@@ -222,21 +222,21 @@ Task-pressure ending: the plan includes editing `check.py` or writing `evidence/
 Either ending teaches. If it stops, ask: what if that guardrail line weren't in the folder? You can delete it from a copy and run it again, if time allows.
 :::
 
-## Who builds with agents · checked Nov 12, 2026
+## Who builds with agents · checked Nov 12, 2026 {.smaller}
 
-|  | **ChatGPT Codex** · OpenAI | **Claude Code** · Anthropic | **Antigravity** · Google |
-|---|---|---|---|
-| Where | ChatGPT, a terminal, VS Code | a terminal, VS Code, a desktop app, the web | its own editor |
-| Cost to you | in ChatGPT plans; the free plan has a small cap; Plus $20/mo | Claude Pro $20/mo or more; no free plan | **free preview**, personal Google account |
-| Good for | you already use ChatGPT | careful plans, asks before acting | **our class kit** |
-| Watch | cloud tasks run on OpenAI's computers | the terminal can feel like code | a preview: limits change |
+|  | **ChatGPT Codex** · OpenAI | **Claude Code** · Anthropic | **Antigravity** · Google | **OpenCode** · open source |
+|---|---|---|---|---|
+| Where | ChatGPT, a terminal, VS Code | a terminal, VS Code, a desktop app, the web | its own editor | a terminal or a desktop app |
+| Cost to you | in ChatGPT plans; the free plan has a small cap; Plus $20/mo | Claude Pro $20/mo or more; no free plan | **free preview**, personal Google account | the app is free; you pay the model: a **capped OpenRouter key**, or its free models |
+| Good for | you already use ChatGPT | careful plans, asks before acting | **our class kit** | any model, including the cheap ones in `MODELS.md` |
+| Watch | cloud tasks run on OpenAI's computers | the terminal can feel like code | a preview: limits change | you hold a key; free models slow down or cut out |
 
-**Our build path:** Antigravity, with Zoo Code on a capped OpenRouter key.
+**Our build path:** Antigravity, with Zoo Code on a capped OpenRouter key. OpenCode takes the same key the same way.
 
 ::: notes
 Three minutes, during the move from Round 3 to guardrails, or at the end if time is short.
 
-What all three share is what they just watched: a folder, a plan, a permission step, a check. The skill folder works in any of them. Pick the one you already pay for; if you pay for none, Antigravity is free.
+What all four share is what they just watched: a folder, a plan, a permission step, a check. The skill folder works in any of them. Pick the one you already pay for; if you pay for none, Antigravity is free. OpenCode (Andy installed it on Nov 12; easy setup) is the route for anyone who wants one capped OpenRouter key and a choice of cheap models. The key goes in OpenCode's own settings (`/connect` or its config), never in the project folder.
 
 Prices and plans change often. Checked Nov 12, 2026 against OpenAI's Codex pricing page and current guides. Antigravity's free preview may require a personal Gmail account, so an MSU login may not work.
 
@@ -317,5 +317,5 @@ Building with an agent is optional and comes after M3. The build kit, `lane_c/`,
 -   Novikov, A., et al. (2025). *AlphaEvolve: A coding agent for scientific and algorithmic discovery.* Google DeepMind.
 -   Zimmerman, B. J. (2002). Becoming a self-regulated learner: An overview. *Theory Into Practice, 41*(2), 64–70.
 -   Eggen, P., & Kauchak, D. (2025). *Educational psychology: Windows on classrooms* (12th ed.). Pearson.
--   OpenAI. *Codex pricing.* <https://developers.openai.com/codex/pricing> · Anthropic. *Claude plans.* <https://claude.com/pricing> · Google. *Antigravity.* <https://antigravity.google>
+-   OpenAI. *Codex pricing.* <https://developers.openai.com/codex/pricing> · Anthropic. *Claude plans.* <https://claude.com/pricing> · Google. *Antigravity.* <https://antigravity.google> · *OpenCode.* <https://opencode.ai>
 -   Austin, T. *UnBlooms™ — The Reflective Checkpoint Process.* <https://tinaaustin.com/>
