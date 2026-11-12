@@ -36,6 +36,7 @@ A logged decision is not reopened. W-numbers are this repo's. Decisions inherite
 | W12 | **W4 turns to accessibility and the ethics of AI.** The guardrails piece of the old W4 spine moved to W3. | 2026-11-10 · Andy |
 | W13 | **Release W3 and W4 early**, with the M3 and M4 tasks, so students have more time (C8). | 2026-11-10 · Andy |
 | W15 | **Every student ends with one website and deploys it themselves**, on GitHub Pages or Vercel. A static tool is the page; a chatbot or teacher tool gets a page that shows it. One prompt path, P0–P7 (`w3/lane_c/PROMPTS.md`). The agent proposes and the student accepts or rejects, with reasons in the student's own words. *Supersedes* "Andy publishes Nov 30" (C8). | 2026-11-10 · Andy |
+| W16 | **W3 lab = context engineering, live.** Andy drives a sim folder (thin vs. full skill folder, then a tempting check) on Claude in Antigravity; the class observes. **The roleplay persona test is dropped from the room**: students run P4 at home and paste it into M3. Updates C2 and W14. | 2026-11-12 · Andy |
 | W14 | **W3 room format: drivers and observers check the agent's properties** on a lab folder. This replaces playing the AI. Antigravity install instructions go out before class, optional (C4). | 2026-11-10 · Andy proposed, Claude designed |
 
 ------------------------------------------------------------------------
@@ -66,7 +67,8 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 ### Before Workshop 3 (Thu Nov 12)
 - [ ] **Tue Nov 10 · Andy:** send MSU ITS one line: *"Can a self-hosted Open WebUI with student logins be used for EPY 3143 coursework?"*
 - [ ] **Tue Nov 10 · Andy:** send students `w3/before_class.md` (optional Antigravity install), both sections. ✅ Antigravity confirmed still free (Andy, 2026-11-10).
-- [ ] **Wed Nov 11 · Claude:** build `w3/agent_lab/`, the agent-log sheet, `w3/slides.qmd` and `w3/build_index.py` from `w3/PLAN.md`.
+- [x] ✅ **Thu Nov 12 · Claude:** `w3/sim_lab/` + observer log built and check tested (W16).
+- [ ] **Claude:** build `w3/slides.qmd` and `w3/build_index.py` from `w3/PLAN.md`.
 - [ ] **Wed Nov 11 · Andy:** test the agent lab once on his Mac and record the ≈5-min run for online and non-installers. The recording is the Plan B if the live demo fails.
 - [ ] **Wed Nov 11 · Andy + Claude:** write `Week_13/02_milestone.md` (M3: HOW YOU TALK + three guardrails, at home, due Nov 15). It doesn't exist yet and has to be released with W3.
 - [ ] **Wed Nov 11 · Andy:** paste the six survey questions (`w3/deployment_lanes.md`) into a Canvas quiz; Q6 needs a file-upload question, both sections.
@@ -133,3 +135,5 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 - **Survey:** Q5 added (GitHub account).
 
 **2026-11-11 — Survey Q6: the interface.** Andy asked each student what they picture on screen, with a sketch or a screenshot. The answer feeds P2. The per-student M2 feedback (course repo, gitignored) now ends with a Stretch line (one realistic way to grow the tool) and the same interface question.
+
+**2026-11-12 — W3 lab becomes a live context-engineering demo (W16).** `w3/sim_lab/`: Round 1 thin folder, Round 2 full skill folder for a fictional operant-conditioning drill, Round 3 "pass every check" with one check only real learners can pass. Fabricating the evidence file or editing `check.py` is the task-pressure move to watch for. `check.py` tested: a good page passes 6 of 7. Model for the live run: Claude in Antigravity (reliability in front of the room; no key on screen). The roleplay persona test left the room; P4 at home replaces it. **Not yet done for today:** Andy's rehearsal and recording, slides, M3 task file.
