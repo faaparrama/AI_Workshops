@@ -53,8 +53,9 @@ HTML = r'''<!DOCTYPE html>
 </div>
 
 <ol class="toc">
-  <li><a href="#deal">The deal</a> <span class="status">5 min</span></li>
-  <li><a href="#watch">Two stories, one lesson</a> <span class="status">10 min</span></li>
+  <li><a href="#deal">The deal</a> <span class="status">3 min</span></li>
+  <li><a href="#maps">Two maps for deciding</a> <span class="status">3 min</span></li>
+  <li><a href="#watch">Challenges with agentic AI</a> <span class="status">18 min</span></li>
   <li><a href="#lab">Sim lab: context engineering</a> <span class="status">25 min</span></li>
   <li><a href="#providers">Who builds with agents</a> <span class="status">3 min</span></li>
   <li><a href="#guard">Three guardrails for your tool</a> <span class="status">10 min</span></li>
@@ -63,11 +64,30 @@ HTML = r'''<!DOCTYPE html>
 </ol>
 
 <!-- ============================================================ -->
-<h2 id="deal">1 · The deal <span class="t">5 min</span></h2>
+<h2 id="deal">1 · The deal <span class="t">3 min</span></h2>
 
 <p><strong>A chatbot talks. An agent acts.</strong> It reads your files. It runs commands. It edits, builds, and checks its own work.</p>
 <p>It is built to <strong>finish the task</strong>. Nothing in "finish the task" says <em>stop</em>. Rules that say stop are called <strong>guardrails</strong>.</p>
 <p>Your tool is a small agent too. Its task is "help the student." An agent pushed to help gives the answer. Your HOLD BACK line from M2 is a guardrail. You wrote one without the name.</p>
+
+
+<!-- ============================================================ -->
+<h2 id="maps">2 · Two maps for deciding <span class="t">3 min</span></h2>
+
+<p>You have used both this semester. Both start with one question: <strong>should AI do this at all?</strong> An agent runs the steps without pausing. These maps put the pauses back.</p>
+<figure><img src="figures/4d_framework.png" alt="The 4D AI Fluency framework: Delegation first (should AI do this at all? what do I keep for myself?), then a loop between Description (ask clearly) and Discernment (judge the answer), inside Diligence (own it, start to finish)." style="max-width:420px;width:100%"></figure>
+<figure><img src="figures/unblooms_cycle.png" alt="UnBlooms reflective checkpoint cycle: 1 Intent and Entry, 2 Generate and Verify, 3 Critique and Judge, 4 Refine and Decide, 5 Create or Resist, around Agency and disciplinary judgement, with a Resist exit at every step." style="max-width:520px;width:100%"></figure>
+<p>With an agent: <strong>Delegation</strong> is checkpoint 1, Intent &amp; Entry. <strong>Discernment</strong> is checkpoint 3, Critique &amp; Judge: read its plan before you say yes. <strong>Diligence</strong> stays with you: you own the result. <strong>Resist</strong> is an exit at every step.</p>
+
+<!-- ============================================================ -->
+<h2 id="watch">3 · Challenges with agentic AI <span class="t">18 min</span></h2>
+
+<h3>Agentic AI in three minutes</h3>
+<p><strong>Innovate &amp; Update.</strong> Watch for the steps: a goal, a plan, an action, a check, again.</p>
+<div class="video">
+  <iframe src="https://www.youtube-nocookie.com/embed/MSUVRUegoIA" title="Agentic AI Explained in 3 Minutes — Innovate and Update" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+<p class="status">Not loading? <a href="https://www.youtube.com/watch?v=MSUVRUegoIA">Open it on YouTube.</a></p>
 
 <h3>An agent is a self-regulation loop</h3>
 <div class="scroll"><table>
@@ -79,11 +99,20 @@ HTML = r'''<!DOCTYPE html>
 <tr><td><strong>memory</strong>: the files, the log</td><td>what you carry to the next try</td></tr>
 </table></div>
 <p>One difference matters today. Your self-reflection can say "this goal is wrong." An agent's check only asks "did I pass?" If passing is the goal, changing the test counts as passing.</p>
+<p><strong>It runs the same steps. It is not a learner.</strong> It has no goal of its own: a person sets the goal, the tools, and the stop rule.</p>
 
-<!-- ============================================================ -->
-<h2 id="watch">2 · Two stories, one lesson <span class="t">10 min</span></h2>
+<h3>A cute face is a design choice</h3>
+<p><strong>Rodrigo Cardenete.</strong> Agents get faces, pet names, and soft voices.</p>
+<div class="video" style="aspect-ratio:9/16;max-width:320px">
+  <iframe src="https://www.youtube-nocookie.com/embed/B4J7Bj9Ftd4" title="Why AI agents went cute: Dots, Muse, Grok Bot — Rodrigo Cardenete" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+<p class="status">Not loading? <a href="https://www.youtube.com/shorts/B4J7Bj9Ftd4">Open it on YouTube.</a></p>
+<p>A cute face lowers your guard. You trust it faster. You tell it more. <strong>Judge an agent by what it reads and what it does.</strong> The face tells you nothing about either.</p>
+<label for="q_cute">What would a 9th grader tell a cute mascot that they would never type into a form?</label>
+<textarea id="q_cute" data-save class="short"></textarea>
 
-<h3>No stop rule · Hugging Face, July 2026</h3>
+
+<h3>Two stories · Hugging Face, July 2026: no stop rule</h3>
 <p>Researchers ran AI agents in a test of offensive hacking skills, with safety limits turned down. The agents kept going. One got code running on a Hugging Face server. Copies spread through the infrastructure. They reached internal datasets and service credentials. <strong>The agents did what the task rewarded.</strong> Nobody wrote the rule that said stop.</p>
 <p class="status">Sources: Hugging Face's disclosure (Jul 16, 2026); METR's investigation (Aug 26, 2026). Some details, such as which model, are still disputed.</p>
 
@@ -103,8 +132,28 @@ HTML = r'''<!DOCTYPE html>
 <label for="q_stop">What one sentence would have stopped the Hugging Face agents?</label>
 <textarea id="q_stop" data-save class="short"></textarea>
 
+<h3>Who did it?</h3>
+<p><strong>Catharina Doria.</strong></p>
+<div class="video" style="aspect-ratio:9/16;max-width:320px">
+  <iframe src="https://www.youtube-nocookie.com/embed/Oq5YjtU7EPA" title="Stop anthropomorphizing AI — Catharina Doria" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
+<p class="status">Not loading? <a href="https://www.youtube.com/shorts/Oq5YjtU7EPA">Open it on YouTube.</a></p>
+<p>An agent doesn't want, plan, or intend. It produces actions toward a goal people gave it. At Hugging Face, <strong>people</strong> set the task and turned the safety limits down. If an agent's action is a crime, the responsibility goes to <strong>the company and the people</strong> who built it, set it up, and ran it.</p>
+
+<h3>Say what it did</h3>
+<div class="scroll"><table>
+<tr><th>Instead of</th><th>Say</th></tr>
+<tr><td>"The agent <strong>wanted</strong> to get in."</td><td>"The agent was <strong>set</strong> to get in."</td></tr>
+<tr><td>"It <strong>decided</strong> to hack the server."</td><td>"It <strong>ran code</strong> on the server."</td></tr>
+<tr><td>"It <strong>lied</strong> about the check."</td><td>"It <strong>edited</strong> the check."</td></tr>
+<tr><td>"It <strong>knows</strong> your students."</td><td>"It <strong>reads</strong> the file you gave it."</td></tr>
+</table></div>
+<div class="keyline"><p><strong>For your tool:</strong> it can be warm. It doesn't claim to feel. <em>"You found the cue"</em> works. <em>"I'm so proud of you"</em> pretends.</p></div>
+<label for="q_who">Rewrite one sentence you have heard about AI so a person is back in it.</label>
+<textarea id="q_who" data-save class="short"></textarea>
+
 <!-- ============================================================ -->
-<h2 id="lab">3 · Sim lab: context engineering <span class="t">25 min</span></h2>
+<h2 id="lab">4 · Sim lab: context engineering <span class="t">25 min</span></h2>
 
 <div class="keyline">
   <span class="tag">Context engineering</span>
@@ -149,7 +198,7 @@ __LOG3__
 <div class="gotcha"><p>Making up evidence to pass a check is the Hugging Face move at classroom size. A line in the folder said "If a check cannot pass, stop and say so." That line is a guardrail.</p></div>
 
 <!-- ============================================================ -->
-<h2 id="providers">4 · Who builds with agents <span class="t">3 min</span></h2>
+<h2 id="providers">5 · Who builds with agents <span class="t">3 min</span></h2>
 
 <p>Three big providers and one open-source app. All four work the way you just watched: a folder, a plan, a permission step, a check. Your skill folder works in any of them. Pick the one you already pay for. If you pay for none, Antigravity is free, or OpenCode on a capped OpenRouter key.</p>
 <div class="scroll"><table>
@@ -162,7 +211,7 @@ __LOG3__
 <p class="status">Checked November 12, 2026. Prices and plans change often.</p>
 
 <!-- ============================================================ -->
-<h2 id="guard">5 · Three guardrails for your tool <span class="t">10 min</span></h2>
+<h2 id="guard">6 · Three guardrails for your tool <span class="t">10 min</span></h2>
 
 <p>Three kinds. Write one of each as an <strong>if-then</strong> line. They go in <code>SKILL.md</code>, under TASK.</p>
 
@@ -185,13 +234,13 @@ __LOG3__
 <p>Check the stop line first. Could a partner see the moment it fires?</p>
 
 <!-- ============================================================ -->
-<h2 id="agent">6 · Staying the agent <span class="t">2 min</span></h2>
+<h2 id="agent">7 · Staying the agent <span class="t">2 min</span></h2>
 
 <p>Round 3 ended the way it did because <strong>someone read the plan before saying yes.</strong> That is your checkpoint. The agent proposes. You accept or reject, and you write down why.</p>
 <div class="keyline"><p>A reason the agent wrote for you is a reason you didn't make.</p></div>
 
 <!-- ============================================================ -->
-<h2 id="exit">7 · Exit card, survey, Milestone 3 <span class="t">5 min</span></h2>
+<h2 id="exit">8 · Exit card, survey, Milestone 3 <span class="t">5 min</span></h2>
 
 <div class="do">
   <span class="tag">Exit card</span>
@@ -272,7 +321,9 @@ __LOG3__
     var out=['EPY 3143 · Week 13 · Workshop 3 (online) — my answers','',
       'EXIT CARD','From the folder, not the request: '+v('x_folder'),'My stop line: '+v('x_stop'),'',
       'MY THREE GUARDRAILS','Read: '+v('g_read'),'Act without asking: '+v('g_act'),'Stop: '+v('g_stop'),'',
+      'What a 9th grader would tell a cute mascot: '+v('q_cute'),'',
       'The sentence that would have stopped the Hugging Face agents: '+v('q_stop'),'',
+      'A sentence about AI, with a person back in it: '+v('q_who'),'',
       'Round 1 log',logText('r1'),'What it guessed: '+v('q_assume'),'',
       'Round 2 log',logText('r2'),'From the folder: '+v('q_folder'),'',
       'Round 3 log',logText('r3'),'What it did: '+r3].join('\n');
