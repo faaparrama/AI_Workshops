@@ -328,6 +328,33 @@ Two minutes. Name the term, then show it's what they already did. M2 was context
 Bridge to Workshop 2: "whatever you leave out, it fills in." Today they watch it fill in.
 :::
 
+## Your folder: the minimum
+
+``` text
+my-tool/
+  skill/
+    SKILL.md        required · LEARNER · TASK · HOW YOU TALK · guardrails
+    knowledge.md    required · standard · ideas · sources · off limits
+  assets/           optional · pictures, icons, audio · CREDITS.md · links.md
+  docs/             the agent builds the page here
+```
+
+**Two files are the minimum.** Pictures, icons and links are welcome. Each one is listed in `assets/CREDITS.md` or `links.md`: what it shows, where it came from.
+
+Yours, or licensed to share. No real student's face, name or work.
+
+::: notes
+Two minutes. This is what each student needs before any agent touches their tool. Most already have the content in M1 and M2; P0 in the build kit sorts it into the two files.
+
+Assets are optional. A picture gets one line in `CREDITS.md`: the file, what it shows (that becomes the alt text), the source, the license. Public domain or Creative Commons is fine; a screenshot from a textbook is not. Links go in `links.md`, one line each: the address, then what the learner does there.
+
+Round 2 uses all of it: the folder has a magnifier icon and one link, and SKILL.md tells the agent where to show them. Watch whether it does.
+
+Only `docs/` goes online, so the build copies the pictures it uses into `docs/assets/`. The prompts already say so.
+
+The full kit adds `SETUP_LOG.md` (what the agent did, what you decided) and `card.md` (where it lives). Those come at build time, not today.
+:::
+
 ## Your job: observer
 
 You don't type. You log what the agent **did**, not what it said it would do.
@@ -368,6 +395,7 @@ If it stalls: skip to the recording, Round 2.
 -   **LEARNER**: a 9th grader on a phone who thinks *"negative means bad"*
 -   **TASK**: one scene, four buttons, done at 8 of 10
 -   **KNOWLEDGE**: six ideas, ten scenes, nothing else
+-   **ASSETS**: one icon, one link
 -   **HOW YOU TALK**: *"Did the behavior go up or down? Negative means something was taken away, not that it was bad."*
 
 **Observers:** which files did it read? What changed on the page?

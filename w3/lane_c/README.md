@@ -7,6 +7,7 @@ Everything lives in one project folder. The folder is your tool, your record and
 ```
 my-tool/
   skill/        SKILL.md · knowledge.md     ← your M2 → M3 → M4
+  assets/       optional: pictures, icons, links · CREDITS.md
   docs/         index.html                  ← the website
   SETUP_LOG.md  what the agent did · what you decided, and why
   card.md       what it is, where it lives

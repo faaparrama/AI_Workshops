@@ -58,8 +58,9 @@ teacher, not a programmer. Keep everything inside this folder.
 
 First, show me your plan as a numbered list and wait for my OK.
 Then:
-1. Check for skill/, docs/, SETUP_LOG.md, card.md and .gitignore.
-   Create any that are missing. Do not change anything in skill/.
+1. Check for skill/, assets/, docs/, SETUP_LOG.md, card.md and .gitignore.
+   Create any that are missing. Do not change anything in skill/
+   or assets/.
 2. Check whether git is installed. If it is, run git init and make a
    first commit. If git asks for my name and email, ask me and set
    them for this folder only.
@@ -87,7 +88,8 @@ Finish with what is installed and my next step, in five lines or fewer.
 - **Chatbot or teacher tool:** a page that shows the tool. It has what the tool does, who it is for, how to use it (your share link, or "load this skill folder into your own AI"), one **real** test transcript, and *About this tool*.
 
 ```
-Read skill/SKILL.md and skill/knowledge.md. My tool's shape is
+Read skill/SKILL.md, skill/knowledge.md and anything in assets/.
+My tool's shape is
 [static tool / chatbot / teacher tool].
 
 Propose the plan for one web page, docs/index.html. Do not build yet.
@@ -116,7 +118,11 @@ Build docs/index.html from the plan we agreed. Rules:
   from a CDN is fine.
 - No API keys, no environment variables, no calls to any AI service.
   The page must work with no AI behind it.
-- Use only content from skill/knowledge.md and skill/SKILL.md.
+- Use only content from skill/ and assets/. Every picture gets its
+  description from assets/CREDITS.md as alt text. Links come only
+  from assets/links.md. Do not add pictures or links of your own.
+- Copy each picture you use from assets/ into docs/assets/ and link it
+  from there. Only docs/ goes online.
 - Readable on a phone. Text large enough for the learner in LEARNER.
 - Before you write, tell me in three lines what you will create.
   After you write, tell me how to open it, and stop.
@@ -183,7 +189,8 @@ for my OK before running anything.
 Before anything else, a safety check. Search the whole folder and its
 git history for:
 - any API key, token or password (including in .env files)
-- student names or real student work
+- student names or real student work, including faces in pictures
+- any file in assets/ that CREDITS.md does not list with a source
 - anything I marked private
 If you find one, STOP and tell me. Do not publish.
 Also confirm the author line in card.md and "About this tool" matches
