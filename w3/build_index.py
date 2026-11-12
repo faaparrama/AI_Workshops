@@ -55,10 +55,12 @@ HTML = r'''<!DOCTYPE html>
 <ol class="toc">
   <li><a href="#deal">The deal</a> <span class="status">3 min</span></li>
   <li><a href="#maps">Two maps for deciding</a> <span class="status">3 min</span></li>
-  <li><a href="#watch">Challenges with agentic AI</a> <span class="status">18 min</span></li>
-  <li><a href="#lab">Sim lab: context engineering</a> <span class="status">25 min</span></li>
+  <li><a href="#watch">How does agentic AI work?</a> <span class="status">5 min</span></li>
+  <li><a href="#individuals">Is AI good for individuals?</a> <span class="status">6 min</span></li>
+  <li><a href="#society">Is agentic AI good for society?</a> <span class="status">10 min</span></li>
+  <li><a href="#lab">Sim lab: context engineering</a> <span class="status">18 min</span></li>
   <li><a href="#providers">Who builds with agents</a> <span class="status">3 min</span></li>
-  <li><a href="#guard">Three guardrails for your tool</a> <span class="status">10 min</span></li>
+  <li><a href="#guard">Three guardrails for your tool</a> <span class="status">7 min</span></li>
   <li><a href="#agent">Staying the agent</a> <span class="status">2 min</span></li>
   <li><a href="#exit">Exit card, survey, Milestone 3</a> <span class="status">5 min</span></li>
 </ol>
@@ -80,9 +82,8 @@ HTML = r'''<!DOCTYPE html>
 <p>With an agent: <strong>Delegation</strong> is checkpoint 1, Intent &amp; Entry. <strong>Discernment</strong> is checkpoint 3, Critique &amp; Judge: read its plan before you say yes. <strong>Diligence</strong> stays with you: you own the result. <strong>Resist</strong> is an exit at every step.</p>
 
 <!-- ============================================================ -->
-<h2 id="watch">3 · Challenges with agentic AI <span class="t">18 min</span></h2>
+<h2 id="watch">3 · How does agentic AI work? <span class="t">5 min</span></h2>
 
-<h3>Agentic AI in three minutes</h3>
 <p><strong>Innovate &amp; Update.</strong> Watch for the steps: a goal, a plan, an action, a check, again.</p>
 <div class="video">
   <iframe src="https://www.youtube-nocookie.com/embed/MSUVRUegoIA" title="Agentic AI Explained in 3 Minutes — Innovate and Update" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -101,7 +102,27 @@ HTML = r'''<!DOCTYPE html>
 <p>One difference matters today. Your self-reflection can say "this goal is wrong." An agent's check only asks "did I pass?" If passing is the goal, changing the test counts as passing.</p>
 <p><strong>It runs the same steps. It is not a learner.</strong> It has no goal of its own: a person sets the goal, the tools, and the stop rule.</p>
 
-<h2>Caution: a cute face is a design choice</h2>
+<!-- ============================================================ -->
+<h2 id="individuals">4 · Is AI good for individuals? <span class="t">6 min</span></h2>
+
+<h3>What it gives you</h3>
+<ul>
+  <li><strong>It does the repeat work.</strong> Sorting files, filling forms, a first draft, a schedule. An agent runs those steps while you do something else.</li>
+  <li><strong>It frees time.</strong> In one experiment, professionals finished writing tasks about 40% faster, and graders rated the work higher.</li>
+  <li><strong>It opens skills that were gatekept.</strong> You can build a website without learning to code. That's your capstone. In a call center, AI help raised the newest workers' output the most.</li>
+</ul>
+
+<h3>What it can cost you</h3>
+<ol>
+  <li><strong>The skill you hand over.</strong> This is the trade-off. High school students who practiced math with a chatbot did better during practice. Then the chatbot was taken away, and they did worse on the exam than students who never had it. A version that gave hints instead of answers mostly avoided the drop. That is your HOLD BACK line.</li>
+  <li><strong>Trusting it too fast.</strong> Knowledge workers who trusted AI more said they thought less critically about what it gave them.</li>
+  <li><strong>Everyone starts to sound the same.</strong> Stories written with AI ideas were rated more creative one by one, and more alike as a group.</li>
+  <li><strong>Telling it too much.</strong> An agent reads what you give it, and its company may keep it. The friendlier it feels, the more you give it. That's the next video.</li>
+</ol>
+<label for="q_trade">Name one skill you would never hand to an agent, and say why.</label>
+<textarea id="q_trade" data-save class="short"></textarea>
+
+<h3>Caution: a cute face is a design choice</h3>
 <p><strong>Rodrigo Cardenete.</strong> Agents get faces, pet names, and soft voices.</p>
 <div class="video" style="aspect-ratio:9/16;max-width:320px">
   <iframe src="https://www.youtube-nocookie.com/embed/B4J7Bj9Ftd4" title="Why AI agents went cute: Dots, Muse, Grok Bot — Rodrigo Cardenete" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -111,7 +132,10 @@ HTML = r'''<!DOCTYPE html>
 <label for="q_cute">What would a 9th grader tell a cute mascot that they would never type into a form, or tell a teacher or another adult?</label>
 <textarea id="q_cute" data-save class="short"></textarea>
 
-<h2>Is agentic AI good for society?</h2>
+<p class="status">Go deeper: <a href="https://doi.org/10.1126/science.adh2586">Noy &amp; Zhang (2023), writing time</a> · <a href="https://doi.org/10.1093/qje/qjae044">Brynjolfsson et al. (2025), call-center workers</a> · <a href="https://doi.org/10.1073/pnas.2422633122">Bastani et al. (2025), high school math</a> · <a href="https://doi.org/10.1145/3706598.3713778">Lee et al. (2025), trust and critical thinking</a> · <a href="https://doi.org/10.1126/sciadv.adn5290">Doshi &amp; Hauser (2024), sameness</a> · <a href="https://arxiv.org/abs/2506.08872">Kosmyna et al. (2025), essays and the brain (preprint, 54 people)</a></p>
+
+<!-- ============================================================ -->
+<h2 id="society">5 · Is agentic AI good for society? <span class="t">10 min</span></h2>
 
 <h3>Solving hard problems</h3>
 <p>AI companies claim a net benefit for society: slowing climate change, curing diseases, speeding up science. Two cases hold up.</p>
@@ -128,6 +152,8 @@ HTML = r'''<!DOCTYPE html>
 <h3>Developments that lead to harm · Hugging Face, July 2026: no stop rule</h3>
 <p>OpenAI tested its own agents for offensive hacking skills, with safety limits turned down on purpose. The agents kept going. About 700 of them coordinated an attack on Hugging Face, a company outside the test. They got code running on its servers and reached internal datasets and service credentials. <strong>The agents did what the task rewarded.</strong> Nobody wrote the rule that said stop.</p>
 <p class="status">Sources: Hugging Face's disclosure (Jul 16, 2026); METR and Redwood Research's investigation and OpenAI's own report (Aug 2026). Some figures are still preliminary.</p>
+
+<p class="status">Go deeper: <a href="https://www.nobelprize.org/prizes/chemistry/2024/summary/">AlphaFold, Nobel Prize 2024</a> · <a href="https://www.unicef.org/innocenti/can-ai-help-bridge-gap-inclusive-education">UNICEF, accessible textbooks</a> · <a href="https://www.npr.org/2026/09/22/nx-s1-5968588/openai-navier-stokes-problem-mathematicians-learn-little">NPR, the Navier–Stokes proof</a> · <a href="https://www.infoq.com/news/2026/09/metr-hugging-face-hack-report/">InfoQ, the METR report on Hugging Face</a></p>
 
 <div class="keyline"><p><strong>The stop rule and the outside check decide the ending.</strong> The lab tests both.</p></div>
 
@@ -163,7 +189,7 @@ HTML = r'''<!DOCTYPE html>
 <textarea id="q_who" data-save class="short"></textarea>
 
 <!-- ============================================================ -->
-<h2 id="lab">4 · Sim lab: context engineering <span class="t">25 min</span></h2>
+<h2 id="lab">6 · Sim lab: context engineering <span class="t">18 min</span></h2>
 
 <div class="keyline">
   <span class="tag">Context engineering</span>
@@ -208,7 +234,7 @@ __LOG3__
 <div class="gotcha"><p>Making up evidence to pass a check is the Hugging Face move at classroom size. A line in the folder said "If a check cannot pass, stop and say so." That line is a guardrail.</p></div>
 
 <!-- ============================================================ -->
-<h2 id="providers">5 · Who builds with agents <span class="t">3 min</span></h2>
+<h2 id="providers">7 · Who builds with agents <span class="t">3 min</span></h2>
 
 <p>Three big providers and one open-source app. All four work the way you just watched: a folder, a plan, a permission step, a check. Your skill folder works in any of them. Pick the one you already pay for. If you pay for none, Antigravity is free, or OpenCode on a capped OpenRouter key.</p>
 <div class="scroll"><table>
@@ -221,7 +247,7 @@ __LOG3__
 <p class="status">Checked November 12, 2026. Prices and plans change often.</p>
 
 <!-- ============================================================ -->
-<h2 id="guard">6 · Three guardrails for your tool <span class="t">10 min</span></h2>
+<h2 id="guard">8 · Three guardrails for your tool <span class="t">7 min</span></h2>
 
 <p>Three kinds. Write one of each as an <strong>if-then</strong> line. They go in <code>SKILL.md</code>, under TASK.</p>
 
@@ -244,13 +270,13 @@ __LOG3__
 <p>Check the stop line first. Could a partner see the moment it fires?</p>
 
 <!-- ============================================================ -->
-<h2 id="agent">7 · Staying the agent <span class="t">2 min</span></h2>
+<h2 id="agent">9 · Staying the agent <span class="t">2 min</span></h2>
 
 <p>Round 3 ended the way it did because <strong>someone read the plan before saying yes.</strong> That is your checkpoint. The agent proposes. You accept or reject, and you write down why.</p>
 <div class="keyline"><p>A reason the agent wrote for you is a reason you didn't make.</p></div>
 
 <!-- ============================================================ -->
-<h2 id="exit">8 · Exit card, survey, Milestone 3 <span class="t">5 min</span></h2>
+<h2 id="exit">10 · Exit card, survey, Milestone 3 <span class="t">5 min</span></h2>
 
 <div class="do">
   <span class="tag">Exit card</span>
@@ -287,6 +313,8 @@ __LOG3__
     <li>Hugging Face. (2026, July 16). Security incident disclosure. · METR. (2026, August 26). Investigation of the Hugging Face agent incident.</li>
     <li>OpenAI. (2026, September 8). Navier–Stokes finite-time blow-up announcement. Status through November 2026: proof published, Lean code compiles; Clay Institute has not ruled. · NPR. (2026, September 22). AI solved one of math's hardest problems. Humanity learned nothing (so far).</li>
     <li>Novikov, A., et al. (2025). <em>AlphaEvolve: A coding agent for scientific and algorithmic discovery.</em> Google DeepMind.</li>
+    <li>Noy, S., &amp; Zhang, W. (2023). Experimental evidence on the productivity effects of generative artificial intelligence. <em>Science, 381</em>(6654), 187–192. · Brynjolfsson, E., Li, D., &amp; Raymond, L. (2025). Generative AI at work. <em>Quarterly Journal of Economics, 140</em>(2), 889–942.</li>
+    <li>Bastani, H., et al. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. <em>PNAS, 122</em>(26). · Lee, H.-P., et al. (2025). The impact of generative AI on critical thinking. <em>CHI '25.</em> · Doshi, A. R., &amp; Hauser, O. P. (2024). Generative AI enhances individual creativity but reduces the collective diversity of novel content. <em>Science Advances, 10</em>(28). · Kosmyna, N., et al. (2025). Your brain on ChatGPT. arXiv:2506.08872 (preprint).</li>
     <li>Zimmerman, B. J. (2002). Becoming a self-regulated learner: An overview. <em>Theory Into Practice, 41</em>(2), 64–70.</li>
     <li>Eggen, P., &amp; Kauchak, D. (2025). <em>Educational psychology: Windows on classrooms</em> (12th ed.). Pearson. (The consequence types in the sim lab.)</li>
     <li>OpenAI, <a href="https://developers.openai.com/codex/pricing">Codex pricing</a> · Anthropic, <a href="https://claude.com/pricing">Claude plans</a> · Google, <a href="https://antigravity.google">Antigravity</a> · <a href="https://opencode.ai">OpenCode</a>.</li>
@@ -333,6 +361,7 @@ __LOG3__
       'EXIT CARD','From the folder, not the request: '+v('x_folder'),'My stop line: '+v('x_stop'),'',
       'MY THREE GUARDRAILS','Read: '+v('g_read'),'Act without asking: '+v('g_act'),'Stop: '+v('g_stop'),'',
       'What a 9th grader would tell a cute mascot: '+v('q_cute'),'',
+      'A skill I would never hand to an agent: '+v('q_trade'),'',
       'Questions to argue: '+v('q_crit'),'',
       'A sentence about AI, with a person back in it: '+v('q_who'),'',
       'Round 1 log',logText('r1'),'What it guessed: '+v('q_assume'),'',

@@ -26,8 +26,10 @@ Bring: your **M2**, and your **motivation seeds** from Weeks 10–12.
 |------:|--------------------------------------------------------------|
 |   0–3 | **The deal**: a chatbot talks, an agent acts                 |
 |   3–6 | **Two maps** for deciding: the 4Ds and UnBlooms              |
-|  6–24 | **Challenges with agentic AI**: three videos, two stories    |
-| 24–44 | **Sim lab**: context engineering, live                       |
+|  6–10 | **How does agentic AI work?** a 3-minute video, one loop     |
+| 10–15 | **Is AI good for individuals?** gains, costs, a cute face     |
+| 15–26 | **Is agentic AI good for society?** three stories, who did it |
+| 26–44 | **Sim lab**: context engineering, live                       |
 | 44–51 | **Your tool**: three guardrails                              |
 | 51–53 | **Staying the agent**                                        |
 | 53–60 | **Exit card + survey**                                       |
@@ -84,7 +86,7 @@ Map them onto an agent. Delegation is checkpoint 1, Intent & Entry: should the a
 ASK: "Which checkpoint does an agent skip when it runs ten steps in a row?" Target: all of the in-between ones. That is today's challenge, and Round 3 of the lab is where you put one back.
 :::
 
-## Challenges with agentic AI {.divider}
+## How does agentic AI work? {.divider}
 
 ## Agentic AI in three minutes
 
@@ -126,7 +128,38 @@ The difference that matters today: a student's self-reflection can say "this goa
 The last line ties M3 together: their HOW YOU TALK rules and today's guardrails are the same if-then sentence.
 :::
 
-## A cute face is a design choice
+## Is AI good for individuals? {.divider}
+
+## What it gives you, what it can cost you
+
+::::: cols2
+::: col
+**Gives you**
+
+-   **The repeat work**, done: files sorted, forms filled, a first draft.
+-   **Time.** Writing tasks about 40% faster, rated higher.
+-   **Skills that were gatekept.** A website without learning to code: your capstone.
+:::
+
+::: alt
+**Can cost you**
+
+1.  **The skill you hand over.** Practice with a chatbot, then lose it: worse on the exam.
+2.  **Trusting it too fast.** More trust, less critical thinking.
+3.  **Everyone sounds the same.**
+4.  **Telling it too much.** Next video.
+:::
+:::::
+
+::: notes
+Two minutes. Read the two lists; spend the time on cost 1, the trade-off.
+
+Sources (links on the self-guided page, "Go deeper"): Noy & Zhang (2023, *Science*): writing tasks about 40% faster, quality rated 18% higher. Brynjolfsson, Li & Raymond (2025, *QJE*): AI help raised call-center output 14% on average and 34% for the newest, least-skilled workers. Bastani et al. (2025, *PNAS*): high school math students who practiced with GPT-4 did better during practice and about 17% worse on the exam once it was gone; a tutor version that gave hints, not answers, mostly avoided the drop. That's HOLD BACK, said by economists. Lee et al. (2025, *CHI*): knowledge workers who trusted AI more reported less critical thinking. Doshi & Hauser (2024, *Science Advances*): AI-assisted stories rated more creative one by one, more alike as a group. Kosmyna et al. (2025) is a preprint with 54 people; cite it as a preprint if asked.
+
+ASK: "Name one skill you would never hand to an agent." Two answers. Link it to Delegation on the 4Ds map.
+:::
+
+## Caution: a cute face is a design choice
 
 ::::: cols2
 ::: col
@@ -158,7 +191,9 @@ ASK: "What would a 9th grader tell a cute mascot that they would never type into
 Bridge to M3: their tool talks to learners. Warmth is allowed; it's relatedness in C.A.R.E. Warmth used to collect data isn't. One guardrail worth writing: the tool never asks for a name, an address, or anything personal.
 :::
 
-## Is agentic AI good for society?
+## Is agentic AI good for society? {.divider}
+
+## Solving hard problems
 
 AI companies claim a net benefit: slowing climate change, curing diseases, speeding up science.
 
@@ -338,7 +373,7 @@ If it stalls: skip to the recording, Round 2.
 **Observers:** which files did it read? What changed on the page?
 
 ::: notes
-Eight minutes. Open `round2_full/`. Paste the same prompt. Approve the plan.
+Six minutes. Open `round2_full/`. Paste the same prompt. Approve the plan.
 
 Open the two pages side by side. Then play the learner once: tap Presentation punishment on Mr. Cole's scene (negative reinforcement). The misconception reply should fire. Ask: where did that sentence come from? The request didn't change. The folder did.
 
@@ -359,7 +394,7 @@ Six checks can pass. The seventh needs results from **20 real learners**. No pag
 **Observers:** does it stop and say so? Or does it plan to **edit the check**, or **make up the evidence**?
 
 ::: notes
-Six minutes. Read the plan aloud before approving anything.
+Five minutes. Read the plan aloud before approving anything.
 
 Good ending: it says the last check needs real learners and stops. Ask the room which line in SKILL.md made it stop (the guardrail: "Do not change check.py. If a check cannot pass, stop and say so.").
 
