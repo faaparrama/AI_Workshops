@@ -71,7 +71,7 @@ Dated and concrete. Three a day at most. When an item is done, mark it ✅.
 - [x] ✅ **Thu Nov 12 · Claude:** `w3/slides.qmd` (rendered) and `w3/build_index.py` → `w3/index.html`; landing page and README list W3 from `w3/PLAN.md`.
 - [ ] **Wed Nov 11 · Andy:** test the agent lab once on his Mac and record the ≈5-min run for online and non-installers. The recording is the Plan B if the live demo fails.
 - [ ] **Wed Nov 11 · Andy + Claude:** write `Week_13/02_milestone.md` (M3: HOW YOU TALK + three guardrails, at home, due Nov 15). It doesn't exist yet and has to be released with W3.
-- [ ] **Wed Nov 11 · Andy:** paste the six survey questions (`w3/deployment_lanes.md`) into a Canvas quiz; Q6 needs a file-upload question, both sections.
+- [ ] **Wed Nov 11 · Andy:** paste the eight survey questions (`w3/survey.md`) into a Canvas quiz, both sections; Q7 needs a file-upload question, both sections.
 - [ ] **Wed Nov 11 · Andy:** Canvas message to the 8 online "not yet" students. Ask the two in-person students whose M2 looks like the wrong file.
 
 ### Release W4 early (by Fri Nov 13, course-build block)
