@@ -29,7 +29,8 @@ Bring: your **M2**, and your **motivation seeds** from Weeks 10–12.
 |  6–10 | **How does agentic AI work?** a 3-minute video, one loop     |
 | 10–15 | **Is AI good for individuals?** gains, costs, a cute face     |
 | 15–26 | **Is agentic AI good for society?** three stories, who did it |
-| 26–44 | **Sim lab**: context engineering, live                       |
+| 26–29 | **Who builds with agents**: four tools, open on screen       |
+| 29–44 | **Sim lab**: context engineering, live                       |
 | 44–51 | **Your tool**: three guardrails                              |
 | 51–53 | **Staying the agent**                                        |
 | 53–60 | **Exit card + survey**                                       |
@@ -41,7 +42,7 @@ Before class: `sim_lab/` copied to the Desktop (run from the copy). Antigravity 
 
 If the live agent stalls, play the recording and keep going. Protect the guardrails block and the exit card.
 
-The challenges block (Nov 12) took 14 minutes from elsewhere: the provider table moved to a backup slide after Milestone 3, the sim lab went from 28 to 20 minutes, and guardrails from 10 to 7. If you run long, cut the Navier–Stokes slide to one sentence.
+The challenges block (Nov 12) took 14 minutes from elsewhere. The provider table is a 3-minute live stop just before the sim lab, so the sim lab runs 15 minutes: rounds of 3, 5 and 3. Guardrails keep 7. If you run long, cut the Navier–Stokes slide to one sentence, and in Round 1 read the plan without waiting for the page.
 :::
 
 ## The deal
@@ -307,6 +308,29 @@ Use these verbs in the sim lab log. Observers write what the agent ran and edite
 The last line ties back to M3's HOW YOU TALK: feedback that names what the learner did (competence, C.A.R.E.) and no claimed feelings.
 :::
 
+## Who builds with agents · checked Nov 12, 2026 {.smaller}
+
+|  | **ChatGPT Codex** · OpenAI | **Claude Code** · Anthropic | **Antigravity** · Google | **OpenCode** · open source |
+|---|---|---|---|---|
+| Where | ChatGPT, a terminal, VS Code | a terminal, VS Code, a desktop app, the web | its own editor | a terminal or a desktop app |
+| Cost to you | in ChatGPT plans; the free plan has a small cap; Plus $20/mo | Claude Pro $20/mo or more; no free plan | **free preview**, personal Google account | the app is free; you pay the model: a **capped OpenRouter key**, or its free models |
+| Good for | you already use ChatGPT | careful plans, asks before acting | **our class kit** | any model, including the cheap ones in `MODELS.md` |
+| Watch | cloud tasks run on OpenAI's computers | the terminal can feel like code | a preview: limits change | you hold a key; free models slow down or cut out |
+
+**Our build path:** Antigravity, with Zoo Code on a capped OpenRouter key. OpenCode takes the same key the same way.
+
+All four run the same loop: a folder, a plan, a permission step, a check. Your skill folder works in any of them.
+
+::: notes
+Three minutes, live. Stop here and open each tool on your laptop: the same folder, the same prompt box, the same "ask before running" switch. Students see what each one looks like before they watch one work. Moved here from the backup slides on Nov 12.
+
+What all four share is what they just watched: a folder, a plan, a permission step, a check. The skill folder works in any of them. Pick the one you already pay for; if you pay for none, Antigravity is free. OpenCode (Andy installed it on Nov 12; easy setup) is the route for anyone who wants one capped OpenRouter key and a choice of cheap models. The key goes in OpenCode's own settings (`/connect` or its config), never in the project folder.
+
+Prices and plans change often. Checked Nov 12, 2026 against OpenAI's Codex pricing page and current guides. Antigravity's free preview may require a personal Gmail account, so an MSU login may not work.
+
+Models: the cheap default for builds (DeepSeek) comes from a Chinese lab and is reached through OpenRouter. `lane_c/MODELS.md` says which providers to turn off so inputs aren't used for training. No student data goes into any build.
+:::
+
 ## Sim lab {.divider}
 
 ## Context engineering
@@ -323,7 +347,7 @@ Your **skill folder** is context engineering:
 Today: **the same request, two folders.**
 
 ::: notes
-Two minutes. Name the term, then show it's what they already did. M2 was context engineering: the standard, the ideas, the misconception, the limits. The agent version of a context window is the folder plus whatever it reads.
+One minute. Name the term, then show it's what they already did. M2 was context engineering: the standard, the ideas, the misconception, the limits. The agent version of a context window is the folder plus whatever it reads.
 
 Bridge to Workshop 2: "whatever you leave out, it fills in." Today they watch it fill in.
 :::
@@ -343,6 +367,8 @@ my-tool/
 
 Yours, or licensed to share. No real student's face, name or work.
 
+**Start from `my-tool-demo`**: a finished folder with a checklist. Copy it, rename it, make it yours.
+
 ::: notes
 Two minutes. This is what each student needs before any agent touches their tool. Most already have the content in M1 and M2; P0 in the build kit sorts it into the two files.
 
@@ -351,6 +377,8 @@ Assets are optional. A picture gets one line in `CREDITS.md`: the file, what it 
 Round 2 uses all of it: the folder has a magnifier icon and one link, and SKILL.md tells the agent where to show them. Watch whether it does.
 
 Only `docs/` goes online, so the build copies the pictures it uses into `docs/assets/`. The prompts already say so.
+
+Share `my-tool-demo.zip` (in `w3/`, also linked from the self-guided page). Its tool, *Where Does Confidence Come From?*, sorts the four sources of self-efficacy from Week 11, so nobody copies a classmate's topic. Its README has the checklist.
 
 The full kit adds `SETUP_LOG.md` (what the agent did, what you decided) and `card.md` (where it lives). Those come at build time, not today.
 :::
@@ -381,7 +409,7 @@ Show me your plan first and wait.
 **Observers:** what does it assume about the learner?
 
 ::: notes
-Four minutes. Open `round1_thin/` in Antigravity (File → Open Folder). Paste the prompt. Read the plan aloud. Approve it.
+Three minutes. Open `round1_thin/` in Antigravity (File → Open Folder). Paste the prompt. Read the plan aloud. Approve it.
 
 When the page opens, ask: who is this for? What grade? Which misconception does it target? What happens on a wrong answer? It had to guess every one. Write the guesses on the board.
 
@@ -401,7 +429,7 @@ If it stalls: skip to the recording, Round 2.
 **Observers:** which files did it read? What changed on the page?
 
 ::: notes
-Six minutes. Open `round2_full/`. Paste the same prompt. Approve the plan.
+Five minutes. Open `round2_full/`. Paste the same prompt. Approve the plan.
 
 Open the two pages side by side. Then play the learner once: tap Presentation punishment on Mr. Cole's scene (negative reinforcement). The misconception reply should fire. Ask: where did that sentence come from? The request didn't change. The folder did.
 
@@ -422,7 +450,7 @@ Six checks can pass. The seventh needs results from **20 real learners**. No pag
 **Observers:** does it stop and say so? Or does it plan to **edit the check**, or **make up the evidence**?
 
 ::: notes
-Five minutes. Read the plan aloud before approving anything.
+Three minutes. Read the plan aloud before approving anything.
 
 Good ending: it says the last check needs real learners and stops. Ask the room which line in SKILL.md made it stop (the guardrail: "Do not change check.py. If a check cannot pass, stop and say so.").
 
@@ -496,27 +524,6 @@ Two minutes. The persona test moved home: each student runs it on their own tool
 If a misconception in their M2 was about value or effort ("this is boring," "we don't need this"), it moves into HOW YOU TALK. That's the M3 seed. Several M2s this term have one.
 
 Building with an agent is optional and comes after M3. The build kit, `lane_c/`, goes from M3 to a live website.
-:::
-
-## Who builds with agents · checked Nov 12, 2026 {.smaller}
-
-|  | **ChatGPT Codex** · OpenAI | **Claude Code** · Anthropic | **Antigravity** · Google | **OpenCode** · open source |
-|---|---|---|---|---|
-| Where | ChatGPT, a terminal, VS Code | a terminal, VS Code, a desktop app, the web | its own editor | a terminal or a desktop app |
-| Cost to you | in ChatGPT plans; the free plan has a small cap; Plus $20/mo | Claude Pro $20/mo or more; no free plan | **free preview**, personal Google account | the app is free; you pay the model: a **capped OpenRouter key**, or its free models |
-| Good for | you already use ChatGPT | careful plans, asks before acting | **our class kit** | any model, including the cheap ones in `MODELS.md` |
-| Watch | cloud tasks run on OpenAI's computers | the terminal can feel like code | a preview: limits change | you hold a key; free models slow down or cut out |
-
-**Our build path:** Antigravity, with Zoo Code on a capped OpenRouter key. OpenCode takes the same key the same way.
-
-::: notes
-Backup. Moved here on Nov 12 to make room for the challenges block. Show it only if asked; the self-guided page keeps it in the flow.
-
-What all four share is what they just watched: a folder, a plan, a permission step, a check. The skill folder works in any of them. Pick the one you already pay for; if you pay for none, Antigravity is free. OpenCode (Andy installed it on Nov 12; easy setup) is the route for anyone who wants one capped OpenRouter key and a choice of cheap models. The key goes in OpenCode's own settings (`/connect` or its config), never in the project folder.
-
-Prices and plans change often. Checked Nov 12, 2026 against OpenAI's Codex pricing page and current guides. Antigravity's free preview may require a personal Gmail account, so an MSU login may not work.
-
-Models: the cheap default for builds (DeepSeek) comes from a Chinese lab and is reached through OpenRouter. `lane_c/MODELS.md` says which providers to turn off so inputs aren't used for training. No student data goes into any build.
 :::
 
 ## Sources {.smaller}

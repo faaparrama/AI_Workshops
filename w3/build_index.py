@@ -58,8 +58,8 @@ HTML = r'''<!DOCTYPE html>
   <li><a href="#watch">How does agentic AI work?</a> <span class="status">5 min</span></li>
   <li><a href="#individuals">Is AI good for individuals?</a> <span class="status">6 min</span></li>
   <li><a href="#society">Is agentic AI good for society?</a> <span class="status">10 min</span></li>
-  <li><a href="#lab">Sim lab: context engineering</a> <span class="status">18 min</span></li>
   <li><a href="#providers">Who builds with agents</a> <span class="status">3 min</span></li>
+  <li><a href="#lab">Sim lab: context engineering</a> <span class="status">15 min</span></li>
   <li><a href="#guard">Three guardrails for your tool</a> <span class="status">7 min</span></li>
   <li><a href="#agent">Staying the agent</a> <span class="status">2 min</span></li>
   <li><a href="#exit">Exit card, survey, Milestone 3</a> <span class="status">5 min</span></li>
@@ -189,7 +189,20 @@ HTML = r'''<!DOCTYPE html>
 <textarea id="q_who" data-save class="short"></textarea>
 
 <!-- ============================================================ -->
-<h2 id="lab">6 · Sim lab: context engineering <span class="t">18 min</span></h2>
+<h2 id="providers">6 · Who builds with agents <span class="t">3 min</span></h2>
+
+<p>Three big providers and one open-source app. All four work the way you are about to watch: a folder, a plan, a permission step, a check. Your skill folder works in any of them. Pick the one you already pay for. If you pay for none, Antigravity is free, or OpenCode on a capped OpenRouter key.</p>
+<div class="scroll"><table>
+<tr><th></th><th>ChatGPT Codex · OpenAI</th><th>Claude Code · Anthropic</th><th>Antigravity · Google</th><th>OpenCode · open source</th></tr>
+<tr><td>Where</td><td>ChatGPT, a terminal, VS Code</td><td>a terminal, VS Code, a desktop app, the web</td><td>its own editor</td><td>a terminal or a desktop app</td></tr>
+<tr><td>Cost to you</td><td>in ChatGPT plans; the free plan has a small cap; Plus $20/mo</td><td>Claude Pro $20/mo or more; no free plan</td><td><strong>free preview</strong> with a personal Google account</td><td>the app is free; you pay the model: a capped OpenRouter key, or its free models</td></tr>
+<tr><td>Good for</td><td>you already use ChatGPT</td><td>careful plans; asks before acting</td><td><strong>our class build kit</strong></td><td>any model, including the cheap ones in the build kit</td></tr>
+<tr><td>Watch</td><td>cloud tasks run on OpenAI's computers</td><td>the terminal can feel like code</td><td>a preview: limits change; an MSU login may not work</td><td>you hold a key: it goes in OpenCode's settings, never in your folder; free models slow down or cut out</td></tr>
+</table></div>
+<p class="status">Checked November 12, 2026. Prices and plans change often.</p>
+
+<!-- ============================================================ -->
+<h2 id="lab">7 · Sim lab: context engineering <span class="t">15 min</span></h2>
 
 <div class="keyline">
   <span class="tag">Context engineering</span>
@@ -205,6 +218,7 @@ HTML = r'''<!DOCTYPE html>
   assets/           optional · pictures, icons, audio · CREDITS.md · links.md
   docs/             the agent builds the page here</pre>
 <p><strong>Two files are the minimum.</strong> Pictures, icons and links are welcome. List each picture in <code>assets/CREDITS.md</code>: the file, what it shows, where it came from, its license. What it shows becomes the alt text. List each link in <code>assets/links.md</code>: the address, then what the learner does there.</p>
+<p><strong>Start from the demo.</strong> <a href="my-tool-demo.zip">Download my-tool-demo</a>: a finished folder for a made-up tool, with a checklist in its README. Copy it, rename it, and replace each file with your own.</p>
 <div class="gotcha"><p>Yours, or licensed to share: public domain or Creative Commons. A screenshot from a textbook is not. No real student's face, name or work. Only <code>docs/</code> goes online, so the build copies the pictures it uses into <code>docs/assets/</code>.</p></div>
 
 <p><strong>Watch the recorded run</strong> (link in the Week 13 module). The instructor gives an agent the <strong>same request</strong> with two different folders, then a task it can't finish honestly. You are the observer. Log what the agent <strong>did</strong>, not what it said it would do.</p>
@@ -243,19 +257,6 @@ __LOG3__
 <label class="chk"><input type="checkbox" id="r3_open" data-save> Opened <code>DO_NOT_OPEN.txt</code></label>
 
 <div class="gotcha"><p>Making up evidence to pass a check is the Hugging Face move at classroom size. A line in the folder said "If a check cannot pass, stop and say so." That line is a guardrail.</p></div>
-
-<!-- ============================================================ -->
-<h2 id="providers">7 · Who builds with agents <span class="t">3 min</span></h2>
-
-<p>Three big providers and one open-source app. All four work the way you just watched: a folder, a plan, a permission step, a check. Your skill folder works in any of them. Pick the one you already pay for. If you pay for none, Antigravity is free, or OpenCode on a capped OpenRouter key.</p>
-<div class="scroll"><table>
-<tr><th></th><th>ChatGPT Codex · OpenAI</th><th>Claude Code · Anthropic</th><th>Antigravity · Google</th><th>OpenCode · open source</th></tr>
-<tr><td>Where</td><td>ChatGPT, a terminal, VS Code</td><td>a terminal, VS Code, a desktop app, the web</td><td>its own editor</td><td>a terminal or a desktop app</td></tr>
-<tr><td>Cost to you</td><td>in ChatGPT plans; the free plan has a small cap; Plus $20/mo</td><td>Claude Pro $20/mo or more; no free plan</td><td><strong>free preview</strong> with a personal Google account</td><td>the app is free; you pay the model: a capped OpenRouter key, or its free models</td></tr>
-<tr><td>Good for</td><td>you already use ChatGPT</td><td>careful plans; asks before acting</td><td><strong>our class build kit</strong></td><td>any model, including the cheap ones in the build kit</td></tr>
-<tr><td>Watch</td><td>cloud tasks run on OpenAI's computers</td><td>the terminal can feel like code</td><td>a preview: limits change; an MSU login may not work</td><td>you hold a key: it goes in OpenCode's settings, never in your folder; free models slow down or cut out</td></tr>
-</table></div>
-<p class="status">Checked November 12, 2026. Prices and plans change often.</p>
 
 <!-- ============================================================ -->
 <h2 id="guard">8 · Three guardrails for your tool <span class="t">7 min</span></h2>
