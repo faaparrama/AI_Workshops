@@ -49,16 +49,20 @@ Every tool starts from the same **skill folder**: `SKILL.md` (LEARNER · TASK ·
 | **OpenRouter keys, one per student, capped** | hard static builds (≈3) + any Lane B chatbot | setup clinic, office hours |
 | **Opt-in consent** for the public catalog | before anything is listed with a name | one survey question |
 
-## Thursday survey: the questions that decide the lane
+## Thursday survey: the questions that decide the lane (8, updated Nov 12)
 
 1. Which AI accounts do you have? ChatGPT (free / paid) · Gemini (free / paid) · Claude (free / paid) · Copilot via MSU · none.
 2. In that account, can you make a project and upload a file to it? Yes · No · Don't know. *(Ask them to check live, in the room.)*
-3. Did Antigravity install and run on your laptop on Thursday? Yes · Tried, it failed · Didn't try.
-4. May your finished tool appear in a public catalog? With my name · Without my name · No.
-5. Do you have a GitHub account? Yes · No · I'll make one.
-6. What do you picture your tool looking like on screen? Describe the first thing the learner sees. Then upload a sketch, or a screenshot of a site or app that looks close. *(Text + file upload.)*
+3. Antigravity was an optional install before class. Did you try it? Yes, and it runs · Tried, it failed · Didn't try.
+4. After today: would you let an agent build your tool, if you read every plan before you say yes? Yes, on my own · Yes, with help in office hours · No, I'll build it without an agent. *(New Nov 12: the 4Ds' Delegation question.)*
+5. May your finished tool appear in a public catalog? With my name · Without my name · No.
+6. Do you have a GitHub account? Yes · No · I'll make one.
+7. What do you picture your tool looking like on screen? Describe the first thing the learner sees. Then upload a sketch, or a screenshot of a site or app that looks close. *(Text + file upload.)*
+8. Write one sentence about an AI agent with a person in it: who set its goal, and who answers for what it does. *(Short answer. New Nov 12: checks the "Say what it did" slide.)*
 
-**Reading the result.** Q2 = "No" or "none" on Q1, among chatbot students → proxy needed, with that many seats. Q3 = "Yes" → Lane C on Antigravity is possible. Q3 = "No" among hard-static students → those builds move to an office-hours clinic, or fall back to a chatbot. Q4 sets the catalog. Q6 goes straight into each student's P2 (Plan the page).
+Paste-ready wording, both sections: `w3/survey.md`.
+
+**Reading the result.** Q2 = "No" or "none" on Q1, among chatbot students → proxy needed, with that many seats. Q3 = "Yes" → Lane C on Antigravity is possible. Q3 = "No" among hard-static students → those builds move to an office-hours clinic, or fall back to a chatbot. Q4 = "No" → no agent build for that student; "with help" → the office-hours clinic list. Q5 sets the catalog. Q7 goes straight into each student's P2 (Plan the page).
 
 ## Option to weigh after the survey: OpenRouter + Open WebUI
 

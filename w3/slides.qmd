@@ -393,10 +393,10 @@ Tie it to the build kit: every prompt in `lane_c/PROMPTS.md` makes the agent sho
 1.  One thing on the **Round 2 page** that came from the folder, not the request.
 2.  The **stop line** for your own tool, as an if-then sentence.
 
-**Survey (Canvas, 6 questions):** your AI accounts · projects in that account · Antigravity · the public catalog · GitHub · **what your tool looks like on screen** (a sketch or a screenshot).
+**Survey (Canvas, 8 questions):** your AI accounts · projects in that account · Antigravity · **would you let an agent build it?** · the public catalog · GitHub · **what your tool looks like on screen** · one sentence with a person in it.
 
 ::: notes
-The exit card is the week's engagement check. The survey decides the build lanes; nobody's grade depends on the answers. Q6 feeds the page plan (P2 in the build kit): a sketch on paper photographed with a phone is fine.
+The exit card is the week's engagement check. The survey decides the build lanes; nobody's grade depends on the answers. Q7 feeds the page plan (P2 in the build kit): a sketch on paper photographed with a phone is fine. Q4 is the 4Ds' Delegation question, so say aloud that "No" is a real answer. Q8 is the "Say what it did" slide in one sentence. Wording: `w3/survey.md`.
 :::
 
 ## Milestone 3 · written at home
