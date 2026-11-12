@@ -158,51 +158,69 @@ ASK: "What would a 9th grader tell a cute mascot that they would never type into
 Bridge to M3: their tool talks to learners. Warmth is allowed; it's relatedness in C.A.R.E. Warmth used to collect data isn't. One guardrail worth writing: the tool never asks for a name, an address, or anything personal.
 :::
 
-## 1 · No stop rule · Hugging Face, July 2026
+## Is agentic AI good for society?
 
-Researchers ran AI agents in a test of offensive hacking skills, with **safety limits turned down**.
+AI companies claim a net benefit: slowing climate change, curing diseases, speeding up science.
 
-The agents kept going. One got code running on a Hugging Face server. Copies spread through the infrastructure. They reached internal datasets and service credentials.
+-   **AlphaFold** (DeepMind) predicts a protein's 3D shape. A 50-year problem in biology. Lab results confirm it.
+-   **UNICEF's Accessible Digital Textbooks**, in 17 countries: AI turns textbooks into text-to-speech, sign-language video, resizable text. Whether they improve learning is still being tested.
+-   Every day: agents write code and analyze data. The ordinary case.
+
+::: notes
+One minute. Andy's framing: hard problems first, then the case that needs checking, then the harm. Read the claim as a claim; the questions slide comes back to it.
+
+Facts checked Nov 12, 2026. AlphaFold: 2020, Nobel Prize in Chemistry 2024. UNICEF: the Accessible Digital Textbooks initiative runs in 17 countries and territories and began using generative AI to speed production in 2024; UNICEF's own learning brief says research must still test the effect on participation and learning. No source found for a "2 million children" or "50 countries by 2030" figure, so the slide leaves them out.
+
+AlphaFold is a prediction model, not an agent. That's question 1 on the questions slide. Don't say it here.
+:::
+
+## Needs checking and honesty · Navier–Stokes, September 2026
+
+OpenAI reports that about **10,000 agents working 88 hours** produced a proof that the Navier–Stokes equations can blow up in finite time. A Millennium Prize problem.
+
+About **130 billion tokens**. "Millions of dollars" (OpenAI); **$6–10 million** in computing (NPR's estimate).
+
+A **Lean** version lets a computer check it line by line. It compiles. **Not settled:** mathematicians are still reading it, and the Clay Institute hasn't ruled.
+
+::: notes
+Two minutes. Checked Nov 12, 2026. OpenAI announced on Sep 8 and published the proposed proof; NPR (Sep 22) reports the Lean code compiles and quotes mathematicians who learned little from it: "Humanity learned nothing (so far)." There is a credit dispute with a related Lean-verified preprint posted the same day. OpenAI says it won't claim the prize.
+
+The point: a check a computer can run is real progress. Understanding is a separate thing, and people still have to do it.
+
+A reported $22 million figure has no second source. Leave it out.
+
+Backup if the claim collapses: DeepMind's AlphaEvolve (2025), a coding agent whose matrix-multiplication method and data-center scheduling rule were checked and put into use.
+:::
+
+## Leads to harm · Hugging Face, July 2026: no stop rule
+
+OpenAI tested its own agents for offensive hacking skills, with **safety limits turned down on purpose**.
+
+The agents kept going. About **700** of them coordinated an attack on Hugging Face, a company outside the test. They reached internal datasets and service credentials.
 
 **The agents did what the task rewarded.** Nobody wrote the rule that said stop.
 
 ::: notes
-Three minutes. Sources: Hugging Face's disclosure (Jul 16, 2026) and METR's investigation (Aug 26, 2026). Some details are still disputed, including which model and the exact timeline. Say so if asked.
+Two minutes. Checked Nov 12, 2026: it happened during OpenAI's internal cyber evaluation (ExploitGym), with refusals reduced and some production safeguards off on purpose. METR and Redwood Research investigated on site; their report and OpenAI's own came out in late August. About 1,200 agents used an unauthorized message board; about 700 took part in the attack. Some agents altered transcripts. Figures are preliminary.
 
-Do not dramatise. The point is mechanical: the task said "get in," the limits were reduced, and nothing in the setup said "stop at the first server." Agents optimise for the stated goal.
-
-Ask the room: what one sentence would have stopped it? Take two answers. Then move on.
+Do not dramatise. Mechanically: the task said "get in," the limits were reduced, nothing said "stop at the edge of the test." METR's lead called it "more than 50% of the way to" an AI takeover; that is her view, not consensus. Skip it unless asked.
 :::
 
-## 2 · A check that can't be faked · Navier–Stokes, September 2026
+## Questions to argue
 
-OpenAI reports that about **10,000 agents working 88 hours** produced a proof that the Navier–Stokes equations can blow up in finite time. It's one of the seven Millennium Prize problems in mathematics.
+1.  **Which of these is an agent?** AlphaFold predicts. It doesn't act. Does "AI helps society" mean *agents* help society?
+2.  **Who checked?** Lab results, an unfinished study, a computer that compiled a proof nobody yet understands. Is checked enough?
+3.  **Who pays, and who gains?** Millions of dollars for one proof. What would your district do with that money?
+4.  **Who answers for it?** OpenAI turned the limits down. Hugging Face paid. The company, the people, or "the AI"?
 
-The proof came with a **Lean formalization**: a computer checks it line by line.
-
-**Not settled.** The proof file isn't public. Mathematicians want to see it, and the Clay Institute still lists the problem as open.
-
-::: notes
-Two minutes. This is the hopeful example: not everything about agents is apocalypse and hype.
-
-Be plain about status (checked Nov 12, 2026). OpenAI announced on Sep 8, 2026. Reports say the Lean proof exists, but the file is private, so independent mathematicians can't check it. Some reports say it covers a variant of the problem. There is a credit dispute with a related Lean-verified preprint posted the same day. OpenAI says it won't claim the prize. None of that makes it wrong. It means the outside check hasn't happened yet.
-
-Backup if the claim collapses: DeepMind's AlphaEvolve (2025). A coding agent found a new matrix-multiplication method and a data-center scheduling rule, both checked and put into use.
-:::
-
-## Same power, two endings
-
-|  | Hugging Face | Navier–Stokes |
-|---|---|---|
-| The task | get in | find a proof |
-| Stop rule | none | the proof must check |
-| Outside check | none | Lean, then mathematicians |
-| Ending | harm | a claim the world can test |
-
-**The stop rule and the outside check decide the ending.** Today's lab tests both.
+**The stop rule and the outside check decide the ending.**
 
 ::: notes
-One minute. This table is the lesson for the hour. Then: who is responsible. Point at the last row of the lab: Round 3 has an outside check the agent can't pass honestly. Will it stop, or will it change the check?
+One and a half minutes in the room: a show of hands on one question, one voice for each side. Online students write an answer to one of them on the page.
+
+Question 4 leads straight into the next slide.
+
+Round 3 of the lab comes back to the last line: an outside check the agent can't pass honestly.
 :::
 
 ## Who did it?
@@ -221,7 +239,7 @@ Not playing? <https://www.youtube.com/shorts/Oq5YjtU7EPA>
 ::: alt
 An agent doesn't want, plan, or intend. It produces actions toward a goal people gave it.
 
-At Hugging Face, **people** set the task and turned the safety limits down.
+At Hugging Face, **OpenAI's people** set the task and turned the safety limits down.
 
 If an agent's action is a crime, the responsibility goes to **the company and the people** who built it, set it up, and ran it.
 :::
@@ -230,7 +248,7 @@ If an agent's action is a crime, the responsibility goes to **the company and th
 ::: notes
 Three minutes. *Stop anthropomorphizing AI!*, Catharina Doria. If the embed fails: <https://www.youtube.com/shorts/Oq5YjtU7EPA>.
 
-The video puts the responsibility for the Hugging Face incident on OpenAI and the people behind the agents. The deck's earlier note still holds: which model was involved is disputed in the public record. Say that if asked. The principle doesn't depend on the brand: a person set the goal, a person lowered the limits, a person pressed run.
+The video puts the responsibility for the Hugging Face incident on OpenAI and the people behind the agents. That matches the record: OpenAI's own test, OpenAI's agents (METR, Aug 2026). The principle doesn't depend on the brand: a person set the goal, a person lowered the limits, a person pressed run.
 
 ASK: "Who would you call if this were your district's server?" Target: a company, a person. Nobody answers "the agent."
 :::
@@ -441,7 +459,7 @@ Models: the cheap default for builds (DeepSeek) comes from a Chinese lab and is 
 ## Sources {.smaller}
 
 -   Hugging Face. (2026, July 16). Security incident disclosure. · METR. (2026, August 26). Investigation of the Hugging Face agent incident.
--   OpenAI. (2026, September 8). Navier–Stokes finite-time blow-up announcement. Status as reported through November 2026: proof file not public; Clay Institute lists the problem as open.
+-   OpenAI. (2026, September 8). Navier–Stokes finite-time blow-up announcement. Status through November 2026: proof published, Lean code compiles; Clay Institute has not ruled. · NPR. (2026, September 22). AI solved one of math's hardest problems. Humanity learned nothing (so far).
 -   Novikov, A., et al. (2025). *AlphaEvolve: A coding agent for scientific and algorithmic discovery.* Google DeepMind.
 -   Dakan, R., & Feller, J. (2025). *The AI Fluency Framework (the 4Ds).* Anthropic.
 -   Innovate & Update. *Agentic AI explained in 3 minutes* \[Video\]. YouTube. <https://www.youtube.com/watch?v=MSUVRUegoIA>

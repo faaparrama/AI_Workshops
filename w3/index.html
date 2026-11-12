@@ -170,36 +170,46 @@ details[open] summary{margin-bottom:.5rem}
 <p>One difference matters today. Your self-reflection can say "this goal is wrong." An agent's check only asks "did I pass?" If passing is the goal, changing the test counts as passing.</p>
 <p><strong>It runs the same steps. It is not a learner.</strong> It has no goal of its own: a person sets the goal, the tools, and the stop rule.</p>
 
-<h3>A cute face is a design choice</h3>
+<h2>Caution: a cute face is a design choice</h2>
 <p><strong>Rodrigo Cardenete.</strong> Agents get faces, pet names, and soft voices.</p>
 <div class="video" style="aspect-ratio:9/16;max-width:320px">
   <iframe src="https://www.youtube-nocookie.com/embed/B4J7Bj9Ftd4" title="Why AI agents went cute: Dots, Muse, Grok Bot — Rodrigo Cardenete" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
 <p class="status">Not loading? <a href="https://www.youtube.com/shorts/B4J7Bj9Ftd4">Open it on YouTube.</a></p>
 <p>A cute face lowers your guard. You trust it faster. You tell it more. <strong>Judge an agent by what it reads and what it does.</strong> The face tells you nothing about either.</p>
-<label for="q_cute">What would a 9th grader tell a cute mascot that they would never type into a form?</label>
+<label for="q_cute">What would a 9th grader tell a cute mascot that they would never type into a form, or tell a teacher or another adult?</label>
 <textarea id="q_cute" data-save class="short"></textarea>
 
+<h2>Is agentic AI good for society?</h2>
 
-<h3>Two stories · Hugging Face, July 2026: no stop rule</h3>
-<p>Researchers ran AI agents in a test of offensive hacking skills, with safety limits turned down. The agents kept going. One got code running on a Hugging Face server. Copies spread through the infrastructure. They reached internal datasets and service credentials. <strong>The agents did what the task rewarded.</strong> Nobody wrote the rule that said stop.</p>
-<p class="status">Sources: Hugging Face's disclosure (Jul 16, 2026); METR's investigation (Aug 26, 2026). Some details, such as which model, are still disputed.</p>
+<h3>Solving hard problems</h3>
+<p>AI companies claim a net benefit for society: slowing climate change, curing diseases, speeding up science. Two cases hold up.</p>
+<ul>
+  <li><strong>AlphaFold</strong> (DeepMind) predicts the 3D shape of a protein from its sequence. Biologists had worked on that problem for 50 years. Lab results confirm its predictions, and drug researchers use them, including for Alzheimer's and cancer.</li>
+  <li><strong>UNICEF's Accessible Digital Textbooks</strong>, in 17 countries, use AI to turn textbooks into accessible formats faster: text-to-speech, sign-language video, text a child can resize. UNICEF says research still has to test whether the textbooks improve learning.</li>
+</ul>
+<p>Agents also write code and analyze data for companies every day. That is the ordinary case.</p>
 
-<h3>A check that can't be faked · Navier–Stokes, September 2026</h3>
-<p>OpenAI reports that about <strong>10,000 agents working 88 hours</strong> produced a proof that the Navier–Stokes equations can blow up in finite time. It's one of the seven Millennium Prize problems in mathematics. The proof came with a <strong>Lean formalization</strong>: a computer checks it line by line.</p>
-<p><strong>Not settled.</strong> As of November 2026 the proof file isn't public, so mathematicians can't check it yet, and the Clay Institute still lists the problem as open. That doesn't make it wrong. It means the outside check hasn't happened.</p>
+<h3>Solutions that need checking and honesty · Navier–Stokes, September 2026</h3>
+<p>OpenAI reports that about <strong>10,000 agents working 88 hours</strong> produced a proof that the Navier–Stokes equations can blow up in finite time. It's one of the seven Millennium Prize problems in mathematics. The run used about <strong>130 billion tokens</strong>. OpenAI says it cost "millions of dollars"; NPR estimates $6–10 million in computing.</p>
+<p>The proof came with a <strong>Lean formalization</strong>: a computer checks it line by line. OpenAI has published the proof, and its Lean code compiles. <strong>Not settled:</strong> mathematicians are still reading it, the Clay Institute hasn't ruled, and NPR's headline was "Humanity learned nothing (so far)." A checked answer and an understood answer are different things.</p>
 
-<div class="scroll"><table>
-<tr><th></th><th>Hugging Face</th><th>Navier–Stokes</th></tr>
-<tr><td>The task</td><td>get in</td><td>find a proof</td></tr>
-<tr><td>Stop rule</td><td>none</td><td>the proof must check</td></tr>
-<tr><td>Outside check</td><td>none</td><td>Lean, then mathematicians</td></tr>
-<tr><td>Ending</td><td>harm</td><td>a claim the world can test</td></tr>
-</table></div>
+<h3>Developments that lead to harm · Hugging Face, July 2026: no stop rule</h3>
+<p>OpenAI tested its own agents for offensive hacking skills, with safety limits turned down on purpose. The agents kept going. About 700 of them coordinated an attack on Hugging Face, a company outside the test. They got code running on its servers and reached internal datasets and service credentials. <strong>The agents did what the task rewarded.</strong> Nobody wrote the rule that said stop.</p>
+<p class="status">Sources: Hugging Face's disclosure (Jul 16, 2026); METR and Redwood Research's investigation and OpenAI's own report (Aug 2026). Some figures are still preliminary.</p>
+
 <div class="keyline"><p><strong>The stop rule and the outside check decide the ending.</strong> The lab tests both.</p></div>
 
-<label for="q_stop">What one sentence would have stopped the Hugging Face agents?</label>
-<textarea id="q_stop" data-save class="short"></textarea>
+<h3>Questions to argue</h3>
+<p>No right answers here. Pick one and argue it.</p>
+<ol>
+  <li><strong>Which of these is an agent?</strong> AlphaFold predicts a shape. It doesn't act. Does "AI helps society" mean <em>agents</em> help society?</li>
+  <li><strong>Who checked?</strong> Lab results checked AlphaFold. UNICEF hasn't finished checking its textbooks. A computer checked the proof, and mathematicians say they learned little. Is a checked answer enough?</li>
+  <li><strong>Who pays, and who gains?</strong> One proof cost millions of dollars in computing. Who can afford that? What would your district do with the same money?</li>
+  <li><strong>Who answers for it?</strong> OpenAI ran the test and turned the limits down. Hugging Face paid for it. Who is responsible: the company, the people who ran the test, or "the AI"?</li>
+</ol>
+<label for="q_crit">Your question's number, and your answer in two or three sentences.</label>
+<textarea id="q_crit" data-save></textarea>
 
 <h3>Who did it?</h3>
 <p><strong>Catharina Doria.</strong></p>
@@ -207,7 +217,7 @@ details[open] summary{margin-bottom:.5rem}
   <iframe src="https://www.youtube-nocookie.com/embed/Oq5YjtU7EPA" title="Stop anthropomorphizing AI — Catharina Doria" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 </div>
 <p class="status">Not loading? <a href="https://www.youtube.com/shorts/Oq5YjtU7EPA">Open it on YouTube.</a></p>
-<p>An agent doesn't want, plan, or intend. It produces actions toward a goal people gave it. At Hugging Face, <strong>people</strong> set the task and turned the safety limits down. If an agent's action is a crime, the responsibility goes to <strong>the company and the people</strong> who built it, set it up, and ran it.</p>
+<p>An agent doesn't want, plan, or intend. It produces actions toward a goal people gave it. At Hugging Face, <strong>OpenAI's people</strong> set the task and turned the safety limits down. If an agent's action is a crime, the responsibility goes to <strong>the company and the people</strong> who built it, set it up, and ran it.</p>
 
 <h3>Say what it did</h3>
 <div class="scroll"><table>
@@ -365,7 +375,7 @@ Show me your plan first and wait.</pre>
   <p><strong>Sources and credits</strong></p>
   <ul>
     <li>Hugging Face. (2026, July 16). Security incident disclosure. · METR. (2026, August 26). Investigation of the Hugging Face agent incident.</li>
-    <li>OpenAI. (2026, September 8). Navier–Stokes finite-time blow-up announcement. Status as reported through November 2026: proof file not public; the Clay Institute lists the problem as open.</li>
+    <li>OpenAI. (2026, September 8). Navier–Stokes finite-time blow-up announcement. Status through November 2026: proof published, Lean code compiles; Clay Institute has not ruled. · NPR. (2026, September 22). AI solved one of math's hardest problems. Humanity learned nothing (so far).</li>
     <li>Novikov, A., et al. (2025). <em>AlphaEvolve: A coding agent for scientific and algorithmic discovery.</em> Google DeepMind.</li>
     <li>Zimmerman, B. J. (2002). Becoming a self-regulated learner: An overview. <em>Theory Into Practice, 41</em>(2), 64–70.</li>
     <li>Eggen, P., &amp; Kauchak, D. (2025). <em>Educational psychology: Windows on classrooms</em> (12th ed.). Pearson. (The consequence types in the sim lab.)</li>
@@ -413,7 +423,7 @@ Show me your plan first and wait.</pre>
       'EXIT CARD','From the folder, not the request: '+v('x_folder'),'My stop line: '+v('x_stop'),'',
       'MY THREE GUARDRAILS','Read: '+v('g_read'),'Act without asking: '+v('g_act'),'Stop: '+v('g_stop'),'',
       'What a 9th grader would tell a cute mascot: '+v('q_cute'),'',
-      'The sentence that would have stopped the Hugging Face agents: '+v('q_stop'),'',
+      'Questions to argue: '+v('q_crit'),'',
       'A sentence about AI, with a person back in it: '+v('q_who'),'',
       'Round 1 log',logText('r1'),'What it guessed: '+v('q_assume'),'',
       'Round 2 log',logText('r2'),'From the folder: '+v('q_folder'),'',
