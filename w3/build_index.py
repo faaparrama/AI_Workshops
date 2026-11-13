@@ -11,7 +11,6 @@ OUT = os.path.join(HERE, "index.html")
 W2 = open(os.path.join(HERE, "..", "w2", "build_index.py"), encoding="utf-8").read()
 CSS = re.search(r"<style>(.*?)</style>", W2, re.S).group(1)
 
-REPO = "https://github.com/faaparrama/AI_Workshops/tree/main/w3/sim_lab"
 
 LOG_ROWS = [("read", "Read: which files did it open?"),
             ("plan", "Planned: what did its plan say?"),
@@ -390,7 +389,7 @@ __LOG3__
 </html>
 '''
 
-HTML = (HTML.replace("__CSS__", CSS).replace("__REPO__", REPO)
+HTML = (HTML.replace("__CSS__", CSS)
         .replace("__LOG1__", log_block("r1", "Round 1"))
         .replace("__LOG2__", log_block("r2", "Round 2"))
         .replace("__LOG3__", log_block("r3", "Round 3")))
