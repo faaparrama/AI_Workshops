@@ -1,5 +1,7 @@
 # Where Does Confidence Come From? — SKILL.md
 
+*Required. Keep the four headings and replace everything under them with your tool: your learner, your task, how your tool talks, your guardrails.*
+
 A static page. Every answer can be checked, so no AI runs while a learner uses it.
 
 ## 1 · LEARNER

@@ -1,6 +1,8 @@
 # my-tool-demo
 
-A finished example of a project folder. Copy it, rename it after your tool, and put your own content in each file.
+*Read this first: copy the whole folder, rename it after your tool, then open each file and follow the italic line at its top.*
+
+A finished example of a project folder.
 
 The tool in this demo is made up: **Where Does Confidence Come From?**, a sorter for the four sources of self-efficacy (Week 11).
 

@@ -1,5 +1,7 @@
 # Where Does Confidence Come From? — scenarios.md
 
+*Optional. Keep this file only if your tool asks fixed questions; replace these scenes with yours, each followed by its answer and a one-line why.*
+
 Optional. A tool with fixed questions keeps them here, so the agent never writes its own.
 Eight scenes, in this order. The answer and a one-line "why" follow each.
 

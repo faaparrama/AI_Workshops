@@ -1,5 +1,7 @@
 # Where Does Confidence Come From? — knowledge.md
 
+*Required. Replace the standard, ideas, sources and off limits with your own; write each idea as a sentence a learner can get wrong.*
+
 ## Standard
 
 CASEL, Self-awareness: "The abilities to understand one's own emotions, thoughts, and values and how they influence behavior across contexts." One of its examples: experiencing self-efficacy.

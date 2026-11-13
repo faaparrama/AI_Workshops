@@ -1,6 +1,8 @@
 # Assets — optional
 
-Pictures, icons, audio or short video your tool uses. Leave this folder empty if you need none.
+*Optional. Add one table row for each picture, icon or sound you put in this folder; delete the example row and its file if you use none.*
+
+Pictures, icons, audio or short video your tool uses.
 
 One line per file. The agent uses "What it shows" as the alt text.
 
