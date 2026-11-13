@@ -38,7 +38,7 @@ Bring: your **M2**, and your **motivation seeds** from Weeks 10–12.
 ::: notes
 Workshop 3 of four. Sixty minutes. You drive the agent at the projector; the class observes. Nobody has to install or run AI today. Friction Moves stay optional.
 
-Before class: `sim_lab/` copied to the Desktop (run from the copy). Antigravity open, signed in with a personal Google account, model set to Claude, "ask before running commands" on. The Round 2 recording ready in a tab. Observer logs printed (`sim_lab/observer_log.md`), one per student. The survey quiz published in Canvas.
+Before class: `sim_lab/` copied to the Desktop (run from the copy). Antigravity open, signed in with a personal Google account, model set to Claude, "ask before running commands" on. The recordings ready in a tab: `video/round1_thin.mp4` and `video/round2_full.mp4` (Claude Code, Sonnet 4.6, Nov 12; real transcripts). Observer logs printed (`sim_lab/observer_log.md`), one per student. The survey quiz published in Canvas.
 
 If the live agent stalls, play the recording and keep going. Protect the guardrails block and the exit card.
 

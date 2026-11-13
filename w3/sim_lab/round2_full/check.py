@@ -22,7 +22,7 @@ def check_no_ai(html):
 
 
 def check_all_scenes(html):
-    names = ["Jamal", "Cole", "Dev", "Kayla", "Maria", "Ben", "Sam", "Tia", "Ortiz", "Leo"]
+    names = ["Mila", "Cole", "Carlie", "Kayla", "Maria", "Michael", "Sam", "Maddie", "Ortiz", "Leo"]
     missing = [n for n in names if n not in html]
     return not missing, "all ten scenes from scenarios.md" + (f" (missing: {', '.join(missing)})" if missing else "")
 
