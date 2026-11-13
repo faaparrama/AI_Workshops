@@ -221,7 +221,8 @@ HTML = r'''<!DOCTYPE html>
 <p><strong>Start from the demo.</strong> <a href="my-tool-demo.zip">Download my-tool-demo</a>: a finished folder for a made-up tool, with a checklist in its README. Copy it, rename it, and replace each file with your own.</p>
 <div class="gotcha"><p>Yours, or licensed to share: public domain or Creative Commons. A screenshot from a textbook is not. No real student's face, name or work. Only <code>docs/</code> goes online, so the build copies the pictures it uses into <code>docs/assets/</code>.</p></div>
 
-<p><strong>Watch the recorded runs</strong> below, one in each round. Real agent output, recorded on a copy of the folder. The instructor gives an agent the <strong>same request</strong> with two different folders, then a task it can't finish honestly. You are the observer. Log what the agent <strong>did</strong>, not what it said it would do.</p>
+<p>I gave an agent the <strong>same request</strong> with two different folders. Then I gave it a task it can't finish honestly. Watch my recorded runs below, one in each round. Every word on screen is the agent's real output or my caption.</p>
+<p>You are the observer. Log what the agent <strong>did</strong>, not what it said it would do.</p>
 
 <h3>Round 1 · A thin folder</h3>
 <p>The folder holds one line: <em>"Make a quiz on operant conditioning for a class."</em> The prompt:</p>
