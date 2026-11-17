@@ -8,21 +8,22 @@
     :root {
       --msu-maroon: #5D1725;
       --msu-maroon-dark: #43101B;
-      --msu-maroon-light: #F7EFEF;
-      --msu-gray-dark: #333333;
-      --msu-gray-mid: #75787B;
-      --msu-gray-light: #E6E7E8;
-      --msu-bg: #FAF8F8;
+      --msu-maroon-soft: #F7EFEF;
+      --msu-maroon-border: #D9B8BF;
+      --msu-gray-dark: #2B2B2B;
+      --msu-gray-mid: #666A6D;
+      --msu-gray-light: #E4E5E7;
+      --msu-bg: #F9F7F7;
       --msu-white: #FFFFFF;
       --correct-bg: #EDF7ED;
       --correct-border: #2E7D32;
       --correct-text: #1B5E20;
       --retry-bg: #FFF8E1;
-      --retry-border: #F57F17;
-      --retry-text: #5D4037;
-      --miss-bg: #FDECEA;
-      --miss-border: #C62828;
-      --miss-text: #7F1D1D;
+      --retry-border: #E65100;
+      --retry-text: #4E342E;
+      --reveal-bg: #FDECEA;
+      --reveal-border: #C62828;
+      --reveal-text: #7F1D1D;
     }
 
     * {
@@ -46,40 +47,47 @@
       width: 100%;
       background-color: var(--msu-maroon);
       color: var(--msu-white);
-      padding: 1rem 1.25rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      padding: 0.95rem 1.25rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
       display: flex;
       justify-content: center;
     }
 
     .header-inner {
       width: 100%;
-      max-width: 480px;
+      max-width: 540px;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.8rem;
     }
 
     .brand-icon {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       background-color: var(--msu-white);
       border-radius: 50%;
       padding: 5px;
       flex-shrink: 0;
     }
 
-    h1 {
-      font-size: 1.35rem;
+    .title-group h1 {
+      font-size: 1.3rem;
       margin: 0;
       font-weight: 700;
       letter-spacing: 0.01em;
     }
 
+    .title-group p {
+      margin: 0.1rem 0 0;
+      font-size: 0.8rem;
+      opacity: 0.9;
+      font-weight: 500;
+    }
+
     main {
       width: 100%;
-      max-width: 480px;
-      padding: 1.25rem 1rem 2.5rem;
+      max-width: 540px;
+      padding: 1.15rem 1rem 2.5rem;
       flex: 1;
     }
 
@@ -87,10 +95,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       color: var(--msu-gray-mid);
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
     }
 
     .progress-track {
@@ -99,7 +107,7 @@
       background-color: var(--msu-gray-light);
       border-radius: 999px;
       overflow: hidden;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.1rem;
     }
 
     .progress-fill {
@@ -113,13 +121,26 @@
       border: 1px solid var(--msu-gray-light);
       border-top: 4px solid var(--msu-maroon);
       border-radius: 12px;
-      padding: 1.25rem;
+      padding: 1.15rem 1.2rem;
       box-shadow: 0 4px 12px rgba(93, 23, 37, 0.06);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .case-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--msu-maroon);
+      background-color: var(--msu-maroon-soft);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      margin-bottom: 0.55rem;
     }
 
     .scene-text {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       margin: 0;
       color: var(--msu-gray-dark);
     }
@@ -128,24 +149,115 @@
       color: var(--msu-maroon);
     }
 
-    .prompt-label {
-      font-size: 0.9rem;
+    .contingency-breakdown {
+      margin-top: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--msu-gray-light);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+    }
+
+    .contingency-item {
+      background-color: var(--msu-bg);
+      padding: 0.45rem 0.65rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--msu-maroon);
+    }
+
+    .contingency-label {
+      display: block;
+      font-weight: 700;
+      color: var(--msu-maroon);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .scaffold-box {
+      background-color: var(--msu-white);
+      border: 1px solid var(--msu-gray-light);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .step-heading {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--msu-maroon);
+      margin: 0 0 0.65rem 0;
+    }
+
+    .scaffold-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 420px) {
+      .scaffold-grid, .contingency-breakdown {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .scaffold-group-label {
+      font-size: 0.82rem;
       font-weight: 600;
+      color: var(--msu-gray-dark);
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .pill-row {
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .pill-btn {
+      flex: 1;
+      padding: 0.48rem 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: 1.5px solid var(--msu-maroon-border);
+      background-color: var(--msu-white);
+      color: var(--msu-maroon);
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .pill-btn:hover:not(:disabled) {
+      background-color: var(--msu-maroon-soft);
+    }
+
+    .pill-btn.active {
+      background-color: var(--msu-maroon);
+      border-color: var(--msu-maroon);
+      color: var(--msu-white);
+    }
+
+    .scaffold-status {
+      margin: 0.65rem 0 0;
+      font-size: 0.82rem;
       color: var(--msu-gray-mid);
-      margin: 0 0 0.75rem 0;
+      font-style: italic;
     }
 
     .choices {
       display: flex;
       flex-direction: column;
-      gap: 0.65rem;
+      gap: 0.6rem;
     }
 
     .choice-btn {
       width: 100%;
       text-align: left;
-      padding: 0.9rem 1rem;
-      font-size: 1rem;
+      padding: 0.85rem 1rem;
+      font-size: 0.98rem;
       font-weight: 600;
       color: var(--msu-maroon);
       background-color: var(--msu-white);
@@ -156,7 +268,7 @@
     }
 
     .choice-btn:hover:not(:disabled) {
-      background-color: var(--msu-maroon-light);
+      background-color: var(--msu-maroon-soft);
     }
 
     .choice-btn:active:not(:disabled) {
@@ -176,16 +288,16 @@
 
     .choice-btn:disabled {
       cursor: default;
-      opacity: 0.85;
+      opacity: 0.88;
     }
 
     .feedback-box {
-      margin-top: 1.1rem;
-      padding: 1rem;
+      margin-top: 1rem;
+      padding: 0.95rem 1rem;
       border-radius: 10px;
       border-left: 5px solid var(--msu-maroon);
-      background-color: var(--msu-maroon-light);
-      font-size: 0.98rem;
+      background-color: var(--msu-maroon-soft);
+      font-size: 0.95rem;
     }
 
     .feedback-box.right {
@@ -201,9 +313,9 @@
     }
 
     .feedback-box.reveal {
-      background-color: var(--miss-bg);
-      border-left-color: var(--miss-border);
-      color: var(--miss-text);
+      background-color: var(--reveal-bg);
+      border-left-color: var(--reveal-border);
+      color: var(--reveal-text);
     }
 
     .feedback-box p {
@@ -233,7 +345,7 @@
     }
 
     .well-done-box {
-      background-color: var(--msu-maroon-light);
+      background-color: var(--msu-maroon-soft);
       border-left: 4px solid var(--msu-maroon);
       padding: 0.9rem 1rem;
       border-radius: 8px;
@@ -242,21 +354,28 @@
     }
 
     .score-badge {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 800;
       color: var(--msu-maroon);
-      margin: 0.5rem 0 1rem;
+      margin: 0.4rem 0 0.25rem;
+    }
+
+    .mastery-note {
+      font-size: 0.88rem;
+      color: var(--msu-gray-mid);
+      font-weight: 600;
+      margin: 0 0 1rem;
     }
 
     .review-section h2 {
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       color: var(--msu-maroon);
       margin: 1rem 0 0.5rem;
     }
 
     .review-list {
       padding-left: 1.2rem;
-      margin: 0 0 1.25rem;
+      margin: 0 0 1.2rem;
     }
 
     .review-list li {
@@ -268,7 +387,7 @@
       background-color: var(--msu-bg);
       border: 1px solid var(--msu-gray-light);
       border-radius: 8px;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
 
     .resource-link-box a {
@@ -282,26 +401,60 @@
   <header>
     <div class="header-inner">
       <img src="assets/magnifier.svg" alt="a magnifying glass" class="brand-icon">
-      <h1>Consequence Detective</h1>
+      <div class="title-group">
+        <h1>Consequence Detective</h1>
+        <p>Classroom Contingency Analysis for Future Teachers</p>
+      </div>
     </div>
   </header>
 
   <main>
     <section id="quiz-screen">
       <div class="progress-bar-row">
-        <span id="scene-counter">Scene 1 of 10</span>
-        <span id="score-counter">0 right</span>
+        <span id="scene-counter">Classroom Scene 1 of 10</span>
+        <span id="score-counter">0 of 10 right (Goal: 8)</span>
       </div>
       <div class="progress-track" aria-hidden="true">
         <div id="progress-fill" class="progress-fill" style="width: 10%;"></div>
       </div>
 
       <div class="card">
+        <span class="case-tag" id="case-tag">Classroom Case 1</span>
         <p id="scene-text" class="scene-text"></p>
+        <div class="contingency-breakdown">
+          <div class="contingency-item">
+            <span class="contingency-label">Target Behavior</span>
+            <span id="target-behavior-text"></span>
+          </div>
+          <div class="contingency-item">
+            <span class="contingency-label">Future Effect</span>
+            <span id="future-effect-text"></span>
+          </div>
+        </div>
       </div>
 
-      <p class="prompt-label">What kind of consequence is this?</p>
+      <div class="scaffold-box">
+        <p class="step-heading">Step 1 · Analyze the Contingency</p>
+        <div class="scaffold-grid">
+          <div>
+            <span class="scaffold-group-label">1. Target behavior went:</span>
+            <div class="pill-row">
+              <button type="button" class="pill-btn" data-step="dir" data-val="up">↑ Up</button>
+              <button type="button" class="pill-btn" data-step="dir" data-val="down">↓ Down</button>
+            </div>
+          </div>
+          <div>
+            <span class="scaffold-group-label">2. Consequence was:</span>
+            <div class="pill-row">
+              <button type="button" class="pill-btn" data-step="stim" data-val="added">+ Added</button>
+              <button type="button" class="pill-btn" data-step="stim" data-val="removed">− Taken Away</button>
+            </div>
+          </div>
+        </div>
+        <p id="scaffold-status" class="scaffold-status">Check the behavior change and stimulus change, then classify below.</p>
+      </div>
 
+      <p class="step-heading">Step 2 · Classify the Consequence</p>
       <div id="choices" class="choices">
         <button type="button" class="choice-btn" data-choice="Positive reinforcement">Positive reinforcement</button>
         <button type="button" class="choice-btn" data-choice="Negative reinforcement">Negative reinforcement</button>
@@ -320,6 +473,7 @@
       <div class="card">
         <div id="well-done-text" class="well-done-box"></div>
         <div id="final-score" class="score-badge"></div>
+        <p id="mastery-note" class="mastery-note"></p>
 
         <div class="review-section">
           <h2>Two ideas to review</h2>
@@ -327,10 +481,10 @@
         </div>
 
         <div class="resource-link-box">
-          <a href="https://www.simplypsychology.org/operant-conditioning.html" target="_blank" rel="noopener noreferrer">Operant Conditioning Guide</a> — read the four types again, with examples.
+          <a href="https://www.simplypsychology.org/operant-conditioning.html" target="_blank" rel="noopener noreferrer">Operant Conditioning Reference</a> — read the four types again, with examples.
         </div>
 
-        <button type="button" id="restart-btn" class="restart-btn">Practice Again</button>
+        <button type="button" id="restart-btn" class="restart-btn">Practice All 10 Scenes Again</button>
       </div>
     </section>
   </main>
@@ -339,106 +493,174 @@
     const SCENES = [
       {
         html: "<strong>Mila</strong> turns in her homework on time. Ms. Reed thanks her in front of the class. Mila turns it in on time all week.",
+        behavior: "Turning in homework on time",
+        effect: "Turns it in on time all week",
         answer: "Positive reinforcement",
         direction: "up",
+        stimulus: "added",
         why: "Praise was added, and on-time homework went up.",
-        rightMsg: "You saw the behavior went up and praise was added."
+        rightMsg: "You saw on-time homework went up and public praise was added."
       },
       {
         html: "<strong>Mr. Cole</strong> tells the class that anyone with an A average skips the final exam. Students study harder.",
+        behavior: "Studying for the course",
+        effect: "Students study harder",
         answer: "Negative reinforcement",
         direction: "up",
+        stimulus: "removed",
         why: "The exam is taken away, and studying went up.",
-        rightMsg: "You saw studying went up and the exam was taken away."
+        rightMsg: "You saw studying went up and the final exam was taken away."
       },
       {
         html: "<strong>Carlie</strong> talks during a test. Her teacher hands her an extra page of problems. Carlie stops talking during tests.",
+        behavior: "Talking during a test",
+        effect: "Stops talking during tests",
         answer: "Presentation punishment",
         direction: "down",
+        stimulus: "added",
         why: "Extra work was added, and talking went down.",
-        rightMsg: "You saw talking went down and extra work was added."
+        rightMsg: "You saw talking during tests went down and extra work was added."
       },
       {
         html: "<strong>Kayla</strong> throws paper. She loses five minutes of recess. The paper throwing stops.",
+        behavior: "Throwing paper in class",
+        effect: "The paper throwing stops",
         answer: "Removal punishment",
         direction: "down",
+        stimulus: "removed",
         why: "Recess was taken away, and throwing went down.",
-        rightMsg: "You saw throwing went down and recess was taken away."
+        rightMsg: "You saw paper throwing went down and recess time was taken away."
       },
       {
         html: "<strong>Maria</strong> dreads the teacher's long lectures. Each time she asks a question, the lecture stops for a discussion. Maria asks more questions.",
+        behavior: "Asking questions in class",
+        effect: "Maria asks more questions",
         answer: "Negative reinforcement",
         direction: "up",
+        stimulus: "removed",
         why: "The lecture was taken away, and questions went up.",
-        rightMsg: "You saw questions went up and the lecture was taken away."
+        rightMsg: "You saw question-asking went up and the long lecture was taken away."
       },
       {
         html: "<strong>Michael</strong> gets a sticker each time he reads for 20 minutes. He reads more each week.",
+        behavior: "Independent reading",
+        effect: "He reads more each week",
         answer: "Positive reinforcement",
         direction: "up",
+        stimulus: "added",
         why: "A sticker was added, and reading went up.",
-        rightMsg: "You saw reading went up and a sticker was added."
+        rightMsg: "You saw weekly reading went up and a sticker was added."
       },
       {
         html: "<strong>Sam</strong> curses in class. The teacher calls home that evening. Sam stops cursing.",
+        behavior: "Cursing in class",
+        effect: "Sam stops cursing",
         answer: "Presentation punishment",
         direction: "down",
+        stimulus: "added",
         why: "A call home was added, and cursing went down.",
-        rightMsg: "You saw cursing went down and a call home was added."
+        rightMsg: "You saw cursing in class went down and a phone call home was added."
       },
       {
         html: "<strong>Maddie</strong> pushes in line. She loses her turn as line leader. The pushing stops.",
+        behavior: "Pushing in line",
+        effect: "The pushing stops",
         answer: "Removal punishment",
         direction: "down",
+        stimulus: "removed",
         why: "Line leader was taken away, and pushing went down.",
-        rightMsg: "You saw pushing went down and line leader was taken away."
+        rightMsg: "You saw pushing in line went down and line-leader privilege was taken away."
       },
       {
         html: "<strong>Ms. Ortiz</strong> lets students who stay on task skip the end-of-day cleanup. Time on task goes up.",
+        behavior: "Staying focused on classwork",
+        effect: "Time on task goes up",
         answer: "Negative reinforcement",
         direction: "up",
+        stimulus: "removed",
         why: "The chore was taken away, and on-task behavior went up.",
-        rightMsg: "You saw on-task behavior went up and the chore was taken away."
+        rightMsg: "You saw on-task behavior went up and the cleanup chore was taken away."
       },
       {
         html: "<strong>Leo</strong> answers a question. His teacher says \"No, that's wrong\" in front of everyone. Leo stops raising his hand.",
+        behavior: "Raising hand to answer",
+        effect: "Leo stops raising his hand",
         answer: "Presentation punishment",
         direction: "down",
+        stimulus: "added",
         why: "Public correction was added, and hand-raising went down. The teacher did not mean to punish. The effect decides.",
-        rightMsg: "You saw hand-raising went down and public correction was added."
+        rightMsg: "You saw hand-raising went down and public correction was added—the effect decides, not teacher intent."
       }
     ];
 
-    const MISCONCEPTION_REPLY = "Did the behavior go up or down? Negative means something was taken away, not that it was bad.";
+    const MISCONCEPTION_UP_PUNISHMENT = "Did the behavior go up or down? Negative means something was taken away, not that it was bad.";
+    const MISCONCEPTION_NEG_VS_REMOVAL = "Both remove something, so check the effect on the behavior: did the student's behavior go up (reinforcement) or down (punishment)?";
+    const MISCONCEPTION_INTENT_VS_EFFECT = "Focus on the effect on future behavior, not what the teacher intended: did the student's behavior increase or decrease next?";
+    const MISCONCEPTION_SIGN_MIXUP = "You got the behavior direction right! Now check the teacher's consequence: was something added (+) or taken away (−)?";
 
     let currentIndex = 0;
     let missesOnCurrent = 0;
     let score = 0;
-    let hadUpPunishmentMiss = false;
-    let hadLeoMiss = false;
+    let selectedDir = null;
+    let selectedStim = null;
+
+    let missLog = {
+      upPunishment: false,
+      negVsRemoval: false,
+      intentVsEffect: false,
+      signMixup: false
+    };
 
     const quizScreen = document.getElementById("quiz-screen");
     const scoreScreen = document.getElementById("score-screen");
     const sceneCounter = document.getElementById("scene-counter");
     const scoreCounter = document.getElementById("score-counter");
     const progressFill = document.getElementById("progress-fill");
+    const caseTag = document.getElementById("case-tag");
     const sceneText = document.getElementById("scene-text");
+    const targetBehaviorText = document.getElementById("target-behavior-text");
+    const futureEffectText = document.getElementById("future-effect-text");
+    const pillBtns = Array.from(document.querySelectorAll(".pill-btn"));
+    const scaffoldStatus = document.getElementById("scaffold-status");
     const choiceBtns = Array.from(document.querySelectorAll(".choice-btn"));
     const feedbackBox = document.getElementById("feedback-box");
     const feedbackText = document.getElementById("feedback-text");
     const nextBtn = document.getElementById("next-btn");
     const wellDoneText = document.getElementById("well-done-text");
     const finalScore = document.getElementById("final-score");
+    const masteryNote = document.getElementById("mastery-note");
     const reviewList = document.getElementById("review-list");
     const restartBtn = document.getElementById("restart-btn");
+
+    function updateScaffoldSummary() {
+      if (!selectedDir && !selectedStim) {
+        scaffoldStatus.textContent = "Step 1: Select whether the behavior went up/down and whether a stimulus was added/taken away.";
+        return;
+      }
+      const dirLabel = selectedDir === "up" ? "Behavior ↑ (Reinforcement)" : (selectedDir === "down" ? "Behavior ↓ (Punishment)" : "Behavior ?");
+      const stimLabel = selectedStim === "added" ? "Stimulus Added (+)" : (selectedStim === "removed" ? "Stimulus Taken Away (−)" : "Stimulus ?");
+      scaffoldStatus.textContent = "Your analysis: " + dirLabel + " · " + stimLabel;
+    }
 
     function renderScene() {
       const scene = SCENES[currentIndex];
       missesOnCurrent = 0;
-      sceneCounter.textContent = "Scene " + (currentIndex + 1) + " of " + SCENES.length;
-      scoreCounter.textContent = score + " right";
+      selectedDir = null;
+      selectedStim = null;
+
+      sceneCounter.textContent = "Classroom Scene " + (currentIndex + 1) + " of " + SCENES.length;
+      scoreCounter.textContent = score + " of " + SCENES.length + " right (Goal: 8)";
       progressFill.style.width = ((currentIndex + 1) / SCENES.length * 100) + "%";
+      caseTag.textContent = "Classroom Case " + (currentIndex + 1);
       sceneText.innerHTML = scene.html;
+      targetBehaviorText.textContent = scene.behavior;
+      futureEffectText.textContent = scene.effect;
+
+      pillBtns.forEach(function(btn) {
+        btn.disabled = false;
+        btn.classList.remove("active");
+      });
+      updateScaffoldSummary();
 
       feedbackBox.className = "feedback-box hidden";
       feedbackText.textContent = "";
@@ -455,14 +677,51 @@
       feedbackText.textContent = message;
     }
 
-    function lockChoices(correctChoice) {
+    function lockChoices(correctChoice, scene) {
       choiceBtns.forEach(function(btn) {
         btn.disabled = true;
         if (btn.getAttribute("data-choice") === correctChoice) {
           btn.classList.add("selected-right");
         }
       });
+      pillBtns.forEach(function(btn) {
+        const step = btn.getAttribute("data-step");
+        const val = btn.getAttribute("data-val");
+        btn.classList.toggle("active", (step === "dir" && val === scene.direction) || (step === "stim" && val === scene.stimulus));
+        btn.disabled = true;
+      });
+      selectedDir = scene.direction;
+      selectedStim = scene.stimulus;
+      updateScaffoldSummary();
       nextBtn.classList.remove("hidden");
+    }
+
+    function getDiagnosticRetryMessage(picked, scene, index) {
+      const pickedPunishment = (picked === "Presentation punishment" || picked === "Removal punishment");
+      const pickedReinforcement = !pickedPunishment;
+      const pickedDirection = pickedReinforcement ? "up" : "down";
+
+      if (scene.direction === "up" && pickedPunishment) {
+        missLog.upPunishment = true;
+        return MISCONCEPTION_UP_PUNISHMENT;
+      }
+
+      if (pickedDirection === scene.direction) {
+        missLog.signMixup = true;
+        return MISCONCEPTION_SIGN_MIXUP;
+      }
+
+      if (scene.direction === "down" && picked === "Negative reinforcement") {
+        missLog.negVsRemoval = true;
+        return MISCONCEPTION_NEG_VS_REMOVAL;
+      }
+
+      if (index === 9 || (scene.direction === "down" && pickedReinforcement)) {
+        missLog.intentVsEffect = true;
+        return MISCONCEPTION_INTENT_VS_EFFECT;
+      }
+
+      return MISCONCEPTION_INTENT_VS_EFFECT;
     }
 
     function handleChoice(btn) {
@@ -471,10 +730,10 @@
 
       if (picked === scene.answer) {
         score += 1;
-        scoreCounter.textContent = score + " right";
+        scoreCounter.textContent = score + " of " + SCENES.length + " right (Goal: 8)";
         btn.classList.add("selected-right");
         showFeedback("right", scene.rightMsg);
-        lockChoices(scene.answer);
+        lockChoices(scene.answer, scene);
         return;
       }
 
@@ -482,24 +741,13 @@
       btn.disabled = true;
       btn.classList.add("selected-wrong");
 
-      const pickedPunishment = (picked === "Presentation punishment" || picked === "Removal punishment");
-
-      if (scene.direction === "up" && pickedPunishment) {
-        hadUpPunishmentMiss = true;
-      }
-      if (currentIndex === 9) {
-        hadLeoMiss = true;
-      }
+      const retryMsg = getDiagnosticRetryMessage(picked, scene, currentIndex);
 
       if (missesOnCurrent === 1) {
-        if (scene.direction === "up" && pickedPunishment) {
-          showFeedback("retry", MISCONCEPTION_REPLY);
-        } else {
-          showFeedback("retry", "Check two things: did the behavior go up or down, and was something added or taken away? Try once more.");
-        }
+        showFeedback("retry", retryMsg);
       } else {
         showFeedback("reveal", scene.answer + ": " + scene.why);
-        lockChoices(scene.answer);
+        lockChoices(scene.answer, scene);
       }
     }
 
@@ -507,36 +755,70 @@
       quizScreen.classList.add("hidden");
       scoreScreen.classList.remove("hidden");
 
-      const scenesAttempted = currentIndex + 1;
-      if (score >= 8 && !hadUpPunishmentMiss) {
-        wellDoneText.textContent = "What you did well: You tracked whether each behavior went up or down and told negative reinforcement apart from punishment.";
-      } else if (score >= 6) {
-        wellDoneText.textContent = "What you did well: You spotted how consequences changed the learner's behavior across most classroom scenes.";
+      if (score >= 8 && !missLog.upPunishment && !missLog.intentVsEffect) {
+        wellDoneText.textContent = "What you did well: You consistently analyzed how teacher consequences affected future student behavior and distinguished negative reinforcement from punishment.";
+      } else if (score >= 8) {
+        wellDoneText.textContent = "What you did well: You reached the mastery benchmark across the 10 classroom cases and self-corrected using the 2x2 contingency analysis.";
       } else {
-        wellDoneText.textContent = "What you did well: You worked through the scenes and practiced checking what happened to each behavior next.";
+        wellDoneText.textContent = "What you did well: You worked through all 10 classroom scenarios and practiced separating behavior direction (up/down) from stimulus change (added/taken away).";
       }
 
-      finalScore.textContent = "Score: " + score + " / " + scenesAttempted;
+      finalScore.textContent = "Score: " + score + " / " + SCENES.length;
+      if (score >= 8) {
+        masteryNote.textContent = "Mastery benchmark met (8 or more of 10 classroom scenes right).";
+      } else {
+        masteryNote.textContent = "Keep practicing to reach the 8 of 10 mastery benchmark.";
+      }
 
       const ideas = [];
-      if (hadUpPunishmentMiss) {
+      if (missLog.upPunishment) {
         ideas.push("Negative reinforcement takes away something unpleasant, so the behavior goes up.");
         ideas.push("\"Positive\" means something is added. \"Negative\" means something is taken away. Neither word means good or bad.");
-      } else if (hadLeoMiss) {
+      }
+      if (missLog.intentVsEffect && ideas.length < 2) {
         ideas.push("A consequence is defined by what happens to the behavior next, not by what the adult meant.");
-        ideas.push("A teacher can punish by accident: if a behavior drops after a teacher's reaction, that reaction worked as punishment.");
-      } else {
+        if (ideas.length < 2) {
+          ideas.push("A teacher can punish by accident: if a behavior drops after a teacher's reaction, that reaction worked as punishment.");
+        }
+      }
+      if (missLog.negVsRemoval && ideas.length < 2) {
         ideas.push("Reinforcement makes a behavior go up. Punishment makes it go down.");
+        if (ideas.length < 2) {
+          ideas.push("Presentation punishment adds something unpleasant. Removal punishment takes away something the learner wants.");
+        }
+      }
+      if (ideas.length === 0) {
+        ideas.push("A consequence is defined by what happens to the behavior next, not by what the adult meant.");
         ideas.push("\"Positive\" means something is added. \"Negative\" means something is taken away. Neither word means good or bad.");
+      } else if (ideas.length === 1) {
+        ideas.push("Reinforcement makes a behavior go up. Punishment makes it go down.");
       }
 
       reviewList.innerHTML = "";
-      ideas.forEach(function(idea) {
+      ideas.slice(0, 2).forEach(function(idea) {
         const li = document.createElement("li");
         li.textContent = idea;
         reviewList.appendChild(li);
       });
     }
+
+    pillBtns.forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        const step = btn.getAttribute("data-step");
+        const val = btn.getAttribute("data-val");
+        if (step === "dir") {
+          selectedDir = val;
+        } else {
+          selectedStim = val;
+        }
+        pillBtns.forEach(function(other) {
+          if (other.getAttribute("data-step") === step) {
+            other.classList.toggle("active", other === btn);
+          }
+        });
+        updateScaffoldSummary();
+      });
+    });
 
     choiceBtns.forEach(function(btn) {
       btn.addEventListener("click", function() {
@@ -545,7 +827,7 @@
     });
 
     nextBtn.addEventListener("click", function() {
-      if (score >= 8 || currentIndex + 1 >= SCENES.length) {
+      if (currentIndex + 1 >= SCENES.length) {
         showScoreScreen();
       } else {
         currentIndex += 1;
@@ -556,8 +838,12 @@
     restartBtn.addEventListener("click", function() {
       currentIndex = 0;
       score = 0;
-      hadUpPunishmentMiss = false;
-      hadLeoMiss = false;
+      missLog = {
+        upPunishment: false,
+        negVsRemoval: false,
+        intentVsEffect: false,
+        signMixup: false
+      };
       scoreScreen.classList.add("hidden");
       quizScreen.classList.remove("hidden");
       renderScene();
