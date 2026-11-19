@@ -3,3 +3,6 @@
 *_files/
 .DS_Store
 ._*
+
+# Raw setup screenshots can show keys or emails; only finished videos are tracked
+w3/setup_demos/*/screenshots/
