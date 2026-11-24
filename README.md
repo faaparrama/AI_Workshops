@@ -15,7 +15,7 @@ source for the workshops; the class links here and keeps no copy.**
 | **Workshop 1 — Introduction to AI co-creation** | [`w1/slides.html`](w1/slides.html) | [`w1/`](w1/) | ✅ |
 | **Workshop 2 — Curation: teaching the tool what to teach** | [`w2/slides.html`](w2/slides.html) | [`w2/`](w2/) | ✅ |
 | **Workshop 3 — Agents: beyond the chatbot** | [`w3/slides.html`](w3/slides.html) | [`w3/`](w3/) | ✅ |
-| Workshop 4 — Alignment, adaptability, and the production line | `w4/slides.html` | `w4/` | planned |
+| **Workshop 4 — Who does your tool leave out?** (accessibility, challenge, ethics) | none: no class meeting, Fall 2026 | [`w4/`](w4/) | ✅ |
 
 The workshops are **detached from the milestones**: a milestone is written at home, after its
 workshop, and the workshop gives the technical piece the milestone needs. The self-guided

@@ -1,5 +1,7 @@
 # Workshop 4 — Accessibility and the ethics of AI
 
+> **Superseded 2026-11-23 (W17):** no class meeting on Nov 24. Workshop 4 is the self-guided page `w4/index.html`, both sections, no deck. The room plan below is kept for Spring 2027.
+
 **Tue Nov 24 · single session (Thanksgiving cancels Thursday) · depends on the Nov 17 discussion (Ch. 4–5).**
 Outline only. Released early with W3 (C8) so students have more time. M4 = who the tool leaves out.
 
