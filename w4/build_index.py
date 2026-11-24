@@ -87,7 +87,82 @@ body{font-size:1.0625rem}
 :root .seg button,:root:not([data-theme="light"]) .seg button{background:transparent;color:var(--ink);border:2px solid transparent;padding:.25em .7em;font-size:.88em}
 :root .seg button[aria-pressed="true"],:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{background:var(--ground);color:var(--maroon);border-color:var(--maroon)}
 @media print{.reading{display:none}}
+:root{--fig:#8C2F42;--fig-n:#82797C}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fig:#D4687C;--fig-n:#8F8589}}
+:root[data-theme="dark"]{--fig:#D4687C;--fig-n:#8F8589}
+:root[data-theme="contrast"]{--fig:#40101A;--fig-n:#5A5A5A}
+table.bars{table-layout:fixed;margin:0 0 .9rem}
+table.bars caption{text-align:left;font-weight:700;padding:.3rem 0}
+table.bars th[scope=row]{width:42%;font-weight:400;font-size:.95em;letter-spacing:0;text-transform:none;color:var(--ink);border-bottom:0;padding:.22em .6em .22em 0;vertical-align:middle;overflow-wrap:break-word}
+table.bars td{border-bottom:0;padding:.22em 0;vertical-align:middle}
+.barcell{display:flex;align-items:center;gap:.5em}
+.barcell .track{flex:1;display:block;height:1rem;border-left:1px solid var(--muted)}
+.barcell .fill{display:block;height:100%;background:var(--fig);border-radius:0 4px 4px 0}
+.barcell .fill.n{background:var(--fig-n)}
+.barcell .val{flex:none;width:3.6em;font-weight:700;font-variant-numeric:tabular-nums}
+.units{display:flex;flex-wrap:wrap;gap:3px;flex:1}
+.units i{width:1.05rem;height:1.05rem;border-radius:3px;border:2px solid var(--fig)}
+.units i.on{background:var(--fig)}
+.barcell .fill,.units i{print-color-adjust:exact;-webkit-print-color-adjust:exact;forced-color-adjust:none}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+figure.fig svg{width:100%;min-width:21rem;max-width:34rem}
+@media (max-width:640px){table.bars,table.bars tbody,table.bars tr,table.bars th[scope=row],table.bars td,table.bars caption{display:block;width:100%}table.bars th[scope=row]{padding:.45em 0 0}}
+.fig .wall{fill:var(--fig)}.fig .wallout{fill:none;stroke:var(--fig);stroke-width:1.5;stroke-dasharray:4 3}
+.fig .bar{stroke:var(--ink);stroke-width:3}.fig .ceil{stroke:var(--fig-n);stroke-width:3;stroke-dasharray:8 5}
+.fig .base{stroke:var(--muted);stroke-width:1}
+.fig text{fill:var(--ink);font-family:inherit}
+.fig .arr{stroke:var(--ink);stroke-width:1.5;fill:none}
 """
+
+def bars(caption, head, rows, unit="%"):
+    """A table that draws its own bars, so the numbers are text and scale with the page."""
+    out = [f'<table class="bars" role="table"><caption>{caption}</caption>',
+           f'<thead class="vh" role="rowgroup"><tr role="row"><th scope="col" role="columnheader">{head[0]}</th><th scope="col" role="columnheader">{head[1]}</th></tr></thead><tbody role="rowgroup">']
+    for name, v, neutral in rows:
+        out.append(f'<tr role="row"><th scope="row" role="rowheader">{name}</th><td role="cell"><span class="barcell"><span class="track" aria-hidden="true">'
+                   f'<span class="fill{" n" if neutral else ""}" style="width:{v}%"></span></span><span class="val">{v}{unit}</span></span></td></tr>')
+    return "\n".join(out) + "\n</tbody></table>"
+
+
+# Control-arm means plus the effects in Table 1 of Bastani et al. (2025), as points out of 100.
+FIG_BASTANI = ('<figure class="fig">\n'
+    + bars("Practice problems, with the assigned tool", ("Group", "Estimated score out of 100"),
+           [("No chatbot", 28, True), ("Standard chatbot", 42, False), ("Tutor with safeguards", 65, False)], "")
+    + bars("Exam, without any tool", ("Group", "Estimated score out of 100"),
+           [("No chatbot", 32, True), ("Standard chatbot", 27, False), ("Tutor with safeguards", 32, False)], "")
+    + '\n<figcaption><strong>Figure 1.</strong> Estimated scores out of 100 in practice and on the exam. The values for the other groups add the effects in Table 1 of Bastani et al. (2025) to the mean of the group without a chatbot. '
+      'The standard chatbot group scored about 5 points lower on the exam, which is 17% of 32. The tutor group did not differ significantly from the group without a chatbot.</figcaption></figure>')
+
+FIG_TERMS = """<figure class="fig"><div class="scroll" role="region" tabindex="0" aria-label="Figure 2"><svg viewBox="0 0 360 236" role="img" aria-label="Illustration of the same tool before and after two changes. Before: a tall barrier stands in front of the learning goal, and the ceiling is just above the goal. After: the barrier is short, the ceiling is much higher, and the bar, which is the learning goal, is at the same height as before.">
+<text x="95" y="16" text-anchor="middle" font-size="16" font-weight="700">Before</text><text x="265" y="16" text-anchor="middle" font-size="16" font-weight="700">After</text>
+<line x1="12" y1="205" x2="172" y2="205" class="base"/><line x1="188" y1="205" x2="348" y2="205" class="base"/>
+<path d="M34 205V95a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4V205z" class="wall"/>
+<path d="M210 205V95a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4V205z" class="wallout"/><path d="M210 205V187a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4V205z" class="wall"/>
+<text x="46" y="225" text-anchor="middle" font-size="16">Barrier</text><text x="222" y="225" text-anchor="middle" font-size="16">Barrier</text>
+<line x1="70" y1="130" x2="172" y2="130" class="bar"/><line x1="246" y1="130" x2="348" y2="130" class="bar"/>
+<text x="121" y="151" text-anchor="middle" font-size="16">Bar</text><text x="297" y="151" text-anchor="middle" font-size="16">Same bar</text>
+<line x1="70" y1="104" x2="172" y2="104" class="ceil"/><line x1="246" y1="46" x2="348" y2="46" class="ceil"/>
+<text x="121" y="93" text-anchor="middle" font-size="16">Ceiling</text><text x="297" y="38" text-anchor="middle" font-size="16">Ceiling</text>
+<path d="M297 122V56M292 63l5-8 5 8" class="arr"/><path d="M222 110V172M217 165l5 8 5-8" class="arr"/>
+</svg></div>
+<figcaption><strong>Figure 2.</strong> An illustration of two changes to a tool. The barrier becomes lower, the ceiling becomes higher, and the bar stays at the same height.</figcaption></figure>"""
+
+
+def units(n, of=8):
+    return '<span class="units" aria-hidden="true">' + "".join(f'<i class="on"></i>' if i < n else "<i></i>" for i in range(of)) + "</span>"
+
+
+FIG_RAFA = ('<figure class="fig"><table class="bars" role="table"><caption>Scenes that Rafa answered correctly</caption>'
+    '<thead class="vh" role="rowgroup"><tr role="row"><th scope="col" role="columnheader">Setting</th><th scope="col" role="columnheader">Correct answers out of 8</th></tr></thead><tbody role="rowgroup">'
+    + "".join(f'<tr role="row"><th scope="row" role="rowheader">{n}</th><td role="cell"><span class="barcell">{units(v)}<span class="val">{v} of 8</span></span></td></tr>'
+              for n, v in [("English class, silent reading", 4), ("Robotics club, listening and speaking", 8)])
+    + '</tbody></table><figcaption><strong>Figure 3.</strong> Rafa is fictional. The eight scenes were the same in both settings.</figcaption></figure>')
+
+FIG_WEB = ('<figure class="fig">' + bars("Home pages with each error, 2026", ("Error", "Percentage of home pages"),
+    [("Text with low contrast", 83.9, False), ("Pictures without a text description", 53.1, False), ("Form fields without a label", 51.0, False),
+     ("Empty links", 46.3, False), ("Empty buttons", 30.6, False), ("Page language not stated", 13.5, False)])
+    + '<figcaption><strong>Figure 4.</strong> The six most common errors on one million home pages (WebAIM, 2026). A page can have more than one error. An automated test found these errors, and it cannot find every accessibility problem.</figcaption></figure>')
+
 
 def bar(where):
     groups = [("theme", "Page color", [("light", "Paper", "Paper"), ("contrast", "High contrast", "High contrast"), ("dark", "Midnight", "Midnight")]),
@@ -169,7 +244,8 @@ __BAR1__
 <tr><td>Values</td><td>Is the tool fair and beneficial for the people it affects?</td><td>We need to ask which students benefit and which students are harmed.</td></tr>
 </table></div>
 
-<p>Researchers found a similar problem in an experiment with nearly a thousand high school math students. With a standard chatbot, students' grades on practice problems improved by 48%. When the chatbot was removed, these students scored 17% lower than students who never had it. A tutor with safeguards for learning largely avoided this harm (Bastani et al., 2025).</p>
+<p>Researchers found a similar problem in an experiment with nearly a thousand high school math students. Students who used a standard chatbot scored 48% higher on practice problems than students without one. On the exam, without the chatbot, they scored 17% lower. A tutor with safeguards for learning largely avoided this harm (Bastani et al., 2025).</p>
+__FIG_BASTANI__
 <p>Researchers also distinguish two parts of the problem. <strong>Outer alignment</strong> asks whether the objective we write represents what we want. <strong>Inner alignment</strong> asks whether the goal the system learned matches that objective (Hubinger et al., 2019). Your work is closest to outer alignment, because your SKILL.md states the purpose and the rules. You cannot inspect what an AI model learned, so you test what your tool does.</p>
 
 <h3>Why bias is an alignment problem</h3>
@@ -190,6 +266,7 @@ __BAR1__
   <li><strong>Ceiling:</strong> the most challenging work the tool offers. A low ceiling leaves advanced learners with nothing new to learn.</li>
 </ul>
 <p>In Week 14, you learned to <strong>lower the barrier and keep the bar</strong>. In this workshop, you also learn to <strong>raise the ceiling</strong>.</p>
+__FIG_TERMS__
 <label for="q_default">Describe in one sentence the learner you imagined when you designed your tool. What does your tool assume this learner can already do?</label>
 <textarea id="q_default" data-save class="short"></textarea>
 
@@ -242,6 +319,7 @@ __BAR1__
   <tr><td>Imani</td><td>Writing a paragraph alone</td><td>Discussing the idea in class</td></tr>
   <tr><td>Rafa</td><td>Reading silently in English class</td><td>Listening, speaking and inventing a scene in robotics club</td></tr>
   </table></div>
+  __FIG_RAFA__
   <div class="gotcha"><p><strong>These observations are not diagnoses.</strong> They give a teacher a reason to talk with the family and consider a referral for evaluation. Your tool should never suggest a diagnosis.</p></div>
 </div>
 
@@ -343,7 +421,8 @@ person's confidence comes from and explain why.</pre>
 <tr><td>Understandable</td><td>Can learners follow the content and the instructions?</td><td>Vocabulary, amount of information</td></tr>
 <tr><td>Robust</td><td>Does the page work with assistive technology, such as a screen reader?</td><td>Reading aloud, keyboard</td></tr>
 </table></div>
-<p>Many pages do not meet these guidelines. In 2026, WebAIM found errors on 95.9% of one million home pages, and 83.9% had text with low contrast. AI tools learn to write pages from existing pages, so they can repeat these errors. Public schools and public universities in the United States have to meet WCAG 2.1 at Level AA, with compliance dates in 2027 and 2028 (U.S. Department of Justice, 2024, 2026).</p>
+<p>Many pages do not meet these guidelines. In 2026, WebAIM found errors on 95.9% of one million home pages, and 83.9% had text with low contrast (Figure 4). AI tools learn to write pages from existing pages, so they can repeat these errors. Public schools and public universities in the United States have to meet WCAG 2.1 at Level AA, with compliance dates in 2027 and 2028 (U.S. Department of Justice, 2024, 2026).</p>
+__FIG_WEB__
 
 <h3>Try the reading settings</h3>
 <p>The settings below change this whole page. They are also at the top.</p>
@@ -613,6 +692,8 @@ learner for a diagnosis. I will choose what to fix, one item at a time.</pre>
 ACCJS = "[" + ",".join(f"['{k}','{n}']" for k, n, *_ in ACCESS) + "]"
 HTML = (HTML.replace("__CSS__", CSS + EXTRA)
         .replace("__ACCESS__", access_cards())
+        .replace("__FIG_BASTANI__", FIG_BASTANI).replace("__FIG_TERMS__", FIG_TERMS)
+        .replace("__FIG_RAFA__", FIG_RAFA).replace("__FIG_WEB__", FIG_WEB)
         .replace("__BAR1__", bar(", top of page")).replace("__BAR2__", bar(", section 5"))
         .replace("__ACCJS__", ACCJS))
 open(OUT, "w", encoding="utf-8").write(HTML)
