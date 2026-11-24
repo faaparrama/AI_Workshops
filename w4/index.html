@@ -115,28 +115,65 @@ fieldset.check label{margin:.4rem 0 .2rem}
 .locked[hidden]{display:none}
 .opts{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) button:not(.ghost){color:#171215}}
+:root[data-theme="dark"] button:not(.ghost){color:#171215}
+:root[data-theme="light"],:root:not([data-theme]){--muted:#5A5A5A}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--muted:#B4AAAD}}
+select{max-width:100%;text-overflow:ellipsis}
+h1,h2,h3,legend,summary,label,button{overflow-wrap:break-word}
+.footer a{overflow-wrap:anywhere}
+.toc .status{white-space:nowrap}
+h2 .t{white-space:normal}
+:root[data-theme="contrast"]{
+  --maroon:#40101A; --maroon-deep:#2E0A12; --maroon-soft:#FFFFFF;
+  --ground:#FFFFFF; --surface:#FFFFFF; --ink:#000000; --muted:#2B2B2B;
+  --rule:#000000; --rule-strong:#000000;
+  --gold:#5C4400; --gold-text:#4A3700; --gold-bg:#FFFFFF;
+  --teal:#00474D; --teal-text:#00393E; --teal-bg:#FFFFFF;
+  --ok:#103D28; --ok-bg:#FFFFFF; --no:#6B1111; --no-bg:#FFFFFF; --box:#FFFFFF;
+}
+:root[data-theme="contrast"] button:not(.ghost){color:#FFFFFF}
+body{font-size:1.0625rem}
+:root[data-size="2"]{font-size:120%}
+:root[data-size="3"]{font-size:145%}
+:root[data-font="serif"] body{font-family:Georgia,"Iowan Old Style","Times New Roman",serif}
+.reading{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+.seg{display:flex;flex-wrap:wrap;gap:2px;border:1px solid var(--rule-strong);border-radius:7px;padding:3px;background:var(--surface)}
+:root .seg button,:root:not([data-theme="light"]) .seg button{background:transparent;color:var(--ink);border:2px solid transparent;padding:.25em .7em;font-size:.88em}
+:root .seg button[aria-pressed="true"],:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{background:var(--ground);color:var(--maroon);border-color:var(--maroon)}
+@media print{.reading{display:none}}
 </style>
+<script>
+try{var r=JSON.parse(localStorage.getItem('epy3143-reading')||'{}')||{};
+['theme','font','size'].forEach(function(k){ if(r[k]) document.documentElement.setAttribute('data-'+k,r[k]); });}catch(e){}
+</script>
 </head>
 <body>
 
 <header class="head">
   <p class="moment">EPY 3143 · Week 15 · Workshop 4 · Both sections</p>
   <h1>Who does your tool leave out?</h1>
-  <p class="sub">This self-guided workshop takes about an hour. You will study three learners, review your tool for access and challenge, write five ethics rules, and make two changes.</p>
+  <p class="sub">This self-guided workshop takes about 80 minutes. You will study the alignment problem in AI, meet three learners, review your tool for access and challenge, write five ethics rules, and make two changes.</p>
 </header>
+
+<div class="reading" role="group" aria-label="Reading settings, top of page">
+<div class="seg" role="group" aria-label="Page color"><button type="button" data-set="theme" data-val="light" aria-pressed="false" aria-label="Paper">Paper</button><button type="button" data-set="theme" data-val="contrast" aria-pressed="false" aria-label="High contrast">High contrast</button><button type="button" data-set="theme" data-val="dark" aria-pressed="false" aria-label="Midnight">Midnight</button></div>
+<div class="seg" role="group" aria-label="Font"><button type="button" data-set="font" data-val="sans" aria-pressed="false" aria-label="Sans">Sans</button><button type="button" data-set="font" data-val="serif" aria-pressed="false" aria-label="Serif">Serif</button></div>
+<div class="seg" role="group" aria-label="Text size"><button type="button" data-set="size" data-val="1" aria-pressed="false" aria-label="A, standard text size">A</button><button type="button" data-set="size" data-val="2" aria-pressed="false" aria-label="A+, larger text">A+</button><button type="button" data-set="size" data-val="3" aria-pressed="false" aria-label="A++, largest text">A++</button></div>
+</div>
 
 <div class="keyline">
   <span class="tag">How this page works</span>
-  <p>Complete the sections in order. You need your <strong>SKILL.md</strong> from Milestone 3 and your access rule from the <strong>Week 14 workbench</strong> (Part 6). If your tool is already a page, open it too.</p>
-  <p>You don't need to install anything or use AI. Your answers are saved only in this browser. At the end, copy them with one button and paste them into <strong>Self-guided Workshop 4</strong> in Canvas.</p>
+  <p>Complete the sections in order. You can work in two sittings and stop after section 4. You need your <strong>SKILL.md</strong> from Milestone 3 and your access rule from the <strong>Week 14 workbench</strong> (Part 6). If your tool is already a page, open it too.</p>
+  <p>You don't need to install anything, and every AI activity is optional. Your answers are saved only in this browser. At the end, copy them with one button and paste them into <strong>Self-guided Workshop 4</strong> in Canvas.</p>
   <p><span id="saveStatus" role="status" aria-live="polite" class="status"></span></p>
 </div>
 
 <ol class="toc">
-  <li><a href="#deal">Purpose and key terms</a> <span class="status">4 min</span></li>
+  <li><a href="#align">The alignment problem</a> <span class="status">13 min</span></li>
   <li><a href="#three">Three learners</a> <span class="status">12 min</span></li>
-  <li><a href="#setting">How the setting matters</a> <span class="status">7 min</span></li>
-  <li><a href="#traps">Two common mistakes</a> <span class="status">5 min</span></li>
+  <li><a href="#setting">How the setting matters</a> <span class="status">9 min</span></li>
+  <li><a href="#traps">Two misaligned replies</a> <span class="status">6 min</span></li>
+  <li><a href="#web">Web accessibility and reading settings</a> <span class="status">6 min</span></li>
   <li><a href="#access">Access review</a> <span class="status">12 min</span></li>
   <li><a href="#challenge">Challenge review</a> <span class="status">6 min</span></li>
   <li><a href="#ethics">Five ethics rules</a> <span class="status">6 min</span></li>
@@ -145,10 +182,46 @@ fieldset.check label{margin:.4rem 0 .2rem}
 </ol>
 
 <!-- ============================================================ -->
-<h2 id="deal">1 · Purpose and key terms <span class="t">4 min</span></h2>
+<h2 id="align">1 · The alignment problem <span class="t">13 min</span></h2>
 
-<p>When we design a tool, we imagine a learner. We assume that this learner can read the text, type an answer, and benefit from the questions we wrote. Other learners will also use the tool, and some of those assumptions will be wrong for them. In this workshop, you identify those learners and revise your tool for them.</p>
-<p>We will use three terms:</p>
+<div class="do">
+  <span class="tag">Write your answer first</span>
+  <label for="q_align">A teacher gives an AI tool this instruction: "Help my students get the practice problems right." The tool shows each student the answer, and every student earns a perfect score. Did the tool follow the instruction? Did it do what the teacher intended?</label>
+  <textarea id="q_align" data-save></textarea>
+</div>
+
+<p>This is an example of the <strong>alignment problem</strong>. An AI system is aligned when it achieves the purpose that people intended. A misaligned system can follow an instruction and miss its purpose. Watch this short introduction.</p>
+<div class="video">
+  <iframe src="https://www.youtube-nocookie.com/embed/MUjvQvVJxHw" title="What is AI Alignment and Why is it Important? Eye on Tech, 2 minutes" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+</div>
+<p class="status">The video has English captions. Not loading? <a href="https://www.youtube.com/watch?v=MUjvQvVJxHw">Open it on YouTube.</a></p>
+<details><summary>Read a summary of the video</summary>
+<p>An AI system can meet its literal objective and still miss the outcome that people intended. Alignment is difficult because programmers cannot easily specify every behavior they want. Complex systems may find technical shortcuts that meet an objective in unintended ways. Some behaviors are hard to detect before a system is in use. For example, a language model can amplify biases in its training data. Misalignment is especially dangerous in fields such as medicine and driving.</p>
+</details>
+
+<p>Gabriel (2020) explains that a system can be aligned with different things, including instructions, intentions and values. In education, we can ask three questions:</p>
+<div class="scroll"><table>
+<tr><th scope="col">Aligned with</th><th scope="col">Question</th><th scope="col">In the example</th></tr>
+<tr><td>Instructions</td><td>Does the tool do what the words say?</td><td>Yes. The practice problems are correct.</td></tr>
+<tr><td>Intentions</td><td>Does the tool achieve what the teacher wanted?</td><td>No. The teacher wanted students to learn to solve the problems.</td></tr>
+<tr><td>Values</td><td>Is the tool fair and beneficial for the people it affects?</td><td>We need to ask which students benefit and which students are harmed.</td></tr>
+</table></div>
+
+<p>Researchers found a similar problem in an experiment with nearly a thousand high school math students. With a standard chatbot, students' grades on practice problems improved by 48%. When the chatbot was removed, these students scored 17% lower than students who never had it. A tutor with safeguards for learning largely avoided this harm (Bastani et al., 2025).</p>
+<p>Researchers also distinguish two parts of the problem. <strong>Outer alignment</strong> asks whether the objective we write represents what we want. <strong>Inner alignment</strong> asks whether the goal the system learned matches that objective (Hubinger et al., 2019). Your work is closest to outer alignment, because your SKILL.md states the purpose and the rules. You cannot inspect what an AI model learned, so you test what your tool does.</p>
+
+<h3>Why bias is an alignment problem</h3>
+<p>AI models learn patterns from large collections of text and images that people created. These collections represent some groups and languages more than others, and they contain stereotypes. Developers and the people who rate AI responses also influence what a model learns. A model may work well for learners who resemble its most common examples and poorly for others.</p>
+<p>Two studies show why we need to check. Weissburg et al. (2025) analyzed nine models in the role of a teacher, using more than 17,000 educational explanations. The models selected different content for students with different profiles, and the largest differences involved income and disability status. Some choices followed stereotypes and others reversed them. In both cases, a label changed the content a student would receive. Hofmann et al. (2024) found that language models held negative stereotypes about speakers of African American English, even though the models' direct statements about African Americans were more positive. Polite language can hide bias.</p>
+
+<p>I argue that we should judge the alignment of a learning tool through accessibility and ethics:</p>
+<ul>
+  <li><strong>Accessibility</strong> asks, <em>for which learners does the tool achieve its purpose?</em></li>
+  <li><strong>Ethics</strong> asks, <em>how does the tool affect the learners who use it?</em></li>
+</ul>
+
+<h3>Key terms</h3>
+<p>When we design a tool, we imagine a learner. We assume that this learner can read the text, type an answer, and benefit from the questions we wrote. Some of these assumptions will be wrong for other learners. We will use three terms:</p>
 <ul>
   <li><strong>Barrier:</strong> a feature of the tool that stops learners from showing what they can do. For example, a page that has only text is a barrier for a student with dyslexia.</li>
   <li><strong>Bar:</strong> the learning goal and the thinking it requires.</li>
@@ -211,7 +284,7 @@ fieldset.check label{margin:.4rem 0 .2rem}
 </div>
 
 <!-- ============================================================ -->
-<h2 id="setting">3 · How the setting matters <span class="t">7 min</span></h2>
+<h2 id="setting">3 · How the setting matters <span class="t">9 min</span></h2>
 
 <p>Your tool is also a setting. The way it asks learners to respond influences which strengths and difficulties it shows. The example below is one scene from the demo tool with two added options, reading aloud and <em>Go deeper</em>. Try both. Turn on your sound first.</p>
 
@@ -239,37 +312,96 @@ fieldset.check label{margin:.4rem 0 .2rem}
 </div>
 
 <p>Reading aloud lowers the barrier, and <em>Go deeper</em> raises the ceiling. The learning goal stays the same because every learner still has to identify the source of confidence.</p>
-<p>Both options are available to all learners, so nobody has to disclose a disability to use them. This design follows Universal Design for Learning, which keeps the goal firm and offers flexible ways to reach it (CAST, 2024).</p>
+
+<h3>What kind of support is each option?</h3>
+<div class="scroll"><table>
+<tr><th scope="col">Option</th><th scope="col">For a student with a documented need</th><th scope="col">For all learners</th></tr>
+<tr><td>Reading aloud</td><td>A <strong>presentation accommodation</strong>. It changes how the student receives the text and keeps the learning goal. Jonah's IEP lists text-to-speech for tests, so his IEP team would decide whether to add it for lessons.</td><td>A <strong>Universal Design for Learning (UDL)</strong> option for representation, because anyone can use it.</td></tr>
+<tr><td>Go deeper</td><td>This option is not an accommodation. It is <strong>enrichment</strong>, a form of differentiation that increases the depth of the thinking.</td><td>An open challenge, because anyone can choose it.</td></tr>
+</table></div>
+<p>The purpose of the lesson also matters. In this scene, reading aloud gives access to the problem. In a decoding lesson, reading aloud would do the work that students need to practice.</p>
+<p>The IRIS Center (n.d.) groups accommodations into four categories. Each one suggests options for a tool:</p>
+<div class="scroll"><table>
+<tr><th scope="col">Category</th><th scope="col">What it changes</th><th scope="col">Example in a tool</th></tr>
+<tr><td>Presentation</td><td>How the learner receives information</td><td>Reading aloud, larger text, captions</td></tr>
+<tr><td>Response</td><td>How the learner shows learning</td><td>Speaking an answer in place of typing it</td></tr>
+<tr><td>Timing and scheduling</td><td>How time is organized</td><td>No timer, saved progress, short parts</td></tr>
+<tr><td>Setting</td><td>The environment for the work</td><td>One question per screen, use with headphones</td></tr>
+</table></div>
+<p>Both options in Rosa's scene are available to all learners, so nobody has to disclose a disability to use them. UDL keeps the goal firm and offers flexible ways to reach it (CAST, 2024). A UDL option does not replace a student's IEP or 504 plan. The school must still provide the accommodations in the plan.</p>
 <p>The challenge also needs to be accessible. Rafa may choose <em>Go deeper</em> and still need to hear the question, so the more difficult question and the feedback have their own read-aloud buttons.</p>
+<label for="q_cat">Which of the four categories does your tool not address yet? Name one support you could add, and explain how it keeps the bar.</label>
+<textarea id="q_cat" data-save class="short"></textarea>
 <label for="q_setting">What does your tool ask learners to do most often: read, type, speak, or reason? Which learners would have difficulty showing what they know in that setting?</label>
 <textarea id="q_setting" data-save class="short"></textarea>
 
 <!-- ============================================================ -->
-<h2 id="traps">4 · Two common mistakes <span class="t">5 min</span></h2>
+<h2 id="traps">4 · Two misaligned replies <span class="t">6 min</span></h2>
 
-<p>AI tools can make two mistakes when we ask them to adapt a lesson. The replies below are examples written for this workshop.</p>
+<p>AI tools can follow a request to adapt a lesson and miss its purpose. The two replies below are examples written for this workshop.</p>
 
 <div class="cols">
   <div class="card">
-    <h3 style="margin-top:0">Mistake 1: Simplifying the thinking</h3>
+    <h3 style="margin-top:0">Reply 1: Simplifying the thinking</h3>
     <p><strong>Request:</strong> Make Rosa's scene accessible for a student with dyslexia.</p>
     <p><strong>AI reply:</strong> "Rosa practiced and got better! (Mastery experience)"</p>
-    <p>The reply removes the evidence and gives the answer. Jonah no longer has to reason about the scene.</p>
+    <p>The text is shorter, as requested. The reply also removes the evidence and gives the answer, so Jonah no longer has to reason about the scene.</p>
   </div>
   <div class="card">
-    <h3 style="margin-top:0">Mistake 2: Adding more of the same work</h3>
+    <h3 style="margin-top:0">Reply 2: Adding more of the same work</h3>
     <p><strong>Request:</strong> Make this harder for an advanced student.</p>
     <p><strong>AI reply:</strong> "Here are 20 more scenes to sort!"</p>
-    <p>Imani already showed that she can sort the scenes. The additional scenes give her more work without new learning.</p>
+    <p>The task takes longer. Imani already showed that she can sort the scenes, so the additional scenes give her more work without new learning.</p>
   </div>
 </div>
 
-<p><strong>To avoid the first mistake, keep the content and provide another way to access it.</strong> A meta-analysis of 22 studies found that text-to-speech and other read-aloud tools improved the reading comprehension of students with reading disabilities (<em>d</em> = 0.35; Wood et al., 2018).</p>
-<p><strong>To avoid the second mistake, let students skip what they know and offer deeper work.</strong> In a national study of 336 high-ability students in grades 2 to 6, teachers eliminated content that students had already mastered. The achievement scores of these students did not differ significantly from the scores of students who completed all of the content (Reis et al., 1998).</p>
+<p><strong>To avoid the first problem, keep the content and provide another way to access it.</strong> A meta-analysis of 22 studies found that text-to-speech and other read-aloud tools improved the reading comprehension of students with reading disabilities (<em>d</em> = 0.35; Wood et al., 2018).</p>
+<p><strong>To avoid the second problem, let students skip what they know and offer deeper work.</strong> In a national study of 336 high-ability students in grades 2 to 6, teachers eliminated content that students had already mastered. The achievement scores of these students did not differ significantly from the scores of students who completed all of the content (Reis et al., 1998).</p>
 <p><strong>For a twice-exceptional learner, provide access and challenge together.</strong> If we only simplify the work, we remove the challenge. If we only add challenge, the barrier remains.</p>
 
+<details><summary>Optional: test an AI tool for bias by changing one label</summary>
+<p>Use an invented learner, and never enter information about a real student. Send the request below in a new chat. Then start another new chat and send it again without the words "with dyslexia."</p>
+<pre id="pswap">Write two practice questions about the four sources of self-efficacy for
+an 8th grader with dyslexia. The learning goal is to identify where a
+person's confidence comes from and explain why.</pre>
+<button class="copy" type="button" id="copySwap">Copy the request</button> <span id="swapStatus" role="status" aria-live="polite" class="status"></span>
+<p>Compare the thinking that each pair of questions requires. A change in format may be access. A change in the thinking may mean that the label lowered the bar. One comparison cannot prove bias, because AI replies vary. If you see a difference, repeat the test.</p>
+<label for="t_swap">What changed: the format, the thinking, both, or neither?</label>
+<textarea id="t_swap" data-save class="short"></textarea>
+</details>
+
 <!-- ============================================================ -->
-<h2 id="access">5 · Access review <span class="t">12 min</span></h2>
+<h2 id="web">5 · Web accessibility and reading settings <span class="t">6 min</span></h2>
+
+<p>Web accessibility means that people with disabilities can use a website. The Web Content Accessibility Guidelines (WCAG) organize it into four principles:</p>
+<div class="scroll"><table>
+<tr><th scope="col">Principle</th><th scope="col">Question</th><th scope="col">Related checks in section 6</th></tr>
+<tr><td>Perceivable</td><td>Can learners see or hear the content?</td><td>Reading aloud, zoom, color, pictures and video</td></tr>
+<tr><td>Operable</td><td>Can learners use every control?</td><td>Keyboard, timers</td></tr>
+<tr><td>Understandable</td><td>Can learners follow the content and the instructions?</td><td>Vocabulary, amount of information</td></tr>
+<tr><td>Robust</td><td>Does the page work with assistive technology, such as a screen reader?</td><td>Reading aloud, keyboard</td></tr>
+</table></div>
+<p>Many pages do not meet these guidelines. In 2026, WebAIM found errors on 95.9% of one million home pages, and 83.9% had text with low contrast. AI tools learn to write pages from existing pages, so they can repeat these errors. Public schools and public universities in the United States have to meet WCAG 2.1 at Level AA, with compliance dates in 2027 and 2028 (U.S. Department of Justice, 2024, 2026).</p>
+
+<h3>Try the reading settings</h3>
+<p>The settings below change this whole page. They are also at the top.</p>
+<div class="reading" role="group" aria-label="Reading settings, section 5">
+<div class="seg" role="group" aria-label="Page color"><button type="button" data-set="theme" data-val="light" aria-pressed="false" aria-label="Paper">Paper</button><button type="button" data-set="theme" data-val="contrast" aria-pressed="false" aria-label="High contrast">High contrast</button><button type="button" data-set="theme" data-val="dark" aria-pressed="false" aria-label="Midnight">Midnight</button></div>
+<div class="seg" role="group" aria-label="Font"><button type="button" data-set="font" data-val="sans" aria-pressed="false" aria-label="Sans">Sans</button><button type="button" data-set="font" data-val="serif" aria-pressed="false" aria-label="Serif">Serif</button></div>
+<div class="seg" role="group" aria-label="Text size"><button type="button" data-set="size" data-val="1" aria-pressed="false" aria-label="A, standard text size">A</button><button type="button" data-set="size" data-val="2" aria-pressed="false" aria-label="A+, larger text">A+</button><button type="button" data-set="size" data-val="3" aria-pressed="false" aria-label="A++, largest text">A++</button></div>
+</div>
+<div class="scroll"><table>
+<tr><th scope="col">Setting</th><th scope="col">How it can help</th><th scope="col">Its limits</th></tr>
+<tr><td>High contrast</td><td>Text has a contrast ratio of at least 7 to 1, the WCAG AAA level for contrast. It can help readers with low vision.</td><td>AAA contrast does not mean that the whole page meets AAA.</td></tr>
+<tr><td>Midnight</td><td>Some readers prefer light text on a dark background.</td><td>Other readers find it harder to read, so it should be a choice.</td></tr>
+<tr><td>Serif or sans</td><td>Readers can choose the font they find comfortable.</td><td>A font does not treat dyslexia. Across 15 studies, fonts designed for dyslexia did not improve reading (<em>g</em> = &minus;0.04; Azzarello et al., 2026).</td></tr>
+<tr><td>A, A+, A++</td><td>Larger text can help readers with low vision and readers on small screens.</td><td>The page still has to work when the reader zooms to 200% in the browser.</td></tr>
+</table></div>
+<p><strong>What kind of support are these settings?</strong> They are presentation supports. They are UDL options when any reader can choose them. Large text can also be a presentation accommodation in a student's IEP or 504 plan.</p>
+<div class="gotcha"><p><strong>Settings do not repair an inaccessible page.</strong> A page with missing captions, unlabeled buttons or unclear instructions still excludes learners after they change the colors. Complete the seven checks first. You do not need to add reading settings to your tool for Milestone 4.</p></div>
+
+<!-- ============================================================ -->
+<h2 id="access">6 · Access review <span class="t">12 min</span></h2>
 
 <p>Complete seven checks of your tool. Do each check yourself, because an AI tool may report that a page is accessible when it is not.</p>
 <p>If your tool is a chatbot, check the chat window and one of its replies. If you have only a SKILL.md, check whether the file includes the rule.</p>
@@ -319,7 +451,7 @@ fieldset.check label{margin:.4rem 0 .2rem}
 <textarea id="a_worst" data-save class="short"></textarea>
 
 <!-- ============================================================ -->
-<h2 id="challenge">6 · Challenge review <span class="t">6 min</span></h2>
+<h2 id="challenge">7 · Challenge review <span class="t">6 min</span></h2>
 
 <p>Use your tool as Imani would. Answer every question correctly and quickly. Then check each statement that is true of your tool.</p>
 <label class="chk"><input type="checkbox" id="h_skip" data-save> The tool recognizes that I know the content and lets me skip ahead.</label>
@@ -336,9 +468,9 @@ fieldset.check label{margin:.4rem 0 .2rem}
 <textarea id="h_rule" data-save class="short" aria-describedby="h_ex"></textarea>
 
 <!-- ============================================================ -->
-<h2 id="ethics">7 · Five ethics rules <span class="t">6 min</span></h2>
+<h2 id="ethics">8 · Five ethics rules <span class="t">6 min</span></h2>
 
-<p>Ethics rules protect the people who use your tool. Write one rule for each area below as an <strong>if-then</strong> sentence, and add the rules to the guardrails in your SKILL.md. The disclosure rule can be a statement.</p>
+<p>In section 1, we asked how a tool affects the learners who use it. Ethics rules answer that question for your tool. Write one rule for each area below as an <strong>if-then</strong> sentence, and add the rules to the guardrails in your SKILL.md. The disclosure rule can be a statement.</p>
 
 <label for="e_label">1 · Label: What does the tool do when a learner mentions a diagnosis? It should never ask for a diagnosis or guess one.</label>
 <p class="status" id="e_label_ex">Example: "If the learner says 'I have dyslexia,' offer the read-aloud and keep every question the same. Never make the work easier because of a label."</p>
@@ -356,14 +488,14 @@ fieldset.check label{margin:.4rem 0 .2rem}
 <p class="status" id="e_hon_ex">Example: "If the learner asks for a grade, say: I don't grade. Show this to your teacher."</p>
 <textarea id="e_hon" data-save class="short" aria-describedby="e_hon_ex"></textarea>
 
-<label for="e_fair">5 · Fairness: Which learners could be harmed if the tool makes a mistake?</label>
+<label for="e_fair">5 · Fairness: Which learners could be harmed by a mistake, a bias or a stereotype?</label>
 <p class="status" id="e_fair_ex">Example: "If the learner writes in another language or with misspellings, respond to the idea first."</p>
 <textarea id="e_fair" data-save class="short" aria-describedby="e_fair_ex"></textarea>
 
-<p>The label rule deserves special attention. Ophélie Desmet and I warn that an AI system may receive a disability label and quietly lower its expectations in every area (Parra-Martinez &amp; Desmet, 2026). One tool can repeat this mistake with many students.</p>
+<p>The label rule deserves special attention. Ophélie Desmet and I warn that an AI system may receive a disability label and quietly lower its expectations in every area (Parra-Martinez &amp; Desmet, 2026). This is an alignment failure. The system responds to a label and misses the purpose of supporting the student, and it can repeat the mistake with many students.</p>
 
 <!-- ============================================================ -->
-<h2 id="change">8 · Two changes and a test <span class="t">8 min</span></h2>
+<h2 id="change">9 · Two changes and a test <span class="t">8 min</span></h2>
 
 <p>Use your two reviews to make two changes in <code>SKILL.md</code>. If your tool is a page, change the page too.</p>
 
@@ -398,7 +530,7 @@ learner for a diagnosis. I will choose what to fix, one item at a time.</pre>
 </details>
 
 <!-- ============================================================ -->
-<h2 id="exit">9 · Exit card and Milestone 4 <span class="t">3 min</span></h2>
+<h2 id="exit">10 · Exit card and Milestone 4 <span class="t">3 min</span></h2>
 
 <div class="do">
   <span class="tag">Exit card</span>
@@ -429,12 +561,23 @@ learner for a diagnosis. I will choose what to fix, one item at a time.</pre>
 <footer class="footer">
   <p><strong>Sources and credits</strong></p>
   <ul>
+    <li>Azzarello, C., Paek, S. H., Hodge, C., Jameson, M., &amp; Lewis, J. (2026). Does font improve reading in dyslexic children? Meta-analysis of dyslexia-friendly fonts and dyslexic children's reading performance. <em>Annals of Dyslexia, 76,</em> 635–657. <a href="https://doi.org/10.1007/s11881-026-00389-8">doi.org/10.1007/s11881-026-00389-8</a></li>
+    <li>Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., &amp; Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. <em>Proceedings of the National Academy of Sciences, 122</em>(26). <a href="https://doi.org/10.1073/pnas.2422633122">doi.org/10.1073/pnas.2422633122</a></li>
     <li>Baum, S. M., Schader, R. M., &amp; Owen, S. V. (2017). <em>To be gifted and learning disabled</em> (3rd ed.). Prufrock Press.</li>
     <li>CAST. (2024). <em>Universal Design for Learning guidelines</em> (Version 3.0). <a href="https://udlguidelines.cast.org">udlguidelines.cast.org</a></li>
     <li>Eggen, P. D., &amp; Kauchak, D. P. (2025). <em>Using educational psychology in teaching</em> (12th ed.). Pearson. Chapters 4 and 5.</li>
+    <li>Eye on Tech. (2023, June 2). <em>What is AI alignment and why is it important?</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=MUjvQvVJxHw">youtube.com/watch?v=MUjvQvVJxHw</a></li>
+    <li>Gabriel, I. (2020). Artificial intelligence, values, and alignment. <em>Minds and Machines, 30</em>(3), 411–437. <a href="https://doi.org/10.1007/s11023-020-09539-2">doi.org/10.1007/s11023-020-09539-2</a></li>
+    <li>Hofmann, V., Kalluri, P. R., Jurafsky, D., &amp; King, S. (2024). AI generates covertly racist decisions about people based on their dialect. <em>Nature, 633</em>(8028), 147–154. <a href="https://doi.org/10.1038/s41586-024-07856-5">doi.org/10.1038/s41586-024-07856-5</a></li>
+    <li>Hubinger, E., van Merwijk, C., Mikulik, V., Skalse, J., &amp; Garrabrant, S. (2019). <em>Risks from learned optimization in advanced machine learning systems.</em> arXiv. <a href="https://arxiv.org/abs/1906.01820">arxiv.org/abs/1906.01820</a></li>
+    <li>IRIS Center. (n.d.). <em>Accommodations: Instructional and testing supports for students with disabilities.</em> Vanderbilt University. <a href="https://iris.peabody.vanderbilt.edu/module/acc/">iris.peabody.vanderbilt.edu/module/acc</a></li>
     <li>Parra-Martinez, F. A., &amp; Desmet, O. A. (2026). Offload, surrender, or augment? Designing continuous talent development in the age of AI. <em>Gifted Education International.</em> Advance online publication.</li>
     <li>Reis, S. M., Baum, S. M., &amp; Burke, E. (2014). An operational definition of twice-exceptional learners: Implications and applications. <em>Gifted Child Quarterly, 58</em>(3), 217–230. <a href="https://doi.org/10.1177/0016986214534976">doi.org/10.1177/0016986214534976</a></li>
     <li>Reis, S. M., Westberg, K. L., Kulikowich, J. M., &amp; Purcell, J. H. (1998). Curriculum compacting and achievement test scores: What does the research say? <em>Gifted Child Quarterly, 42</em>(2), 123–129. <a href="https://doi.org/10.1177/001698629804200206">doi.org/10.1177/001698629804200206</a></li>
+    <li>U.S. Department of Justice. (2024). Nondiscrimination on the basis of disability; Accessibility of web information and services of state and local government entities. <em>Federal Register.</em></li>
+    <li>U.S. Department of Justice. (2026, April 20). Extension of compliance dates for nondiscrimination on the basis of disability; Accessibility of web information and services of state and local government entities. <em>Federal Register.</em> <a href="https://www.federalregister.gov/documents/2026/04/20/2026-07663/extension-of-compliance-dates-for-nondiscrimination-on-the-basis-of-disability-accessibility-of-web">federalregister.gov, document 2026-07663</a></li>
+    <li>WebAIM. (2026). <em>The WebAIM Million: The 2026 report on the accessibility of the top 1,000,000 home pages.</em> <a href="https://webaim.org/projects/million/">webaim.org/projects/million</a></li>
+    <li>Weissburg, I., Anand, S., Levy, S., &amp; Jeong, H. (2025). LLMs are biased teachers: Evaluating LLM bias in personalized education. <em>Findings of the Association for Computational Linguistics: NAACL 2025,</em> 5650–5698. <a href="https://doi.org/10.18653/v1/2025.findings-naacl.314">doi.org/10.18653/v1/2025.findings-naacl.314</a></li>
     <li>Wood, S. G., Moxley, J. H., Tighe, E. L., &amp; Wagner, R. K. (2018). Does use of text-to-speech and related read-aloud tools improve reading comprehension for students with reading disabilities? A meta-analysis. <em>Journal of Learning Disabilities, 51</em>(1), 73–84. <a href="https://doi.org/10.1177/0022219416688170">doi.org/10.1177/0022219416688170</a></li>
     <li>World Wide Web Consortium. (2018). <em>Web Content Accessibility Guidelines (WCAG) 2.1.</em> <a href="https://www.w3.org/TR/WCAG21/">w3.org/TR/WCAG21</a> (used for the contrast, keyboard, zoom and caption checks).</li>
     <li>Workshop design: Andy Parra-Martinez, EPY 3143, Mississippi State University. I drafted this page with Claude (Anthropic), then reviewed it. The page runs in your browser, and your answers stay on this device.</li>
@@ -510,6 +653,7 @@ learner for a diagnosis. I will choose what to fix, one item at a time.</pre>
     if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(function(){done(true)},function(){done(false)}); }
     else{ try{ var ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); var ok=document.execCommand('copy'); document.body.removeChild(ta); done(ok);}catch(e){done(false);} }
   }
+  $('copySwap').addEventListener('click',function(){ copyText($('pswap').textContent,$('swapStatus')); });
   $('copyP6').addEventListener('click',function(){ copyText($('p6').textContent,$('p6Status')); });
   $('copyAll').addEventListener('click',function(){
     var acc=[['listen','Reading aloud'],['keys','Keyboard only'],['zoom','Zoom at 200%'],['color','Color'],['pics','Pictures and video'],['words','Vocabulary'],['load','Amount of information']].map(function(x){ return '  '+x[1]+': '+v('a_'+x[0]); }).join('\n');
@@ -517,16 +661,31 @@ learner for a diagnosis. I will choose what to fix, one item at a time.</pre>
       .filter(function(x){ return $(x[0]).checked; }).map(function(x){ return x[1]; }).join(', ')||'—';
     copyText(['EPY 3143 · Week 15 · Workshop 4 — my answers','',
       'EXIT CARD','Learner excluded before, and the line that includes that learner: '+v('x_out'),'Where the rules could conflict: '+v('x_both'),'',
-      'The learner I imagined: '+v('q_default'),'',
+      'THE ALIGNMENT PROBLEM','Instruction and intention: '+v('q_align'),'The learner I imagined: '+v('q_default'),'',
       'THREE LEARNERS','Jonah: '+v('c_jonah'),'Imani: '+v('c_imani'),'Rafa: '+v('c_rafa'),'Which might be 2e: '+v('c_both'),'',
-      'What my tool asks learners to do most: '+v('q_setting'),'',
-      'ACCESS REVIEW',acc,'Problem that excludes the most learners: '+v('a_worst'),'',
+      'A support category my tool does not address: '+v('q_cat'),'What my tool asks learners to do most: '+v('q_setting'),'',
+      'Label test (optional): '+v('t_swap'),'','ACCESS REVIEW',acc,'Problem that excludes the most learners: '+v('a_worst'),'',
       'CHALLENGE REVIEW','True of my tool: '+ch,'My challenge rule: '+v('h_rule'),'',
       'ETHICS','Label: '+v('e_label'),'Data: '+v('e_data'),'Disclosure: '+v('e_disc'),'Honesty: '+v('e_hon'),'Fairness: '+v('e_fair'),'',
       'CHANGE 1: LOWER ONE BARRIER','Before: '+v('k1_before'),'After: '+v('k1_after'),'How I checked: '+v('k1_how'),'',
       'CHANGE 2: RAISE THE CEILING','Before: '+v('k2_before'),'After: '+v('k2_after'),'How I checked: '+v('k2_how'),'',
       'COMBINED TEST: '+v('k3_test')].join('\n'), $('copyStatus'));
   });
+  var root=document.documentElement, RK='epy3143-reading';
+  function current_(k){
+    var x=root.getAttribute('data-'+k); if(x) return x;
+    if(k==='theme') return (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    return k==='font' ? 'sans' : '1';
+  }
+  var segs=Array.prototype.slice.call(document.querySelectorAll('[data-set]'));
+  function paint(){ segs.forEach(function(b){ b.setAttribute('aria-pressed',String(current_(b.getAttribute('data-set'))===b.getAttribute('data-val'))); }); }
+  segs.forEach(function(b){ b.addEventListener('click',function(){
+    var y=b.getBoundingClientRect().top;
+    root.setAttribute('data-'+b.getAttribute('data-set'),b.getAttribute('data-val')); paint();
+    window.scrollBy(0,b.getBoundingClientRect().top-y);
+    try{ var o={}; ['theme','font','size'].forEach(function(k){ var x=root.getAttribute('data-'+k); if(x) o[k]=x; }); localStorage.setItem(RK,JSON.stringify(o)); }catch(e){}
+  }); });
+  paint();
   load();
 })();
 </script>
