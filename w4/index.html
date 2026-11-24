@@ -213,13 +213,14 @@ fieldset.check label{margin:.4rem 0 .2rem}
 <!-- ============================================================ -->
 <h2 id="setting">3 · How the setting matters <span class="t">7 min</span></h2>
 
-<p>Your tool is also a setting. The way it asks learners to respond influences which strengths and difficulties it shows. The example below is one scene from the demo tool with two added options, <em>Read aloud</em> and <em>Go deeper</em>. Try both.</p>
+<p>Your tool is also a setting. The way it asks learners to respond influences which strengths and difficulties it shows. The example below is one scene from the demo tool with two added options, reading aloud and <em>Go deeper</em>. Try both. Turn on your sound first.</p>
 
 <div class="card" id="demo">
   <h3 style="margin-top:0">Where does Rosa's confidence come from?</h3>
   <p id="scene">Rosa missed every free throw in October. She practiced each day after school. Now she makes six of ten, and she asks to shoot in the game.</p>
   <div class="opts">
-    <button type="button" class="ghost" id="speak">Read aloud</button>
+    <button type="button" class="ghost" id="speak">Read the scene and choices aloud</button>
+    <button type="button" class="ghost" id="speakStop" hidden>Stop reading</button>
     <button type="button" class="ghost" id="deeperBtn" aria-expanded="false" aria-controls="deeper">Go deeper</button>
   </div>
   <p id="speakStatus" role="status" aria-live="polite" class="status"></p>
@@ -230,15 +231,16 @@ fieldset.check label{margin:.4rem 0 .2rem}
     <button type="button" class="ans" data-a="e">Physiological and emotional state</button>
   </div>
   <p id="demoFb" role="status" aria-live="polite"></p>
+  <p><button type="button" class="ghost" id="speakFb" hidden>Read the feedback aloud</button></p>
   <div id="deeper" hidden>
     <p id="deeperText">On Friday, Rosa's coach says, "I knew you could do it." The scene now includes two sources of confidence. On Saturday, Rosa misses her first five shots. Which source is more likely to support her confidence now? Use evidence from the scene to explain your answer.</p>
-    <button type="button" class="ghost" id="speak2">Read this aloud</button>
+    <button type="button" class="ghost" id="speak2">Read the question aloud</button>
   </div>
 </div>
 
-<p><em>Read aloud</em> lowers the barrier, and <em>Go deeper</em> raises the ceiling. The learning goal stays the same because every learner still has to identify the source of confidence.</p>
+<p>Reading aloud lowers the barrier, and <em>Go deeper</em> raises the ceiling. The learning goal stays the same because every learner still has to identify the source of confidence.</p>
 <p>Both options are available to all learners, so nobody has to disclose a disability to use them. This design follows Universal Design for Learning, which keeps the goal firm and offers flexible ways to reach it (CAST, 2024).</p>
-<p>The challenge also needs to be accessible. Rafa may choose <em>Go deeper</em> and still need to hear the question, so the more difficult question has its own read-aloud button.</p>
+<p>The challenge also needs to be accessible. Rafa may choose <em>Go deeper</em> and still need to hear the question, so the more difficult question and the feedback have their own read-aloud buttons.</p>
 <label for="q_setting">What does your tool ask learners to do most often: read, type, speak, or reason? Which learners would have difficulty showing what they know in that setting?</label>
 <textarea id="q_setting" data-save class="short"></textarea>
 
@@ -467,14 +469,28 @@ learner for a diagnosis. I will choose what to fix, one item at a time.</pre>
     $('bothStatus').textContent=''; $('bothAnswer').hidden=false; $('bothAnswer').focus();
   });
 
-  function speak(ids){
-    if(!('speechSynthesis' in window)){ $('speakStatus').textContent='This browser cannot read aloud. Try Edge, Chrome or Safari.'; return; }
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(new SpeechSynthesisUtterance(ids));
+  // `current` keeps the utterance alive: Chrome can drop one that nothing refers to.
+  var current=null;
+  function speakDone(msg){ current=null; $('speakStop').hidden=true; $('speakStatus').textContent=msg||''; }
+  function speak(txt){
+    var noVoice='This browser did not read the text aloud. Open this page in Edge, Chrome or Safari and check your volume.';
+    if(!('speechSynthesis' in window)){ speakDone(noVoice); return; }
+    var s=window.speechSynthesis, u=new SpeechSynthesisUtterance(txt), started=false;
+    u.lang='en-US'; u.rate=0.95;
+    u.onstart=function(){ if(current!==u) return; started=true; $('speakStop').hidden=false; $('speakStatus').textContent='Reading aloud.'; };
+    u.onend=function(){ if(current===u) speakDone(''); };
+    u.onerror=function(e){ if(current===u && !started && e.error!=='interrupted' && e.error!=='canceled') speakDone(noVoice); };
+    var busy=s.speaking||s.pending;
+    current=u; if(busy) s.cancel();
+    setTimeout(function(){ if(current===u) s.speak(u); }, busy?150:0);
+    setTimeout(function(){ if(current===u && !started){ s.cancel(); speakDone(noVoice); } }, 4000);
   }
+  $('speakStop').addEventListener('click',function(){ speakDone(''); window.speechSynthesis.cancel(); $('speak').focus(); });
+  window.addEventListener('pagehide',function(){ if('speechSynthesis' in window) window.speechSynthesis.cancel(); });
+  $('speakFb').addEventListener('click',function(){ speak($('demoFb').textContent); });
   $('speak').addEventListener('click',function(){
     var a=Array.prototype.map.call(document.querySelectorAll('.ans'),function(b){return b.textContent;}).join('. ');
-    speak($('scene').textContent+' Your choices: '+a+'.');
+    speak('Where does Rosa\'s confidence come from? '+$('scene').textContent+' Your choices are: '+a+'.');
   });
   $('speak2').addEventListener('click',function(){ speak($('deeperText').textContent); });
   $('deeperBtn').addEventListener('click',function(){
@@ -482,10 +498,10 @@ learner for a diagnosis. I will choose what to fix, one item at a time.</pre>
   });
   var fb={m:'Correct. Rosa succeeded at the task herself after practice.',
     v:'Try again. Vicarious experience comes from watching someone else succeed. Does Rosa watch someone in this scene?',
-    p:'Try again. Verbal persuasion comes from what other people say. Does anyone speak to Rosa in this scene?',
+    p:'Try again. Who did the task? Being told helps. Doing it yourself helps more.',
     e:'Try again. This source comes from how the learner feels, such as being nervous or calm. Does the scene describe how Rosa feels?'};
   Array.prototype.forEach.call(document.querySelectorAll('.ans'),function(b){
-    b.addEventListener('click',function(){ $('demoFb').textContent=fb[b.getAttribute('data-a')]; });
+    b.addEventListener('click',function(){ $('demoFb').textContent=fb[b.getAttribute('data-a')]; $('speakFb').hidden=false; });
   });
 
   var v=function(id){ var e=$(id); return (e&&e.value||'').trim()||'—'; };
