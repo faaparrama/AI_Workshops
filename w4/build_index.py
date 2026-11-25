@@ -87,7 +87,8 @@ body{font-size:1.0625rem}
 .seg{display:flex;flex-wrap:wrap;gap:2px;border:1px solid var(--rule-strong);border-radius:7px;padding:3px;background:var(--surface)}
 :root .seg button,:root:not([data-theme="light"]) .seg button{background:transparent;color:var(--ink);border:2px solid transparent;padding:.25em .7em;font-size:.88em}
 :root .seg button[aria-pressed="true"],:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{background:var(--ground);color:var(--maroon);border-color:var(--maroon)}
-@media print{.reading{display:none}}
+.printcopy{display:none}
+@media print{.reading,textarea[data-save]{display:none!important}.printcopy{display:block!important;white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #767676;padding:.5em .7em;min-height:1.5em;margin:.2em 0 .8em;color:#000;background:#fff}}
 :root{--fig:#8C2F42;--fig-n:#82797C}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fig:#D4687C;--fig-n:#8F8589}}
 :root[data-theme="dark"]{--fig:#D4687C;--fig-n:#8F8589}
@@ -202,7 +203,7 @@ __BAR1__
 <div class="keyline">
   <span class="tag">How this page works</span>
   <p>Complete the sections in order. You can work in two sittings and stop after section 4. You need your <strong>SKILL.md</strong> from Milestone 3 and your access rule from the <strong>Week 14 workbench</strong> (Part 6). If your tool is already a page, open it too.</p>
-  <p>You don't need to install anything, and every AI activity is optional. Your answers are saved only in this browser. At the end, copy them with one button and paste them into <strong>Self-guided Workshop 4</strong> in Canvas.</p>
+  <p>You don't need to install anything, and every AI activity is optional. Your answers are saved only in this browser. At the end, save the page as a PDF and upload it to <strong>Self-guided Workshop 4</strong> in Canvas.</p>
   <p><span id="saveStatus" role="status" aria-live="polite" class="status"></span></p>
 </div>
 
@@ -542,7 +543,7 @@ learner for a diagnosis. I will choose what to fix, one item at a time.</pre>
   <button class="ghost" type="button" onclick="window.print()">Print / save as PDF</button>
   <span id="copyStatus" role="status" aria-live="polite" class="status"></span>
 </p>
-<p>Paste your answers into <strong>Self-guided Workshop 4</strong> in Canvas.</p>
+<p>Select <strong>Print / save as PDF</strong>, and upload the PDF to <strong>Self-guided Workshop 4</strong> in Canvas. You can use <strong>Copy all my answers</strong> to begin Milestone 4.</p>
 
 <h3>Milestone 4</h3>
 <p>Your answers on this page are a first draft of Milestone 4. The instructions, rubric and deadline are in Canvas. The milestone has five parts:</p>
@@ -587,6 +588,20 @@ learner for a diagnosis. I will choose what to fix, one item at a time.</pre>
   var $=function(id){ return document.getElementById(id); };
   var fields=Array.prototype.slice.call(document.querySelectorAll('[data-save]'));
   var saveStatus=$('saveStatus');
+  // A printed textarea shows only the lines on screen, so print a full copy of each answer.
+  var copies=fields.filter(function(f){ return f.tagName==='TEXTAREA'; }).map(function(f){
+    var d=document.createElement('div'); d.className='printcopy'; d.setAttribute('aria-hidden','true');
+    f.parentNode.insertBefore(d,f.nextSibling); return [f,d];
+  });
+  var opened=[];
+  window.addEventListener('beforeprint',function(){
+    copies.forEach(function(c){
+      c[1].textContent=c[0].value;
+      var d=c[0].closest('details');
+      if(d && !d.open && c[0].value.trim()){ d.open=true; opened.push(d); }
+    });
+  });
+  window.addEventListener('afterprint',function(){ opened.forEach(function(d){ d.open=false; }); opened=[]; });
   function getv(f){ return f.type==='checkbox' ? f.checked : f.value; }
   function setv(f,v){ if(f.type==='checkbox') f.checked=!!v; else f.value=v; }
   function load(){
