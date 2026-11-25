@@ -4,6 +4,7 @@
 The stylesheet is taken from w2/build_index.py so the pages stay one design.
 """
 import os
+import sys
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -696,5 +697,8 @@ HTML = (HTML.replace("__CSS__", CSS + EXTRA)
         .replace("__FIG_RAFA__", FIG_RAFA).replace("__FIG_WEB__", FIG_WEB)
         .replace("__BAR1__", bar(", top of page")).replace("__BAR2__", bar(", section 5"))
         .replace("__ACCJS__", ACCJS))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "shared"))
+import side_nav  # noqa: E402
+HTML = side_nav.add(HTML)
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, len(HTML) // 1024, "KB")

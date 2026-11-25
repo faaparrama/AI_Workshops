@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Assemble w1/index.html — the self-guided Workshop 1. Edit here, run, commit both."""
-import math, os
+import math, os, sys
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "index.html")
 
@@ -560,5 +560,8 @@ details[open] summary{margin-bottom:.5rem}
 </html>
 '''
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "shared"))
+import side_nav  # noqa: E402
+HTML = side_nav.add(HTML)
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, len(HTML)//1024, "KB")

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Assemble w2/index.html — the self-guided Workshop 2. Edit here, run, commit both."""
 import os
+import sys
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "index.html")
 
@@ -614,5 +615,8 @@ STOP      End when they explain on their own why the two sit-in
 </html>
 '''
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "shared"))
+import side_nav  # noqa: E402
+HTML = side_nav.add(HTML)
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, len(HTML)//1024, "KB")
