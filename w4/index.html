@@ -697,15 +697,16 @@ learner for a diagnosis. I will choose what to fix, one item at a time.</pre>
     var d=document.createElement('div'); d.className='printcopy'; d.setAttribute('aria-hidden','true');
     f.parentNode.insertBefore(d,f.nextSibling); return [f,d];
   });
-  var opened=[];
+  var opened=[], R=document.documentElement, themeWas=null;
   window.addEventListener('beforeprint',function(){
+    themeWas=R.getAttribute('data-theme'); R.setAttribute('data-theme','light');
     copies.forEach(function(c){
       c[1].textContent=c[0].value;
       var d=c[0].closest('details');
       if(d && !d.open && c[0].value.trim()){ d.open=true; opened.push(d); }
     });
   });
-  window.addEventListener('afterprint',function(){ opened.forEach(function(d){ d.open=false; }); opened=[]; });
+  window.addEventListener('afterprint',function(){ if(themeWas===null) R.removeAttribute('data-theme'); else R.setAttribute('data-theme',themeWas); opened.forEach(function(d){ d.open=false; }); opened=[]; });
   function getv(f){ return f.type==='checkbox' ? f.checked : f.value; }
   function setv(f,v){ if(f.type==='checkbox') f.checked=!!v; else f.value=v; }
   function load(){
